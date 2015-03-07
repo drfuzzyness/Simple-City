@@ -14,6 +14,7 @@ public class Building : MonoBehaviour {
 
 
 	[Header("Setup")]
+	public ParticleSystem dustParticleSystem;
 	public float revenuePerFloor;
 	public int numPositiveFloors;
 	public BudgetManager budgetManager;
@@ -45,6 +46,7 @@ public class Building : MonoBehaviour {
 			overviewCanvas.gameObject.SetActive( true );
 			overviewCanvas.position = floors[floors.Count - 1].transform.position +
 				Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
+			dustParticleSystem.Play();
 			return true;
 		}
 		else {
@@ -64,6 +66,7 @@ public class Building : MonoBehaviour {
 										Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
 					
 			calculateRevenue();
+			dustParticleSystem.Play();
 		}
 	}
 
@@ -89,9 +92,11 @@ public class Building : MonoBehaviour {
 
 	public void updateCostToBuild( float increaseRate ) {
 		// Increase rate should be >= 1
-		costToBuild = costToBuild * increaseRate;
+		costToBuild = Mathf.Round( costToBuild * increaseRate );
 		plotPosition.updatePricetagDisplay();
 	}
+
+
 
 	// Update is called once per frame
 	void Update () {

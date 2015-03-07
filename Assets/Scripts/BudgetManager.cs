@@ -46,6 +46,7 @@ public class BudgetManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		countdown = timePerPaycheck;
 		calculateRevenue();
 		updateUI();
 		numBuiltBuildings = 0;
@@ -76,7 +77,7 @@ public class BudgetManager : MonoBehaviour {
 			revenueText.text = "-$" + Mathf.Abs( revenue );
 			revenueText.color = negativeCashflowColor;
 		}
-		countdownText.text = paychecks%paychecksPerConstruction + "/" + paychecksPerConstruction ;
+		countdownText.text = ( paychecks % paychecksPerConstruction + 1 ) + "/" + paychecksPerConstruction ;
 
 	}
 
