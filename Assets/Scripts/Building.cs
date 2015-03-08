@@ -76,8 +76,8 @@ public class Building : MonoBehaviour {
 			revenue = revenuePerFloor * floors.Count;
 		}
 		else {
-			revenue = revenuePerFloor * numPositiveFloors - revenuePerFloor *
-				Mathf.Round( ( floors.Count - revenuePerFloor ) / 1.5f );
+			revenue = (revenuePerFloor * numPositiveFloors) - 
+				Mathf.Round( ( floors.Count * revenuePerFloor ) / 0.75f );
 		}
 
 		if( revenue >= 0 ) {
