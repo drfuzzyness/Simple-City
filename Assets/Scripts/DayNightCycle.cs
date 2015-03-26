@@ -39,7 +39,7 @@ public class DayNightCycle : MonoBehaviour {
 	}
 
 	void updateMoonPosition() {
-		Vector3 rotation = new Vector3( timer / cycleDuration * 360 + moonStart.x, moonStart.y, moonStart.z );
+		Vector3 rotation = new Vector3( timer / -cycleDuration * 360 + moonStart.x, moonStart.y, moonStart.z );
 		moonlight.localEulerAngles = rotation;	
 	}
 }
