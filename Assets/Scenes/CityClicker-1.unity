@@ -161,6 +161,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 221208734}
+  - 114: {fileID: 221208735}
   m_Layer: 0
   m_Name: Car Maker
   m_TagString: Untagged
@@ -179,7 +180,20 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
+--- !u!114 &221208735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 221208733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62a4321cb1b104543a55c7544e7f39b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  carPrefab: {fileID: 11425368, guid: ce40529e22619442a88721427f9a8e33, type: 2}
+  output: {fileID: 1901910039}
 --- !u!1 &278031673
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,9 +656,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 685618878}
-        m_MethodName: set_enabled
-        m_Mode: 6
+      - m_Target: {fileID: 221208735}
+        m_MethodName: make
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
@@ -683,52 +697,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 433040625}
---- !u!1001 &592928448
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 435594, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 131.899994
-      objectReference: {fileID: 0}
-    - target: {fileID: 435594, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 1.10000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 435594, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: -82.0999985
-      objectReference: {fileID: 0}
-    - target: {fileID: 435594, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435594, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435594, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 435594, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 435594, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: m_RootOrder
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 11425368, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-      propertyPath: nextNode
-      value: 
-      objectReference: {fileID: 1901910039}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &662793475
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,12 +908,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 676472453}
---- !u!114 &685618878
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11425368, guid: ce40529e22619442a88721427f9a8e33,
-    type: 2}
-  m_PrefabInternal: {fileID: 592928448}
-  m_Script: {fileID: 11500000, guid: 4ac5b4aa713bd4fe28fc2f3cb144ac77, type: 3}
 --- !u!1 &895385089
 GameObject:
   m_ObjectHideFlags: 0

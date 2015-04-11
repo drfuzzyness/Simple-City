@@ -8,7 +8,7 @@ public class Car : MonoBehaviour {
 	public float timeBtwnNodes; // Units/sec
 
 	void Start() {
-		decideWhatNext();
+
 	}
 
 	// Update is called once per frame
@@ -31,7 +31,7 @@ public class Car : MonoBehaviour {
 		decideWhatNext();
 	}
 
-	void decideWhatNext() {
+	public void decideWhatNext() {
 		previousNode = nextNode;
 		nextNode = chooseDestination( nextNode );
 		StartCoroutine( "driveToNextNode" );
@@ -39,6 +39,7 @@ public class Car : MonoBehaviour {
 
 	TrafficNode chooseDestination( TrafficNode node ) {
 		int index = Random.Range( 0, node.nextNodes.Count );
+		Debug.Log ( gameObject + " is going to " + node.nextNodes[ index ] + " next" );
 		return node.nextNodes[ index ];
 	}
 }

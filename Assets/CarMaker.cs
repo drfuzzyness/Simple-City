@@ -4,8 +4,12 @@ using System.Collections;
 public class CarMaker : MonoBehaviour {
 
 	public Car carPrefab;
-	public void make(TrafficNode next) {
-		GameObject newGO = Instantiate( carPrefab, next.transform.position, next.transform.rotation ) as GameObject;
+	public TrafficNode output;
+
+	public void make() {
+		Car newGO = Instantiate( carPrefab, output.transform.position, output.transform.rotation ) as Car;
+		newGO.nextNode = output;
+		newGO.decideWhatNext();
 	}
 
 	// Use this for initialization
