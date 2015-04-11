@@ -1,0 +1,1019 @@
+fileFormatVersion: 2
+guid: 9a3b27b6c903c442f85e067f9dc873a8
+timeCreated: 1428324438
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Foundation
+    100004: IBeam
+    100006: IBeam 1
+    100008: IBeam 10
+    100010: IBeam 11
+    100012: IBeam 12
+    100014: IBeam 13
+    100016: IBeam 14
+    100018: IBeam 15
+    100020: IBeam 16
+    100022: IBeam 17
+    100024: IBeam 2
+    100026: IBeam 3
+    100028: IBeam 4
+    100030: IBeam 5
+    100032: IBeam 6
+    100034: IBeam 7
+    100036: IBeam 8
+    100038: IBeam 9
+    100040: IBeam1
+    100042: IBeam1 1
+    100044: IBeam1 2
+    100046: IBeam1 3
+    100048: IBeam1 4
+    100050: IBeam1 5
+    100052: IBeam1 6
+    100054: IBeam1 7
+    100056: IBeam1 8
+    100058: IBeam2
+    100060: IBeam2 1
+    100062: IBeam2 2
+    100064: IBeam2 3
+    100066: IBeam2 4
+    100068: IBeam2 5
+    100070: IBeam2 6
+    100072: IBeam2 7
+    100074: IBeam2 8
+    100076: IBeam3
+    100078: IBeam3 1
+    100080: IBeam3 10
+    100082: IBeam3 11
+    100084: IBeam3 12
+    100086: IBeam3 13
+    100088: IBeam3 14
+    100090: IBeam3 15
+    100092: IBeam3 16
+    100094: IBeam3 17
+    100096: IBeam3 2
+    100098: IBeam3 3
+    100100: IBeam3 4
+    100102: IBeam3 5
+    100104: IBeam3 6
+    100106: IBeam3 7
+    100108: IBeam3 8
+    100110: IBeam3 9
+    100112: IBeamFloor1
+    100114: IBeamFloor2
+    100116: IBeamForward
+    100118: IBeamForward 1
+    100120: IBeamForward 2
+    100122: IBeamForward 3
+    100124: IBeamForward 4
+    100126: IBeamForward 5
+    100128: IBeamForward 6
+    100130: IBeamForward 7
+    100132: IBeamVert
+    100134: IBeamVert 1
+    100136: IBeamVert1
+    100138: pasted__IBeam
+    100140: pasted__IBeam 1
+    100142: pasted__IBeam 2
+    100144: pasted__IBeam 3
+    100146: pasted__IBeam 4
+    100148: pasted__IBeam 5
+    100150: pasted__IBeam 6
+    100152: pasted__IBeam1
+    100154: pasted__IBeam1 1
+    100156: pasted__IBeam1 2
+    100158: pasted__IBeam1 3
+    100160: pasted__IBeam1 4
+    100162: pasted__IBeam1 5
+    100164: pasted__IBeam1 6
+    100166: pasted__IBeam2
+    100168: pasted__IBeam2 1
+    100170: pasted__IBeam2 2
+    100172: pasted__IBeam2 3
+    100174: pasted__IBeam2 4
+    100176: pasted__IBeam2 5
+    100178: pasted__IBeam2 6
+    100180: pasted__IBeam3
+    100182: pasted__IBeam3 1
+    100184: pasted__IBeam3 2
+    100186: pasted__IBeam3 3
+    100188: pasted__IBeam3 4
+    100190: pasted__IBeam3 5
+    100192: pasted__IBeam3 6
+    100194: pasted__IBeam4
+    100196: pasted__IBeam4 1
+    100198: pasted__IBeam4 2
+    100200: pasted__IBeam4 3
+    100202: pasted__IBeam4 4
+    100204: pasted__IBeam4 5
+    100206: pasted__IBeam4 6
+    100208: transform1
+    100210: transform12
+    100212: transform12 1
+    100214: transform12 2
+    100216: transform13
+    100218: transform13 1
+    100220: transform13 2
+    100222: transform14
+    100224: transform14 1
+    100226: transform14 2
+    100228: transform15
+    100230: transform15 1
+    100232: transform15 2
+    100234: transform16
+    100236: transform16 1
+    100238: transform16 2
+    100240: transform19
+    100242: transform19 1
+    100244: transform19 2
+    100246: transform32
+    100248: transform32 1
+    100250: transform32 2
+    100252: transform35
+    100254: transform35 1
+    100256: transform35 2
+    100258: transform36
+    100260: transform36 1
+    100262: transform36 2
+    100264: transform37
+    100266: transform37 1
+    100268: transform37 2
+    100270: transform38
+    100272: transform38 1
+    100274: transform38 2
+    100276: transform39
+    100278: transform39 1
+    100280: transform39 2
+    100282: transform40
+    100284: transform40 1
+    100286: transform40 2
+    100288: transform41
+    100290: transform41 1
+    100292: transform41 2
+    100294: transform42
+    100296: transform42 1
+    100298: transform42 2
+    100300: transform43
+    100302: transform43 1
+    100304: transform43 2
+    100306: transform44
+    100308: transform44 1
+    100310: transform44 2
+    100312: transform47
+    100314: transform47 1
+    100316: transform47 2
+    100318: transform48
+    100320: transform49
+    100322: transform50
+    100324: transform51
+    100326: transform52
+    400000: //RootNode
+    400002: Foundation
+    400004: IBeam
+    400006: IBeam 1
+    400008: IBeam 10
+    400010: IBeam 11
+    400012: IBeam 12
+    400014: IBeam 13
+    400016: IBeam 14
+    400018: IBeam 15
+    400020: IBeam 16
+    400022: IBeam 17
+    400024: IBeam 2
+    400026: IBeam 3
+    400028: IBeam 4
+    400030: IBeam 5
+    400032: IBeam 6
+    400034: IBeam 7
+    400036: IBeam 8
+    400038: IBeam 9
+    400040: IBeam1
+    400042: IBeam1 1
+    400044: IBeam1 2
+    400046: IBeam1 3
+    400048: IBeam1 4
+    400050: IBeam1 5
+    400052: IBeam1 6
+    400054: IBeam1 7
+    400056: IBeam1 8
+    400058: IBeam2
+    400060: IBeam2 1
+    400062: IBeam2 2
+    400064: IBeam2 3
+    400066: IBeam2 4
+    400068: IBeam2 5
+    400070: IBeam2 6
+    400072: IBeam2 7
+    400074: IBeam2 8
+    400076: IBeam3
+    400078: IBeam3 1
+    400080: IBeam3 10
+    400082: IBeam3 11
+    400084: IBeam3 12
+    400086: IBeam3 13
+    400088: IBeam3 14
+    400090: IBeam3 15
+    400092: IBeam3 16
+    400094: IBeam3 17
+    400096: IBeam3 2
+    400098: IBeam3 3
+    400100: IBeam3 4
+    400102: IBeam3 5
+    400104: IBeam3 6
+    400106: IBeam3 7
+    400108: IBeam3 8
+    400110: IBeam3 9
+    400112: IBeamFloor1
+    400114: IBeamFloor2
+    400116: IBeamForward
+    400118: IBeamForward 1
+    400120: IBeamForward 2
+    400122: IBeamForward 3
+    400124: IBeamForward 4
+    400126: IBeamForward 5
+    400128: IBeamForward 6
+    400130: IBeamForward 7
+    400132: IBeamVert
+    400134: IBeamVert 1
+    400136: IBeamVert1
+    400138: pasted__IBeam
+    400140: pasted__IBeam 1
+    400142: pasted__IBeam 2
+    400144: pasted__IBeam 3
+    400146: pasted__IBeam 4
+    400148: pasted__IBeam 5
+    400150: pasted__IBeam 6
+    400152: pasted__IBeam1
+    400154: pasted__IBeam1 1
+    400156: pasted__IBeam1 2
+    400158: pasted__IBeam1 3
+    400160: pasted__IBeam1 4
+    400162: pasted__IBeam1 5
+    400164: pasted__IBeam1 6
+    400166: pasted__IBeam2
+    400168: pasted__IBeam2 1
+    400170: pasted__IBeam2 2
+    400172: pasted__IBeam2 3
+    400174: pasted__IBeam2 4
+    400176: pasted__IBeam2 5
+    400178: pasted__IBeam2 6
+    400180: pasted__IBeam3
+    400182: pasted__IBeam3 1
+    400184: pasted__IBeam3 2
+    400186: pasted__IBeam3 3
+    400188: pasted__IBeam3 4
+    400190: pasted__IBeam3 5
+    400192: pasted__IBeam3 6
+    400194: pasted__IBeam4
+    400196: pasted__IBeam4 1
+    400198: pasted__IBeam4 2
+    400200: pasted__IBeam4 3
+    400202: pasted__IBeam4 4
+    400204: pasted__IBeam4 5
+    400206: pasted__IBeam4 6
+    400208: transform1
+    400210: transform12
+    400212: transform12 1
+    400214: transform12 2
+    400216: transform13
+    400218: transform13 1
+    400220: transform13 2
+    400222: transform14
+    400224: transform14 1
+    400226: transform14 2
+    400228: transform15
+    400230: transform15 1
+    400232: transform15 2
+    400234: transform16
+    400236: transform16 1
+    400238: transform16 2
+    400240: transform19
+    400242: transform19 1
+    400244: transform19 2
+    400246: transform32
+    400248: transform32 1
+    400250: transform32 2
+    400252: transform35
+    400254: transform35 1
+    400256: transform35 2
+    400258: transform36
+    400260: transform36 1
+    400262: transform36 2
+    400264: transform37
+    400266: transform37 1
+    400268: transform37 2
+    400270: transform38
+    400272: transform38 1
+    400274: transform38 2
+    400276: transform39
+    400278: transform39 1
+    400280: transform39 2
+    400282: transform40
+    400284: transform40 1
+    400286: transform40 2
+    400288: transform41
+    400290: transform41 1
+    400292: transform41 2
+    400294: transform42
+    400296: transform42 1
+    400298: transform42 2
+    400300: transform43
+    400302: transform43 1
+    400304: transform43 2
+    400306: transform44
+    400308: transform44 1
+    400310: transform44 2
+    400312: transform47
+    400314: transform47 1
+    400316: transform47 2
+    400318: transform48
+    400320: transform49
+    400322: transform50
+    400324: transform51
+    400326: transform52
+    2300000: Foundation
+    2300002: IBeam
+    2300004: IBeam 1
+    2300006: IBeam 10
+    2300008: IBeam 11
+    2300010: IBeam 12
+    2300012: IBeam 13
+    2300014: IBeam 14
+    2300016: IBeam 15
+    2300018: IBeam 16
+    2300020: IBeam 17
+    2300022: IBeam 2
+    2300024: IBeam 3
+    2300026: IBeam 4
+    2300028: IBeam 5
+    2300030: IBeam 6
+    2300032: IBeam 7
+    2300034: IBeam 8
+    2300036: IBeam 9
+    2300038: IBeam1
+    2300040: IBeam1 1
+    2300042: IBeam1 2
+    2300044: IBeam1 3
+    2300046: IBeam1 4
+    2300048: IBeam1 5
+    2300050: IBeam1 6
+    2300052: IBeam1 7
+    2300054: IBeam1 8
+    2300056: IBeam2
+    2300058: IBeam2 1
+    2300060: IBeam2 2
+    2300062: IBeam2 3
+    2300064: IBeam2 4
+    2300066: IBeam2 5
+    2300068: IBeam2 6
+    2300070: IBeam2 7
+    2300072: IBeam2 8
+    2300074: IBeam3
+    2300076: IBeam3 1
+    2300078: IBeam3 10
+    2300080: IBeam3 11
+    2300082: IBeam3 12
+    2300084: IBeam3 13
+    2300086: IBeam3 14
+    2300088: IBeam3 15
+    2300090: IBeam3 16
+    2300092: IBeam3 17
+    2300094: IBeam3 2
+    2300096: IBeam3 3
+    2300098: IBeam3 4
+    2300100: IBeam3 5
+    2300102: IBeam3 6
+    2300104: IBeam3 7
+    2300106: IBeam3 8
+    2300108: IBeam3 9
+    2300110: pasted__IBeam
+    2300112: pasted__IBeam 1
+    2300114: pasted__IBeam 2
+    2300116: pasted__IBeam 3
+    2300118: pasted__IBeam 4
+    2300120: pasted__IBeam 5
+    2300122: pasted__IBeam 6
+    2300124: pasted__IBeam1
+    2300126: pasted__IBeam1 1
+    2300128: pasted__IBeam1 2
+    2300130: pasted__IBeam1 3
+    2300132: pasted__IBeam1 4
+    2300134: pasted__IBeam1 5
+    2300136: pasted__IBeam1 6
+    2300138: pasted__IBeam2
+    2300140: pasted__IBeam2 1
+    2300142: pasted__IBeam2 2
+    2300144: pasted__IBeam2 3
+    2300146: pasted__IBeam2 4
+    2300148: pasted__IBeam2 5
+    2300150: pasted__IBeam2 6
+    2300152: pasted__IBeam3
+    2300154: pasted__IBeam3 1
+    2300156: pasted__IBeam3 2
+    2300158: pasted__IBeam3 3
+    2300160: pasted__IBeam3 4
+    2300162: pasted__IBeam3 5
+    2300164: pasted__IBeam3 6
+    2300166: pasted__IBeam4
+    2300168: pasted__IBeam4 1
+    2300170: pasted__IBeam4 2
+    2300172: pasted__IBeam4 3
+    2300174: pasted__IBeam4 4
+    2300176: pasted__IBeam4 5
+    2300178: pasted__IBeam4 6
+    3300000: Foundation
+    3300002: IBeam
+    3300004: IBeam 1
+    3300006: IBeam 10
+    3300008: IBeam 11
+    3300010: IBeam 12
+    3300012: IBeam 13
+    3300014: IBeam 14
+    3300016: IBeam 15
+    3300018: IBeam 16
+    3300020: IBeam 17
+    3300022: IBeam 2
+    3300024: IBeam 3
+    3300026: IBeam 4
+    3300028: IBeam 5
+    3300030: IBeam 6
+    3300032: IBeam 7
+    3300034: IBeam 8
+    3300036: IBeam 9
+    3300038: IBeam1
+    3300040: IBeam1 1
+    3300042: IBeam1 2
+    3300044: IBeam1 3
+    3300046: IBeam1 4
+    3300048: IBeam1 5
+    3300050: IBeam1 6
+    3300052: IBeam1 7
+    3300054: IBeam1 8
+    3300056: IBeam2
+    3300058: IBeam2 1
+    3300060: IBeam2 2
+    3300062: IBeam2 3
+    3300064: IBeam2 4
+    3300066: IBeam2 5
+    3300068: IBeam2 6
+    3300070: IBeam2 7
+    3300072: IBeam2 8
+    3300074: IBeam3
+    3300076: IBeam3 1
+    3300078: IBeam3 10
+    3300080: IBeam3 11
+    3300082: IBeam3 12
+    3300084: IBeam3 13
+    3300086: IBeam3 14
+    3300088: IBeam3 15
+    3300090: IBeam3 16
+    3300092: IBeam3 17
+    3300094: IBeam3 2
+    3300096: IBeam3 3
+    3300098: IBeam3 4
+    3300100: IBeam3 5
+    3300102: IBeam3 6
+    3300104: IBeam3 7
+    3300106: IBeam3 8
+    3300108: IBeam3 9
+    3300110: pasted__IBeam
+    3300112: pasted__IBeam 1
+    3300114: pasted__IBeam 2
+    3300116: pasted__IBeam 3
+    3300118: pasted__IBeam 4
+    3300120: pasted__IBeam 5
+    3300122: pasted__IBeam 6
+    3300124: pasted__IBeam1
+    3300126: pasted__IBeam1 1
+    3300128: pasted__IBeam1 2
+    3300130: pasted__IBeam1 3
+    3300132: pasted__IBeam1 4
+    3300134: pasted__IBeam1 5
+    3300136: pasted__IBeam1 6
+    3300138: pasted__IBeam2
+    3300140: pasted__IBeam2 1
+    3300142: pasted__IBeam2 2
+    3300144: pasted__IBeam2 3
+    3300146: pasted__IBeam2 4
+    3300148: pasted__IBeam2 5
+    3300150: pasted__IBeam2 6
+    3300152: pasted__IBeam3
+    3300154: pasted__IBeam3 1
+    3300156: pasted__IBeam3 2
+    3300158: pasted__IBeam3 3
+    3300160: pasted__IBeam3 4
+    3300162: pasted__IBeam3 5
+    3300164: pasted__IBeam3 6
+    3300166: pasted__IBeam4
+    3300168: pasted__IBeam4 1
+    3300170: pasted__IBeam4 2
+    3300172: pasted__IBeam4 3
+    3300174: pasted__IBeam4 4
+    3300176: pasted__IBeam4 5
+    3300178: pasted__IBeam4 6
+    4300000: Foundation
+    4300002: IBeam3
+    4300004: IBeam2
+    4300006: IBeam1
+    4300008: IBeam
+    4300010: IBeam3
+    4300012: IBeam
+    4300014: IBeam3
+    4300016: IBeam
+    4300018: IBeam3
+    4300020: IBeam2
+    4300022: IBeam1
+    4300024: IBeam
+    4300026: IBeam3
+    4300028: IBeam2
+    4300030: IBeam1
+    4300032: IBeam
+    4300034: IBeam3
+    4300036: IBeam
+    4300038: pasted__IBeam
+    4300040: pasted__IBeam1
+    4300042: pasted__IBeam2
+    4300044: pasted__IBeam3
+    4300046: pasted__IBeam4
+    4300048: pasted__IBeam
+    4300050: pasted__IBeam1
+    4300052: pasted__IBeam2
+    4300054: pasted__IBeam3
+    4300056: pasted__IBeam4
+    4300058: pasted__IBeam
+    4300060: pasted__IBeam1
+    4300062: pasted__IBeam2
+    4300064: pasted__IBeam3
+    4300066: pasted__IBeam4
+    4300068: pasted__IBeam
+    4300070: pasted__IBeam1
+    4300072: pasted__IBeam2
+    4300074: pasted__IBeam3
+    4300076: pasted__IBeam4
+    4300078: pasted__IBeam
+    4300080: pasted__IBeam1
+    4300082: pasted__IBeam2
+    4300084: pasted__IBeam3
+    4300086: pasted__IBeam4
+    4300088: pasted__IBeam
+    4300090: pasted__IBeam1
+    4300092: pasted__IBeam2
+    4300094: pasted__IBeam3
+    4300096: pasted__IBeam4
+    4300098: IBeam3
+    4300100: IBeam2
+    4300102: IBeam1
+    4300104: IBeam
+    4300106: IBeam3
+    4300108: IBeam
+    4300110: IBeam3
+    4300112: IBeam
+    4300114: IBeam3
+    4300116: IBeam2
+    4300118: IBeam1
+    4300120: IBeam
+    4300122: IBeam3
+    4300124: IBeam2
+    4300126: IBeam1
+    4300128: IBeam
+    4300130: IBeam3
+    4300132: IBeam
+    4300134: IBeam3
+    4300136: IBeam2
+    4300138: IBeam1
+    4300140: IBeam
+    4300142: IBeam3
+    4300144: IBeam
+    4300146: IBeam3
+    4300148: IBeam
+    4300150: IBeam3
+    4300152: IBeam2
+    4300154: IBeam1
+    4300156: IBeam
+    4300158: IBeam3
+    4300160: IBeam2
+    4300162: IBeam1
+    4300164: IBeam
+    4300166: IBeam3
+    4300168: IBeam
+    4300170: pasted__IBeam
+    4300172: pasted__IBeam1
+    4300174: pasted__IBeam2
+    4300176: pasted__IBeam3
+    4300178: pasted__IBeam4
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 252
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Foundation
+        weight: 1
+      - path: IBeamFloor1
+        weight: 1
+      - path: IBeamFloor1/IBeamForward
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform1
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform1/IBeamForward 2
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform1/IBeamForward 2/pasted__IBeam 1
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform1/IBeamForward 2/pasted__IBeam1 1
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform1/IBeamForward 2/pasted__IBeam2 1
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform1/IBeamForward 2/pasted__IBeam3 1
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform1/IBeamForward 2/pasted__IBeam4 1
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform48
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform48/IBeamForward 3
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform48/IBeamForward 3/pasted__IBeam 2
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform48/IBeamForward 3/pasted__IBeam1 2
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform48/IBeamForward 3/pasted__IBeam2 2
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform48/IBeamForward 3/pasted__IBeam3 2
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform48/IBeamForward 3/pasted__IBeam4 2
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform49
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform49/IBeamForward 4
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform49/IBeamForward 4/pasted__IBeam 3
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform49/IBeamForward 4/pasted__IBeam1 3
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform49/IBeamForward 4/pasted__IBeam2 3
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform49/IBeamForward 4/pasted__IBeam3 3
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform49/IBeamForward 4/pasted__IBeam4 3
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform50
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform50/IBeamForward 5
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform50/IBeamForward 5/pasted__IBeam 4
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform50/IBeamForward 5/pasted__IBeam1 4
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform50/IBeamForward 5/pasted__IBeam2 4
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform50/IBeamForward 5/pasted__IBeam3 4
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform50/IBeamForward 5/pasted__IBeam4 4
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform51
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform51/IBeamForward 6
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform51/IBeamForward 6/pasted__IBeam 5
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform51/IBeamForward 6/pasted__IBeam1 5
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform51/IBeamForward 6/pasted__IBeam2 5
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform51/IBeamForward 6/pasted__IBeam3 5
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform51/IBeamForward 6/pasted__IBeam4 5
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform52
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform52/IBeamForward 7
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform52/IBeamForward 7/pasted__IBeam 6
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform52/IBeamForward 7/pasted__IBeam1 6
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform52/IBeamForward 7/pasted__IBeam2 6
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform52/IBeamForward 7/pasted__IBeam3 6
+        weight: 1
+      - path: IBeamFloor1/IBeamForward/transform52/IBeamForward 7/pasted__IBeam4 6
+        weight: 1
+      - path: IBeamFloor1/IBeamVert
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform12
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform12/IBeam3
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform13
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform13/IBeam2
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform14
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform14/IBeam1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform15
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform15/IBeam
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform16
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform16/IBeam3 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform19
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform19/IBeam 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform32
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform32/IBeam3 2
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform35
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform35/IBeam 2
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform36
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform36/IBeam3 3
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform37
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform37/IBeam2 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform38
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform38/IBeam1 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform39
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform39/IBeam 3
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform40
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform40/IBeam3 4
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform41
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform41/IBeam2 2
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform42
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform42/IBeam1 2
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform43
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform43/IBeam 4
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform44
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform44/IBeam3 5
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform47
+        weight: 1
+      - path: IBeamFloor1/IBeamVert/transform47/IBeam 5
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform12 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform12 1/IBeam3 6
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform13 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform13 1/IBeam2 3
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform14 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform14 1/IBeam1 3
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform15 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform15 1/IBeam 6
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform16 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform16 1/IBeam3 7
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform19 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform19 1/IBeam 7
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform32 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform32 1/IBeam3 8
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform35 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform35 1/IBeam 8
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform36 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform36 1/IBeam3 9
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform37 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform37 1/IBeam2 4
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform38 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform38 1/IBeam1 4
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform39 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform39 1/IBeam 9
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform40 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform40 1/IBeam3 10
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform41 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform41 1/IBeam2 5
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform42 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform42 1/IBeam1 5
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform43 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform43 1/IBeam 10
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform44 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform44 1/IBeam3 11
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform47 1
+        weight: 1
+      - path: IBeamFloor1/IBeamVert1/transform47 1/IBeam 11
+        weight: 1
+      - path: IBeamFloor2
+        weight: 1
+      - path: IBeamFloor2/IBeamForward 1
+        weight: 1
+      - path: IBeamFloor2/IBeamForward 1/pasted__IBeam
+        weight: 1
+      - path: IBeamFloor2/IBeamForward 1/pasted__IBeam1
+        weight: 1
+      - path: IBeamFloor2/IBeamForward 1/pasted__IBeam2
+        weight: 1
+      - path: IBeamFloor2/IBeamForward 1/pasted__IBeam3
+        weight: 1
+      - path: IBeamFloor2/IBeamForward 1/pasted__IBeam4
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform12 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform12 2/IBeam3 12
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform13 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform13 2/IBeam2 6
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform14 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform14 2/IBeam1 6
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform15 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform15 2/IBeam 12
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform16 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform16 2/IBeam3 13
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform19 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform19 2/IBeam 13
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform32 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform32 2/IBeam3 14
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform35 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform35 2/IBeam 14
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform36 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform36 2/IBeam3 15
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform37 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform37 2/IBeam2 7
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform38 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform38 2/IBeam1 7
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform39 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform39 2/IBeam 15
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform40 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform40 2/IBeam3 16
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform41 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform41 2/IBeam2 8
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform42 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform42 2/IBeam1 8
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform43 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform43 2/IBeam 16
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform44 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform44 2/IBeam3 17
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform47 2
+        weight: 1
+      - path: IBeamFloor2/IBeamVert 1/transform47 2/IBeam 17
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
