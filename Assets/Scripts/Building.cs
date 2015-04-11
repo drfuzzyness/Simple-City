@@ -5,10 +5,7 @@ using UnityEngine.UI;
 
 public class Building : MonoBehaviour {
 
-	[Header("Balance")]
-	public float revenuePerFloor;
-	public float modifierForNegativeFloors;
-	public int numPositiveFloors;
+
 
 	[Header("Status")]
 	public float revenue;
@@ -18,7 +15,8 @@ public class Building : MonoBehaviour {
 
 	[Header("Setup")]
 	public ParticleSystem dustParticleSystem;
-
+	public float revenuePerFloor;
+	public int numPositiveFloors;
 	public BudgetManager budgetManager;
 	public Transform overviewCanvas;
 	public Transform floorPrefab;
@@ -79,19 +77,9 @@ public class Building : MonoBehaviour {
 		}
 		else {
 			revenue = (revenuePerFloor * numPositiveFloors) - 
-				Mathf.Round( (floors.Count - numPositiveFloors) * revenuePerFloor / 0.4f );
+				Mathf.Round( ( floors.Count * revenuePerFloor ) / 0.75f );
 		}
 
-		updateMoneyCanvas();
-	}
-
-	public void updateCostToBuild( float increaseRate ) {
-		// Increase rate should be >= 1
-		costToBuild = Mathf.Round( costToBuild * increaseRate );
-		plotPosition.updatePricetagDisplay();
-	}
-
-	void updateMoneyCanvas() {
 		if( revenue >= 0 ) {
 			overviewCanvas.GetChild(0).GetComponent<Text>().text = "$" + revenue;
 			overviewCanvas.GetChild(0).GetComponent<Text>().color = positiveCashflowColor;
@@ -101,6 +89,14 @@ public class Building : MonoBehaviour {
 			overviewCanvas.GetChild(0).GetComponent<Text>().color = negativeCashflowColor;
 		}
 	}
+
+	public void updateCostToBuild( float increaseRate ) {
+		// Increase rate should be >= 1
+		costToBuild = Mathf.Round( costToBuild * increaseRate );
+		plotPosition.updatePricetagDisplay();
+	}
+
+
 
 	// Update is called once per frame
 	void Update () {
