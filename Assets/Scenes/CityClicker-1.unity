@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   carPrefab: {fileID: 11425368, guid: ce40529e22619442a88721427f9a8e33, type: 2}
-  output: {fileID: 1901910039}
+  output: {fileID: 0}
 --- !u!1 &278031673
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,7 +494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roadPrefab: {fileID: 171662, guid: 2a75c16a458fa49a39007a3784845462, type: 2}
-  currentSegment: {fileID: 1936190723}
+  currentSegment: {fileID: 0}
   age: 0
 --- !u!4 &411593277
 Transform:
@@ -1636,6 +1636,7 @@ MonoBehaviour:
   cameraSpeed: 60
   min: {x: -43.7045784, y: -283.600586}
   max: {x: 200.823105, y: -42.184391}
+  clamp: 0
 --- !u!4 &1484477436
 Transform:
   m_ObjectHideFlags: 0
@@ -1743,7 +1744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   builders:
-  - {fileID: 411593276}
+  - {fileID: 0}
   blockSize: 2
   chanceForward: 55
   chanceTurn: 20
@@ -1763,18 +1764,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
---- !u!114 &1901910039
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11414002, guid: 2a75c16a458fa49a39007a3784845462,
-    type: 2}
-  m_PrefabInternal: {fileID: 1318724443}
-  m_Script: {fileID: 11500000, guid: 94beb042053d748d4b95dac6e63765d1, type: 3}
---- !u!114 &1936190723
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 11402238, guid: 2a75c16a458fa49a39007a3784845462,
-    type: 2}
-  m_PrefabInternal: {fileID: 1318724443}
-  m_Script: {fileID: 11500000, guid: cf2f6ad1d5ad74d2f822e7ab2448be38, type: 3}
 --- !u!1 &1951553085
 GameObject:
   m_ObjectHideFlags: 0

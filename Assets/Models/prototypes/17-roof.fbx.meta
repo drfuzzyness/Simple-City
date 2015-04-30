@@ -1,0 +1,134 @@
+fileFormatVersion: 2
+guid: 638dde60170674d4bb9a1fabfda3ad0e
+timeCreated: 1430318138
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Antenna
+    100004: Antenna1
+    100006: Antenna2
+    100008: Antenna3
+    100010: Roof 1
+    100012: roofbox
+    100014: roofbox1
+    100016: roofbox2
+    100018: roofbox3
+    100020: roofbox4
+    100022: roofbox6
+    100024: roofbox7
+    100026: roofbox8
+    400000: //RootNode
+    400002: Antenna
+    400004: Antenna1
+    400006: Antenna2
+    400008: Antenna3
+    400010: Roof 1
+    400012: roofbox
+    400014: roofbox1
+    400016: roofbox2
+    400018: roofbox3
+    400020: roofbox4
+    400022: roofbox6
+    400024: roofbox7
+    400026: roofbox8
+    2300000: Antenna
+    2300002: Antenna1
+    2300004: Antenna2
+    2300006: Antenna3
+    2300008: Roof 1
+    2300010: roofbox
+    2300012: roofbox1
+    2300014: roofbox2
+    2300016: roofbox3
+    2300018: roofbox4
+    2300020: roofbox6
+    2300022: roofbox7
+    2300024: roofbox8
+    3300000: Antenna
+    3300002: Antenna1
+    3300004: Antenna2
+    3300006: Antenna3
+    3300008: Roof 1
+    3300010: roofbox
+    3300012: roofbox1
+    3300014: roofbox2
+    3300016: roofbox3
+    3300018: roofbox4
+    3300020: roofbox6
+    3300022: roofbox7
+    3300024: roofbox8
+    4300000: roofbox
+    4300002: Roof
+    4300004: Antenna
+    4300006: roofbox1
+    4300008: roofbox2
+    4300010: roofbox3
+    4300012: roofbox4
+    4300014: roofbox6
+    4300016: roofbox7
+    4300018: roofbox8
+    4300020: Antenna1
+    4300022: Antenna2
+    4300024: Antenna3
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 110
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
