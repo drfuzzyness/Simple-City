@@ -23,7 +23,6 @@ public class BuildingRevenue : MonoBehaviour {
 			Debug.LogWarning( "not enough money" );
 			return false;
 		}
-		return true;
 	}
 	
 	public void CalculateRevenue() {
@@ -35,23 +34,21 @@ public class BuildingRevenue : MonoBehaviour {
 				Mathf.Round( (blding.floors.Count - numPositiveFloors) * revenuePerFloor / 0.4f );
 		}
 
-		updateMoneyCanvas();
 	}
-	public void updateCostToBuild( float increaseRate ) {
+	
+	public void UpdateCostToBuild( float increaseRate ) {
 		// Increase rate should be >= 1
-		if( !isBuilt ) {
+		if( !blding.isBuilt ) {
 			costToBuild = Mathf.Round( costToBuild * increaseRate );
-			plot.updatePricetagDisplay();
+			blding.plot.updatePricetagDisplay();
 		}
 	}
 
-	// Use this for initialization
 	void Start () {
 		blding = GetComponent<Building>();
 		bldingUI = GetComponent<BuildingUI>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
 	
 	}

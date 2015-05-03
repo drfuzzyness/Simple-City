@@ -33,8 +33,8 @@ public class BudgetManager : MonoBehaviour {
 		if( money > price ) {
 			money -= price;
 			numBuiltBuildings++;
-			updateCostToBuildForPlots();
-			updateUI();
+			UpdateCostToBuildForPlots();
+			UpdateUI();
 			return true;
 		}
 		return false;
@@ -48,25 +48,25 @@ public class BudgetManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		countdown = timePerPaycheck;
-		calculateRevenue();
-		updateUI();
+		CalculateRevenue();
+		UpdateUI();
 		numBuiltBuildings = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		updateCountdown();
+		UpdateCountdown();
 	}
 
-	void calculateRevenue() {
+	void CalculateRevenue() {
 		revenue = 0;
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
 			if( thisBuilding.isRunning )
-				revenue += thisBuilding.revenue;
+				revenue += thisBuilding.GetComponent<BuildingRevenue>().revenue;
 		}
 	}
 
-	void updateUI() {
+	void UpdateUI() {
 		moneyText.text = "$" + money;
 
 		if( revenue >= 0 ) {
@@ -81,22 +81,22 @@ public class BudgetManager : MonoBehaviour {
 
 	}
 
-	void updateCountdown() {
+	void UpdateCountdown() {
 		countdown -= Time.deltaTime;
 		if( countdown < 0 ) {
 			countdown = timePerPaycheck;
-			applyPaycheck();
+			ApplyPaycheck();
 		}
 		countdownSlider.value = (timePerPaycheck - countdown)/timePerPaycheck;
 
 	}
 
-	void applyPaycheck() {
+	void ApplyPaycheck() {
 		paychecks++;
 		if( paychecks%paychecksPerConstruction == 0) {
-			applyConstruction();
+			BuildFloorOnAll();
 		}
-		calculateRevenue();
+		CalculateRevenue();
 		money += revenue;
 
 
@@ -106,19 +106,19 @@ public class BudgetManager : MonoBehaviour {
 			}
 		}
 
-		updateUI();
+		UpdateUI();
 	}
 
-	void applyConstruction() {
+	void BuildFloorOnAll() {
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
-			thisBuilding.buildFloor();
+			thisBuilding.BuildFloor();
 		}
 	}
 
-	void updateCostToBuildForPlots() {
+	void UpdateCostToBuildForPlots() {
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
 			if( !thisBuilding.isBuilt ) {
-				thisBuilding.updateCostToBuild( costToBuildIncreaseRate );
+				thisBuilding.GetComponent<BuildingRevenue>().UpdateCostToBuild( costToBuildIncreaseRate );
 			}
 		}
 	}

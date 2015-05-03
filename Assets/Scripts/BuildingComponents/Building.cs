@@ -6,44 +6,39 @@ using UnityEngine.UI;
 public class Building : MonoBehaviour {
 
 	[Header("Status")]
-// 	public float revenue;
 	public int age;
-// 	public float costToBuild;
 
 	[Header("Balance")]
 	public bool startBuilt;
-// 	public float revenuePerFloor;
-// 	public float modifierForNegativeFloors;
-// 	public int numPositiveFloors;
 
 
 
-	[Header("Prefabs")]
-	public Transform floorPrefab;
+    [Header("Prefabs")]
 	public Transform baseFloorPrefab;
+	public Transform floorPrefab;
 	public Vector3 heightBetweenFloors;
 	public ParticleSystem dustParticles;
 
 	[Header("Setup")]
-	public Transform overviewCanvas;
 	public BuildingPlot plot;
-// 	public Color positiveCashflowColor;
-// 	public Color negativeCashflowColor;
+
 
 
 	[Header("Data")]
 	public List<Transform> floors;
-	public bool isBuilt; // im a dork
+	public bool isBuilt;
 	public bool isRunning;
 
-	public bool CreateBuilding() {
+    private BuildingUI bldingUI;
+
+    public bool CreateBuilding() {
 		isBuilt = true;
 		isRunning = false;
 		Transform newFloor = Instantiate( baseFloorPrefab, transform.position, transform.rotation ) as Transform;
 		floors.Add( newFloor );
 		newFloor.SetParent( transform );
-		overviewCanvas.gameObject.SetActive( true );
-		overviewCanvas.position = newFloor.position + newFloor.up * ( newFloor.localScale.y / 2 + .3f );
+		bldingUI.overviewCanvas.gameObject.SetActive( true );
+		bldingUI.overviewCanvas.transform.position = newFloor.position + newFloor.up * ( newFloor.localScale.y / 2 + .3f );
 		dustParticles.Play();
 		newFloor.GetComponent<Animator>().Play( "Build" );
 		StartCoroutine( "Construct", newFloor.GetComponent<Animator>() );
@@ -53,41 +48,20 @@ public class Building : MonoBehaviour {
 
 
 
-	public void buildFloor() {
+	public void BuildFloor() {
 		if( isRunning ) {
 			floors.Add( Instantiate( floorPrefab,
 			                        floors[floors.Count - 1].position + heightBetweenFloors,
 			                        transform.rotation ) as Transform ); // new floor above last floor
 			floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
 			// move overviewCanvas to the top of the building
-			overviewCanvas.position = floors[floors.Count - 1].transform.position +
+			if( bldingUI != null )
+				bldingUI.overviewCanvas.transform.position = floors[floors.Count - 1].transform.position +
 										Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
-					
-// 			calculateRevenue();
 			dustParticles.Play();
 		}
 	}
 
-
-// 	public void calculateRevenue() {
-// 		if( floors.Count < numPositiveFloors ) {
-// 			revenue = revenuePerFloor * floors.Count;
-// 		}
-// 		else {
-// 			revenue = (revenuePerFloor * numPositiveFloors) - 
-// 				Mathf.Round( (floors.Count - numPositiveFloors) * revenuePerFloor / 0.4f );
-// 		}
-// 
-// 		updateMoneyCanvas();
-// 	}
-
-// 	public void updateCostToBuild( float increaseRate ) {
-// 		// Increase rate should be >= 1
-// 		if( !isBuilt ) {
-// 			costToBuild = Mathf.Round( costToBuild * increaseRate );
-// 			plot.updatePricetagDisplay();
-// 		}
-// 	}
 
 	IEnumerator Construct( Animator anim ) {
 		int buildState = Animator.StringToHash("Build");
@@ -97,24 +71,13 @@ public class Building : MonoBehaviour {
 		isRunning = true;
 	}
 
-// 	void updateMoneyCanvas() {
-// 		if( revenue >= 0 ) {
-// 			overviewCanvas.GetChild(0).GetComponent<Text>().text = "$" + revenue;
-// 			overviewCanvas.GetChild(0).GetComponent<Text>().color = positiveCashflowColor;
-// 		}
-// 		else {
-// 			overviewCanvas.GetChild(0).GetComponent<Text>().text = "-$" + Mathf.Abs( revenue );
-// 			overviewCanvas.GetChild(0).GetComponent<Text>().color = negativeCashflowColor;
-// 		}
-// 	}
-
-	// Update is called once per frame
 	void Update () {
 		
 	}
-	
-	void Start() {
-		age = 0;
+
+    void Start() {
+        bldingUI = GetComponent<BuildingUI>();
+        age = 0;
 		isBuilt = false;
 		if( startBuilt ) {
 			Destroy( plot.gameObject );

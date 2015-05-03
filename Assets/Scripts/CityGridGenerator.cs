@@ -38,7 +38,7 @@ public class CityGridGenerator : MonoBehaviour {
 
 	void ApplyConstruction() {
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
-			thisBuilding.buildFloor();
+			thisBuilding.BuildFloor();
 		}
 	}
 

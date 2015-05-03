@@ -4,20 +4,22 @@ using UnityEngine.UI;
 
 public class BuildingUI : MonoBehaviour {
 
+	public Canvas overviewCanvas;
 	public Text revText;
-	
+	public Color positiveCashflowColor;
+	public Color negativeCashflowColor;
 	private Building blding;
+	
 	private BuildingRevenue bldingRev;
 	
-	// Use this for initialization
 	void Start () {
 		blding = GetComponent<Building>();
 		bldingRev = GetComponent<BuildingRevenue>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
-		UpdateMoneyCanvas();
+		if( bldingRev != null )
+			UpdateMoneyCanvas();
 	}
 	
 	void UpdateMoneyCanvas() {
