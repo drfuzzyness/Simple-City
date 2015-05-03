@@ -83,6 +83,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 412160}
   - 114: {fileID: 11450940}
+  - 114: {fileID: 11475652}
+  - 114: {fileID: 11468858}
   m_Layer: 0
   m_Name: Building
   m_TagString: Untagged
@@ -131,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.6000004, y: 6.69999981, z: -149.600006}
+  m_LocalPosition: {x: 47.2107239, y: 3.5, z: -128.225861}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417310}
@@ -248,21 +250,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a3a3eb6c37a74e04b52f3bfc9a32efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  revenue: 0
   age: 0
-  costToBuild: 2
-  revenuePerFloor: 1
-  modifierForNegativeFloors: 0
-  numPositiveFloors: 5
-  floorPrefab: {fileID: 456812, guid: 01f605a4e745c4f8ab05097c619d37aa, type: 2}
+  startBuilt: 0
   baseFloorPrefab: {fileID: 473840, guid: 79a1be3ebeffd487398bfc3babcce90d, type: 2}
+  floorPrefab: {fileID: 456812, guid: 01f605a4e745c4f8ab05097c619d37aa, type: 2}
   heightBetweenFloors: {x: 0, y: 5, z: 0}
-  dustParticleSystem: {fileID: 19883450}
-  overviewCanvas: {fileID: 22438884}
+  dustParticles: {fileID: 19883450}
   plot: {fileID: 11433806}
-  positiveCashflowColor: {r: 1, g: 1, b: 1, a: .392156869}
-  negativeCashflowColor: {r: .909803987, g: .502718091, b: .352941155, a: .392156869}
   floors: []
+  isBuilt: 0
+  isRunning: 0
 --- !u!114 &11458506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,6 +323,37 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &11468858
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45c6f5e8fc0e6482195b8a0c6df2eb61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  overviewCanvas: {fileID: 22370676}
+  revText: {fileID: 11499660}
+  positiveCashflowColor: {r: .549019635, g: .909803987, b: .352941185, a: 1}
+  negativeCashflowColor: {r: 1, g: .310344756, b: 0, a: 1}
+--- !u!114 &11475652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c34248930a7e645dbba0074a7712ad40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  revenue: 0
+  costToBuild: 3
+  revenuePerFloor: 0
+  modifierForNegativeFloors: .5
+  numPositiveFloors: 5
 --- !u!114 &11484990
 MonoBehaviour:
   m_ObjectHideFlags: 1
