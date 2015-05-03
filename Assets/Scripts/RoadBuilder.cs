@@ -14,11 +14,10 @@ public class RoadBuilder : MonoBehaviour {
 			                                        currentSegment.transform.rotation ) as GameObject;
 			RoadSegment newRoad = newRoadGameObj.GetComponent<RoadSegment>();
 
-			currentSegment.nodeRight.nextNodes.Add( newRoad.nodeRight );
-			currentSegment.nodeRight.isConnected = true;
-			newRoad.nodeLeft.nextNodes.Add( currentSegment.nodeLeft );
+			RoadSegment.WireSide( currentSegment.nodeFront, newRoad.nodeBack );
+
 			currentSegment.sidewalkFront.gameObject.SetActive( false );
-			currentSegment.nodeLeft.isConnected = true;
+
 			newRoad.sidewalkBack.gameObject.SetActive( false );
 
 			currentSegment = newRoad;
@@ -40,12 +39,10 @@ public class RoadBuilder : MonoBehaviour {
 			                                        currentSegment.transform.position + currentSegment.transform.right * currentSegment.size,
 			                                        newRoadDirection ) as GameObject;
 			RoadSegment newRoad = newRoadGameObj.GetComponent<RoadSegment>();
-			
-			currentSegment.nodeRight.nextNodes.Add( newRoad.nodeRight );
-			currentSegment.nodeRight.isConnected = true;
-			newRoad.nodeLeft.nextNodes.Add( currentSegment.nodeLeft );
+
+			RoadSegment.WireSide( currentSegment.nodeRight, newRoad.nodeBack );
+
 			currentSegment.sidewalkRight.gameObject.SetActive( false );
-			currentSegment.nodeLeft.isConnected = true;
 			newRoad.sidewalkBack.gameObject.SetActive( false );
 			
 			currentSegment = newRoad;
@@ -66,12 +63,8 @@ public class RoadBuilder : MonoBehaviour {
 			                                        currentSegment.transform.position + -currentSegment.transform.right * currentSegment.size,
 			                                        newRoadDirection ) as GameObject;
 			RoadSegment newRoad = newRoadGameObj.GetComponent<RoadSegment>();
-			
-			currentSegment.nodeRight.nextNodes.Add( newRoad.nodeRight );
-			currentSegment.nodeRight.isConnected = true;
-			newRoad.nodeLeft.nextNodes.Add( currentSegment.nodeLeft );
+			RoadSegment.WireSide( currentSegment.nodeLeft, newRoad.nodeBack );
 			currentSegment.sidewalkLeft.gameObject.SetActive( false );
-			currentSegment.nodeLeft.isConnected = true;
 			newRoad.sidewalkBack.gameObject.SetActive( false );
 			
 			currentSegment = newRoad;
@@ -88,11 +81,11 @@ public class RoadBuilder : MonoBehaviour {
 	}
 
 	public void makeFrontLoop() {
-		currentSegment.nodeRight.nextNodes.Add( currentSegment.nodeLeft );
+//		currentSegment.nodeRight.nextNodes.Add( currentSegment.nodeLeft );
 	}
 
 	public void makeBackLoop() {
-		currentSegment.nodeLeft.nextNodes.Add( currentSegment.nodeRight );
+//		currentSegment.nodeLeft.nextNodes.Add( currentSegment.nodeRight );
 	}
 	// Use this for initialization
 	void Start () {

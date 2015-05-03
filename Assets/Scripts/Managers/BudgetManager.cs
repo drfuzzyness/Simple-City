@@ -9,6 +9,8 @@ public class BudgetManager : MonoBehaviour {
 	public float money;
 	public float revenue;
 	private float countdown;
+
+	[Header("Balance")]
 	public float timePerPaycheck;
 	public int paychecksPerConstruction;
 	public float costToBuildIncreaseRate;
@@ -21,15 +23,9 @@ public class BudgetManager : MonoBehaviour {
 	public Slider countdownSlider;
 	public Color positiveCashflowColor;
 	public Color negativeCashflowColor;
-	public Transform buildingPrefab;
-	public Vector3 startGrid;
-	public Vector2 endGrid;
-	public Vector2 incrementGrid;
 
-	[Header("Data")]
-	public List<Building> buildings;
+	public static BudgetManager instance;
 
-	private int maxX; private int maxY;
 	private int numBuiltBuildings;
 	private int paychecks;
 
@@ -44,11 +40,8 @@ public class BudgetManager : MonoBehaviour {
 		return false;
 	}
 
-	public Building getBuilding( int x, int y ) {
-		if( ( 0 < x && x <= maxX ) && ( 0 < y && y <= maxY ) )
-			return buildings[ y + x*maxY ];
-		else
-			return null;
+	void Awake() {
+		instance = this;
 	}
 
 
@@ -58,7 +51,6 @@ public class BudgetManager : MonoBehaviour {
 		calculateRevenue();
 		updateUI();
 		numBuiltBuildings = 0;
-		generateGridOfBuildings();
 	}
 	
 	// Update is called once per frame
@@ -68,8 +60,8 @@ public class BudgetManager : MonoBehaviour {
 
 	void calculateRevenue() {
 		revenue = 0;
-		foreach( Building thisBuilding in buildings ) {
-			if( thisBuilding.IsBuilt )
+		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
+			if( thisBuilding.isRunning )
 				revenue += thisBuilding.revenue;
 		}
 	}
@@ -108,8 +100,8 @@ public class BudgetManager : MonoBehaviour {
 		money += revenue;
 
 
-		foreach( Building thisBuilding in buildings ) {
-			if( thisBuilding.IsBuilt ) {
+		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
+			if( thisBuilding.isRunning ) {
 				thisBuilding.age++;
 			}
 		}
@@ -118,29 +110,15 @@ public class BudgetManager : MonoBehaviour {
 	}
 
 	void applyConstruction() {
-		foreach( Building thisBuilding in buildings ) {
+		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
 			thisBuilding.buildFloor();
 		}
 	}
 
 	void updateCostToBuildForPlots() {
-		foreach( Building thisBuilding in buildings ) {
-			if( !thisBuilding.IsBuilt ) {
+		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
+			if( !thisBuilding.isBuilt ) {
 				thisBuilding.updateCostToBuild( costToBuildIncreaseRate );
-			}
-		}
-	}
-
-	void generateGridOfBuildings() {
-		for( float posX = startGrid.x; posX <= endGrid.x; posX += incrementGrid.x ) {
-			maxX++;
-			for( float posZ = startGrid.z; posZ <= endGrid.y; posZ += incrementGrid.y ) {
-//				Debug.Log( "Creating a building at " + posX + ", " + posZ );
-				maxY++;
-				Transform newBuilding = Instantiate( buildingPrefab,
-				                                   new Vector3( posX, startGrid.y, posZ ),
-				                                   Quaternion.identity ) as Transform;
-				buildings.Add( newBuilding.GetComponent<Building>() );
 			}
 		}
 	}
