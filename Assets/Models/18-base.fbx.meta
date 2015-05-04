@@ -1,0 +1,1637 @@
+fileFormatVersion: 2
+guid: 64cce5b33c8094c6c83d13618fe16eb5
+timeCreated: 1430748049
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: FacadeBaseAngled1
+    100004: FacadeBaseAngled1 1
+    100006: FacadeBaseAngled1 2
+    100008: FacadeBaseAngled1 3
+    100010: FacadeBaseAngled10
+    100012: FacadeBaseAngled10 1
+    100014: FacadeBaseAngled10 2
+    100016: FacadeBaseAngled10 3
+    100018: FacadeBaseAngled2
+    100020: FacadeBaseAngled2 1
+    100022: FacadeBaseAngled2 2
+    100024: FacadeBaseAngled2 3
+    100026: FacadeBaseAngled3
+    100028: FacadeBaseAngled3 1
+    100030: FacadeBaseAngled3 2
+    100032: FacadeBaseAngled3 3
+    100034: FacadeBaseAngled4
+    100036: FacadeBaseAngled4 1
+    100038: FacadeBaseAngled4 2
+    100040: FacadeBaseAngled4 3
+    100042: FacadeBaseAngled5
+    100044: FacadeBaseAngled5 1
+    100046: FacadeBaseAngled5 2
+    100048: FacadeBaseAngled5 3
+    100050: FacadeBaseAngled6
+    100052: FacadeBaseAngled6 1
+    100054: FacadeBaseAngled6 2
+    100056: FacadeBaseAngled6 3
+    100058: FacadeBaseAngled7
+    100060: FacadeBaseAngled7 1
+    100062: FacadeBaseAngled7 2
+    100064: FacadeBaseAngled7 3
+    100066: FacadeBaseAngled8
+    100068: FacadeBaseAngled8 1
+    100070: FacadeBaseAngled8 2
+    100072: FacadeBaseAngled8 3
+    100074: FacadeBaseAngled9
+    100076: FacadeBaseAngled9 1
+    100078: FacadeBaseAngled9 2
+    100080: FacadeBaseAngled9 3
+    100082: FacadeSide
+    100084: FacadeSide1
+    100086: FacadeSide2
+    100088: FacadeSide3
+    100090: floorTile1
+    100092: floorTile10
+    100094: floorTile11
+    100096: floorTile12
+    100098: floorTile13
+    100100: floorTile14
+    100102: floorTile15
+    100104: floorTile16
+    100106: floorTile17
+    100108: floorTile18
+    100110: floorTile19
+    100112: floorTile2
+    100114: floorTile20
+    100116: floorTile21
+    100118: floorTile22
+    100120: floorTile23
+    100122: floorTile24
+    100124: floorTile3
+    100126: floorTile4
+    100128: floorTile5
+    100130: floorTile6
+    100132: floorTile7
+    100134: floorTile8
+    100136: floorTile9
+    100138: FloorTiles
+    100140: IBeam
+    100142: IBeam 1
+    100144: IBeam 10
+    100146: IBeam 11
+    100148: IBeam 2
+    100150: IBeam 3
+    100152: IBeam 4
+    100154: IBeam 5
+    100156: IBeam 6
+    100158: IBeam 7
+    100160: IBeam 8
+    100162: IBeam 9
+    100164: IBeam1
+    100166: IBeam1 1
+    100168: IBeam1 2
+    100170: IBeam1 3
+    100172: IBeam1 4
+    100174: IBeam1 5
+    100176: IBeam2
+    100178: IBeam2 1
+    100180: IBeam2 2
+    100182: IBeam2 3
+    100184: IBeam2 4
+    100186: IBeam2 5
+    100188: IBeam3
+    100190: IBeam3 1
+    100192: IBeam3 10
+    100194: IBeam3 11
+    100196: IBeam3 2
+    100198: IBeam3 3
+    100200: IBeam3 4
+    100202: IBeam3 5
+    100204: IBeam3 6
+    100206: IBeam3 7
+    100208: IBeam3 8
+    100210: IBeam3 9
+    100212: IBeamForward
+    100214: IBeamForward 1
+    100216: IBeamForward 2
+    100218: IBeamForward 3
+    100220: IBeamForward 4
+    100222: IBeamForward 5
+    100224: IBeamForward 6
+    100226: IBeamHoriz
+    100228: IBeamHoriz5
+    100230: IBeamHoriz6
+    100232: IBeamHoriz7
+    100234: IBeamHoriz8
+    100236: IBeamHorizontal
+    100238: IBeamVert
+    100240: IBeamVert1
+    100242: pasted__IBeam
+    100244: pasted__IBeam 1
+    100246: pasted__IBeam 2
+    100248: pasted__IBeam 3
+    100250: pasted__IBeam 4
+    100252: pasted__IBeam 5
+    100254: pasted__IBeam1
+    100256: pasted__IBeam1 1
+    100258: pasted__IBeam1 2
+    100260: pasted__IBeam1 3
+    100262: pasted__IBeam1 4
+    100264: pasted__IBeam1 5
+    100266: pasted__IBeam2
+    100268: pasted__IBeam2 1
+    100270: pasted__IBeam2 2
+    100272: pasted__IBeam2 3
+    100274: pasted__IBeam2 4
+    100276: pasted__IBeam2 5
+    100278: pasted__IBeam3
+    100280: pasted__IBeam3 1
+    100282: pasted__IBeam3 2
+    100284: pasted__IBeam3 3
+    100286: pasted__IBeam3 4
+    100288: pasted__IBeam3 5
+    100290: pasted__IBeam4
+    100292: pasted__IBeam4 1
+    100294: pasted__IBeam4 2
+    100296: pasted__IBeam4 3
+    100298: pasted__IBeam4 4
+    100300: pasted__IBeam4 5
+    100302: pasted__pasted__IBeam10
+    100304: pasted__pasted__IBeam10 1
+    100306: pasted__pasted__IBeam10 2
+    100308: pasted__pasted__IBeam10 3
+    100310: pasted__pasted__IBeam10 4
+    100312: pasted__pasted__IBeam11
+    100314: pasted__pasted__IBeam11 1
+    100316: pasted__pasted__IBeam11 2
+    100318: pasted__pasted__IBeam11 3
+    100320: pasted__pasted__IBeam11 4
+    100322: pasted__pasted__IBeam12
+    100324: pasted__pasted__IBeam12 1
+    100326: pasted__pasted__IBeam12 2
+    100328: pasted__pasted__IBeam12 3
+    100330: pasted__pasted__IBeam12 4
+    100332: pasted__pasted__IBeam13
+    100334: pasted__pasted__IBeam13 1
+    100336: pasted__pasted__IBeam13 2
+    100338: pasted__pasted__IBeam13 3
+    100340: pasted__pasted__IBeam13 4
+    100342: pasted__pasted__IBeam14
+    100344: pasted__pasted__IBeam14 1
+    100346: pasted__pasted__IBeam14 2
+    100348: pasted__pasted__IBeam14 3
+    100350: pasted__pasted__IBeam14 4
+    100352: pasted__pasted__IBeam4
+    100354: pasted__pasted__IBeam4 1
+    100356: pasted__pasted__IBeam4 2
+    100358: pasted__pasted__IBeam4 3
+    100360: pasted__pasted__IBeam4 4
+    100362: pasted__pasted__IBeam5
+    100364: pasted__pasted__IBeam5 1
+    100366: pasted__pasted__IBeam5 2
+    100368: pasted__pasted__IBeam5 3
+    100370: pasted__pasted__IBeam5 4
+    100372: pasted__pasted__IBeam6
+    100374: pasted__pasted__IBeam6 1
+    100376: pasted__pasted__IBeam6 2
+    100378: pasted__pasted__IBeam6 3
+    100380: pasted__pasted__IBeam6 4
+    100382: pasted__pasted__IBeam7
+    100384: pasted__pasted__IBeam7 1
+    100386: pasted__pasted__IBeam7 2
+    100388: pasted__pasted__IBeam7 3
+    100390: pasted__pasted__IBeam7 4
+    100392: pasted__pasted__IBeam8
+    100394: pasted__pasted__IBeam8 1
+    100396: pasted__pasted__IBeam8 2
+    100398: pasted__pasted__IBeam8 3
+    100400: pasted__pasted__IBeam8 4
+    100402: pasted__pasted__IBeam9
+    100404: pasted__pasted__IBeam9 1
+    100406: pasted__pasted__IBeam9 2
+    100408: pasted__pasted__IBeam9 3
+    100410: transform1
+    100412: transform12
+    100414: transform12 1
+    100416: transform13
+    100418: transform13 1
+    100420: transform14
+    100422: transform14 1
+    100424: transform15
+    100426: transform15 1
+    100428: transform16
+    100430: transform16 1
+    100432: transform19
+    100434: transform19 1
+    100436: transform32
+    100438: transform32 1
+    100440: transform35
+    100442: transform35 1
+    100444: transform36
+    100446: transform36 1
+    100448: transform37
+    100450: transform37 1
+    100452: transform38
+    100454: transform38 1
+    100456: transform39
+    100458: transform39 1
+    100460: transform40
+    100462: transform40 1
+    100464: transform41
+    100466: transform41 1
+    100468: transform42
+    100470: transform42 1
+    100472: transform43
+    100474: transform43 1
+    100476: transform44
+    100478: transform44 1
+    100480: transform47
+    100482: transform47 1
+    100484: transform48
+    100486: transform49
+    100488: transform50
+    100490: transform51
+    100492: transform52
+    100494: transform55
+    400000: //RootNode
+    400002: FacadeBaseAngled1
+    400004: FacadeBaseAngled1 1
+    400006: FacadeBaseAngled1 2
+    400008: FacadeBaseAngled1 3
+    400010: FacadeBaseAngled10
+    400012: FacadeBaseAngled10 1
+    400014: FacadeBaseAngled10 2
+    400016: FacadeBaseAngled10 3
+    400018: FacadeBaseAngled2
+    400020: FacadeBaseAngled2 1
+    400022: FacadeBaseAngled2 2
+    400024: FacadeBaseAngled2 3
+    400026: FacadeBaseAngled3
+    400028: FacadeBaseAngled3 1
+    400030: FacadeBaseAngled3 2
+    400032: FacadeBaseAngled3 3
+    400034: FacadeBaseAngled4
+    400036: FacadeBaseAngled4 1
+    400038: FacadeBaseAngled4 2
+    400040: FacadeBaseAngled4 3
+    400042: FacadeBaseAngled5
+    400044: FacadeBaseAngled5 1
+    400046: FacadeBaseAngled5 2
+    400048: FacadeBaseAngled5 3
+    400050: FacadeBaseAngled6
+    400052: FacadeBaseAngled6 1
+    400054: FacadeBaseAngled6 2
+    400056: FacadeBaseAngled6 3
+    400058: FacadeBaseAngled7
+    400060: FacadeBaseAngled7 1
+    400062: FacadeBaseAngled7 2
+    400064: FacadeBaseAngled7 3
+    400066: FacadeBaseAngled8
+    400068: FacadeBaseAngled8 1
+    400070: FacadeBaseAngled8 2
+    400072: FacadeBaseAngled8 3
+    400074: FacadeBaseAngled9
+    400076: FacadeBaseAngled9 1
+    400078: FacadeBaseAngled9 2
+    400080: FacadeBaseAngled9 3
+    400082: FacadeSide
+    400084: FacadeSide1
+    400086: FacadeSide2
+    400088: FacadeSide3
+    400090: floorTile1
+    400092: floorTile10
+    400094: floorTile11
+    400096: floorTile12
+    400098: floorTile13
+    400100: floorTile14
+    400102: floorTile15
+    400104: floorTile16
+    400106: floorTile17
+    400108: floorTile18
+    400110: floorTile19
+    400112: floorTile2
+    400114: floorTile20
+    400116: floorTile21
+    400118: floorTile22
+    400120: floorTile23
+    400122: floorTile24
+    400124: floorTile3
+    400126: floorTile4
+    400128: floorTile5
+    400130: floorTile6
+    400132: floorTile7
+    400134: floorTile8
+    400136: floorTile9
+    400138: FloorTiles
+    400140: IBeam
+    400142: IBeam 1
+    400144: IBeam 10
+    400146: IBeam 11
+    400148: IBeam 2
+    400150: IBeam 3
+    400152: IBeam 4
+    400154: IBeam 5
+    400156: IBeam 6
+    400158: IBeam 7
+    400160: IBeam 8
+    400162: IBeam 9
+    400164: IBeam1
+    400166: IBeam1 1
+    400168: IBeam1 2
+    400170: IBeam1 3
+    400172: IBeam1 4
+    400174: IBeam1 5
+    400176: IBeam2
+    400178: IBeam2 1
+    400180: IBeam2 2
+    400182: IBeam2 3
+    400184: IBeam2 4
+    400186: IBeam2 5
+    400188: IBeam3
+    400190: IBeam3 1
+    400192: IBeam3 10
+    400194: IBeam3 11
+    400196: IBeam3 2
+    400198: IBeam3 3
+    400200: IBeam3 4
+    400202: IBeam3 5
+    400204: IBeam3 6
+    400206: IBeam3 7
+    400208: IBeam3 8
+    400210: IBeam3 9
+    400212: IBeamForward
+    400214: IBeamForward 1
+    400216: IBeamForward 2
+    400218: IBeamForward 3
+    400220: IBeamForward 4
+    400222: IBeamForward 5
+    400224: IBeamForward 6
+    400226: IBeamHoriz
+    400228: IBeamHoriz5
+    400230: IBeamHoriz6
+    400232: IBeamHoriz7
+    400234: IBeamHoriz8
+    400236: IBeamHorizontal
+    400238: IBeamVert
+    400240: IBeamVert1
+    400242: pasted__IBeam
+    400244: pasted__IBeam 1
+    400246: pasted__IBeam 2
+    400248: pasted__IBeam 3
+    400250: pasted__IBeam 4
+    400252: pasted__IBeam 5
+    400254: pasted__IBeam1
+    400256: pasted__IBeam1 1
+    400258: pasted__IBeam1 2
+    400260: pasted__IBeam1 3
+    400262: pasted__IBeam1 4
+    400264: pasted__IBeam1 5
+    400266: pasted__IBeam2
+    400268: pasted__IBeam2 1
+    400270: pasted__IBeam2 2
+    400272: pasted__IBeam2 3
+    400274: pasted__IBeam2 4
+    400276: pasted__IBeam2 5
+    400278: pasted__IBeam3
+    400280: pasted__IBeam3 1
+    400282: pasted__IBeam3 2
+    400284: pasted__IBeam3 3
+    400286: pasted__IBeam3 4
+    400288: pasted__IBeam3 5
+    400290: pasted__IBeam4
+    400292: pasted__IBeam4 1
+    400294: pasted__IBeam4 2
+    400296: pasted__IBeam4 3
+    400298: pasted__IBeam4 4
+    400300: pasted__IBeam4 5
+    400302: pasted__pasted__IBeam10
+    400304: pasted__pasted__IBeam10 1
+    400306: pasted__pasted__IBeam10 2
+    400308: pasted__pasted__IBeam10 3
+    400310: pasted__pasted__IBeam10 4
+    400312: pasted__pasted__IBeam11
+    400314: pasted__pasted__IBeam11 1
+    400316: pasted__pasted__IBeam11 2
+    400318: pasted__pasted__IBeam11 3
+    400320: pasted__pasted__IBeam11 4
+    400322: pasted__pasted__IBeam12
+    400324: pasted__pasted__IBeam12 1
+    400326: pasted__pasted__IBeam12 2
+    400328: pasted__pasted__IBeam12 3
+    400330: pasted__pasted__IBeam12 4
+    400332: pasted__pasted__IBeam13
+    400334: pasted__pasted__IBeam13 1
+    400336: pasted__pasted__IBeam13 2
+    400338: pasted__pasted__IBeam13 3
+    400340: pasted__pasted__IBeam13 4
+    400342: pasted__pasted__IBeam14
+    400344: pasted__pasted__IBeam14 1
+    400346: pasted__pasted__IBeam14 2
+    400348: pasted__pasted__IBeam14 3
+    400350: pasted__pasted__IBeam14 4
+    400352: pasted__pasted__IBeam4
+    400354: pasted__pasted__IBeam4 1
+    400356: pasted__pasted__IBeam4 2
+    400358: pasted__pasted__IBeam4 3
+    400360: pasted__pasted__IBeam4 4
+    400362: pasted__pasted__IBeam5
+    400364: pasted__pasted__IBeam5 1
+    400366: pasted__pasted__IBeam5 2
+    400368: pasted__pasted__IBeam5 3
+    400370: pasted__pasted__IBeam5 4
+    400372: pasted__pasted__IBeam6
+    400374: pasted__pasted__IBeam6 1
+    400376: pasted__pasted__IBeam6 2
+    400378: pasted__pasted__IBeam6 3
+    400380: pasted__pasted__IBeam6 4
+    400382: pasted__pasted__IBeam7
+    400384: pasted__pasted__IBeam7 1
+    400386: pasted__pasted__IBeam7 2
+    400388: pasted__pasted__IBeam7 3
+    400390: pasted__pasted__IBeam7 4
+    400392: pasted__pasted__IBeam8
+    400394: pasted__pasted__IBeam8 1
+    400396: pasted__pasted__IBeam8 2
+    400398: pasted__pasted__IBeam8 3
+    400400: pasted__pasted__IBeam8 4
+    400402: pasted__pasted__IBeam9
+    400404: pasted__pasted__IBeam9 1
+    400406: pasted__pasted__IBeam9 2
+    400408: pasted__pasted__IBeam9 3
+    400410: transform1
+    400412: transform12
+    400414: transform12 1
+    400416: transform13
+    400418: transform13 1
+    400420: transform14
+    400422: transform14 1
+    400424: transform15
+    400426: transform15 1
+    400428: transform16
+    400430: transform16 1
+    400432: transform19
+    400434: transform19 1
+    400436: transform32
+    400438: transform32 1
+    400440: transform35
+    400442: transform35 1
+    400444: transform36
+    400446: transform36 1
+    400448: transform37
+    400450: transform37 1
+    400452: transform38
+    400454: transform38 1
+    400456: transform39
+    400458: transform39 1
+    400460: transform40
+    400462: transform40 1
+    400464: transform41
+    400466: transform41 1
+    400468: transform42
+    400470: transform42 1
+    400472: transform43
+    400474: transform43 1
+    400476: transform44
+    400478: transform44 1
+    400480: transform47
+    400482: transform47 1
+    400484: transform48
+    400486: transform49
+    400488: transform50
+    400490: transform51
+    400492: transform52
+    400494: transform55
+    2300000: FacadeBaseAngled1
+    2300002: FacadeBaseAngled1 1
+    2300004: FacadeBaseAngled1 2
+    2300006: FacadeBaseAngled1 3
+    2300008: FacadeBaseAngled10
+    2300010: FacadeBaseAngled10 1
+    2300012: FacadeBaseAngled10 2
+    2300014: FacadeBaseAngled10 3
+    2300016: FacadeBaseAngled2
+    2300018: FacadeBaseAngled2 1
+    2300020: FacadeBaseAngled2 2
+    2300022: FacadeBaseAngled2 3
+    2300024: FacadeBaseAngled3
+    2300026: FacadeBaseAngled3 1
+    2300028: FacadeBaseAngled3 2
+    2300030: FacadeBaseAngled3 3
+    2300032: FacadeBaseAngled4
+    2300034: FacadeBaseAngled4 1
+    2300036: FacadeBaseAngled4 2
+    2300038: FacadeBaseAngled4 3
+    2300040: FacadeBaseAngled5
+    2300042: FacadeBaseAngled5 1
+    2300044: FacadeBaseAngled5 2
+    2300046: FacadeBaseAngled5 3
+    2300048: FacadeBaseAngled6
+    2300050: FacadeBaseAngled6 1
+    2300052: FacadeBaseAngled6 2
+    2300054: FacadeBaseAngled6 3
+    2300056: FacadeBaseAngled7
+    2300058: FacadeBaseAngled7 1
+    2300060: FacadeBaseAngled7 2
+    2300062: FacadeBaseAngled7 3
+    2300064: FacadeBaseAngled8
+    2300066: FacadeBaseAngled8 1
+    2300068: FacadeBaseAngled8 2
+    2300070: FacadeBaseAngled8 3
+    2300072: FacadeBaseAngled9
+    2300074: FacadeBaseAngled9 1
+    2300076: FacadeBaseAngled9 2
+    2300078: FacadeBaseAngled9 3
+    2300080: floorTile1
+    2300082: floorTile10
+    2300084: floorTile11
+    2300086: floorTile12
+    2300088: floorTile13
+    2300090: floorTile14
+    2300092: floorTile15
+    2300094: floorTile16
+    2300096: floorTile17
+    2300098: floorTile18
+    2300100: floorTile19
+    2300102: floorTile2
+    2300104: floorTile20
+    2300106: floorTile21
+    2300108: floorTile22
+    2300110: floorTile23
+    2300112: floorTile24
+    2300114: floorTile3
+    2300116: floorTile4
+    2300118: floorTile5
+    2300120: floorTile6
+    2300122: floorTile7
+    2300124: floorTile8
+    2300126: floorTile9
+    2300128: IBeam
+    2300130: IBeam 1
+    2300132: IBeam 10
+    2300134: IBeam 11
+    2300136: IBeam 2
+    2300138: IBeam 3
+    2300140: IBeam 4
+    2300142: IBeam 5
+    2300144: IBeam 6
+    2300146: IBeam 7
+    2300148: IBeam 8
+    2300150: IBeam 9
+    2300152: IBeam1
+    2300154: IBeam1 1
+    2300156: IBeam1 2
+    2300158: IBeam1 3
+    2300160: IBeam1 4
+    2300162: IBeam1 5
+    2300164: IBeam2
+    2300166: IBeam2 1
+    2300168: IBeam2 2
+    2300170: IBeam2 3
+    2300172: IBeam2 4
+    2300174: IBeam2 5
+    2300176: IBeam3
+    2300178: IBeam3 1
+    2300180: IBeam3 10
+    2300182: IBeam3 11
+    2300184: IBeam3 2
+    2300186: IBeam3 3
+    2300188: IBeam3 4
+    2300190: IBeam3 5
+    2300192: IBeam3 6
+    2300194: IBeam3 7
+    2300196: IBeam3 8
+    2300198: IBeam3 9
+    2300200: pasted__IBeam
+    2300202: pasted__IBeam 1
+    2300204: pasted__IBeam 2
+    2300206: pasted__IBeam 3
+    2300208: pasted__IBeam 4
+    2300210: pasted__IBeam 5
+    2300212: pasted__IBeam1
+    2300214: pasted__IBeam1 1
+    2300216: pasted__IBeam1 2
+    2300218: pasted__IBeam1 3
+    2300220: pasted__IBeam1 4
+    2300222: pasted__IBeam1 5
+    2300224: pasted__IBeam2
+    2300226: pasted__IBeam2 1
+    2300228: pasted__IBeam2 2
+    2300230: pasted__IBeam2 3
+    2300232: pasted__IBeam2 4
+    2300234: pasted__IBeam2 5
+    2300236: pasted__IBeam3
+    2300238: pasted__IBeam3 1
+    2300240: pasted__IBeam3 2
+    2300242: pasted__IBeam3 3
+    2300244: pasted__IBeam3 4
+    2300246: pasted__IBeam3 5
+    2300248: pasted__IBeam4
+    2300250: pasted__IBeam4 1
+    2300252: pasted__IBeam4 2
+    2300254: pasted__IBeam4 3
+    2300256: pasted__IBeam4 4
+    2300258: pasted__IBeam4 5
+    2300260: pasted__pasted__IBeam10
+    2300262: pasted__pasted__IBeam10 1
+    2300264: pasted__pasted__IBeam10 2
+    2300266: pasted__pasted__IBeam10 3
+    2300268: pasted__pasted__IBeam10 4
+    2300270: pasted__pasted__IBeam11
+    2300272: pasted__pasted__IBeam11 1
+    2300274: pasted__pasted__IBeam11 2
+    2300276: pasted__pasted__IBeam11 3
+    2300278: pasted__pasted__IBeam11 4
+    2300280: pasted__pasted__IBeam12
+    2300282: pasted__pasted__IBeam12 1
+    2300284: pasted__pasted__IBeam12 2
+    2300286: pasted__pasted__IBeam12 3
+    2300288: pasted__pasted__IBeam12 4
+    2300290: pasted__pasted__IBeam13
+    2300292: pasted__pasted__IBeam13 1
+    2300294: pasted__pasted__IBeam13 2
+    2300296: pasted__pasted__IBeam13 3
+    2300298: pasted__pasted__IBeam13 4
+    2300300: pasted__pasted__IBeam14
+    2300302: pasted__pasted__IBeam14 1
+    2300304: pasted__pasted__IBeam14 2
+    2300306: pasted__pasted__IBeam14 3
+    2300308: pasted__pasted__IBeam14 4
+    2300310: pasted__pasted__IBeam4
+    2300312: pasted__pasted__IBeam4 1
+    2300314: pasted__pasted__IBeam4 2
+    2300316: pasted__pasted__IBeam4 3
+    2300318: pasted__pasted__IBeam4 4
+    2300320: pasted__pasted__IBeam5
+    2300322: pasted__pasted__IBeam5 1
+    2300324: pasted__pasted__IBeam5 2
+    2300326: pasted__pasted__IBeam5 3
+    2300328: pasted__pasted__IBeam5 4
+    2300330: pasted__pasted__IBeam6
+    2300332: pasted__pasted__IBeam6 1
+    2300334: pasted__pasted__IBeam6 2
+    2300336: pasted__pasted__IBeam6 3
+    2300338: pasted__pasted__IBeam6 4
+    2300340: pasted__pasted__IBeam7
+    2300342: pasted__pasted__IBeam7 1
+    2300344: pasted__pasted__IBeam7 2
+    2300346: pasted__pasted__IBeam7 3
+    2300348: pasted__pasted__IBeam7 4
+    2300350: pasted__pasted__IBeam8
+    2300352: pasted__pasted__IBeam8 1
+    2300354: pasted__pasted__IBeam8 2
+    2300356: pasted__pasted__IBeam8 3
+    2300358: pasted__pasted__IBeam8 4
+    2300360: pasted__pasted__IBeam9
+    2300362: pasted__pasted__IBeam9 1
+    2300364: pasted__pasted__IBeam9 2
+    2300366: pasted__pasted__IBeam9 3
+    3300000: FacadeBaseAngled1
+    3300002: FacadeBaseAngled1 1
+    3300004: FacadeBaseAngled1 2
+    3300006: FacadeBaseAngled1 3
+    3300008: FacadeBaseAngled10
+    3300010: FacadeBaseAngled10 1
+    3300012: FacadeBaseAngled10 2
+    3300014: FacadeBaseAngled10 3
+    3300016: FacadeBaseAngled2
+    3300018: FacadeBaseAngled2 1
+    3300020: FacadeBaseAngled2 2
+    3300022: FacadeBaseAngled2 3
+    3300024: FacadeBaseAngled3
+    3300026: FacadeBaseAngled3 1
+    3300028: FacadeBaseAngled3 2
+    3300030: FacadeBaseAngled3 3
+    3300032: FacadeBaseAngled4
+    3300034: FacadeBaseAngled4 1
+    3300036: FacadeBaseAngled4 2
+    3300038: FacadeBaseAngled4 3
+    3300040: FacadeBaseAngled5
+    3300042: FacadeBaseAngled5 1
+    3300044: FacadeBaseAngled5 2
+    3300046: FacadeBaseAngled5 3
+    3300048: FacadeBaseAngled6
+    3300050: FacadeBaseAngled6 1
+    3300052: FacadeBaseAngled6 2
+    3300054: FacadeBaseAngled6 3
+    3300056: FacadeBaseAngled7
+    3300058: FacadeBaseAngled7 1
+    3300060: FacadeBaseAngled7 2
+    3300062: FacadeBaseAngled7 3
+    3300064: FacadeBaseAngled8
+    3300066: FacadeBaseAngled8 1
+    3300068: FacadeBaseAngled8 2
+    3300070: FacadeBaseAngled8 3
+    3300072: FacadeBaseAngled9
+    3300074: FacadeBaseAngled9 1
+    3300076: FacadeBaseAngled9 2
+    3300078: FacadeBaseAngled9 3
+    3300080: floorTile1
+    3300082: floorTile10
+    3300084: floorTile11
+    3300086: floorTile12
+    3300088: floorTile13
+    3300090: floorTile14
+    3300092: floorTile15
+    3300094: floorTile16
+    3300096: floorTile17
+    3300098: floorTile18
+    3300100: floorTile19
+    3300102: floorTile2
+    3300104: floorTile20
+    3300106: floorTile21
+    3300108: floorTile22
+    3300110: floorTile23
+    3300112: floorTile24
+    3300114: floorTile3
+    3300116: floorTile4
+    3300118: floorTile5
+    3300120: floorTile6
+    3300122: floorTile7
+    3300124: floorTile8
+    3300126: floorTile9
+    3300128: IBeam
+    3300130: IBeam 1
+    3300132: IBeam 10
+    3300134: IBeam 11
+    3300136: IBeam 2
+    3300138: IBeam 3
+    3300140: IBeam 4
+    3300142: IBeam 5
+    3300144: IBeam 6
+    3300146: IBeam 7
+    3300148: IBeam 8
+    3300150: IBeam 9
+    3300152: IBeam1
+    3300154: IBeam1 1
+    3300156: IBeam1 2
+    3300158: IBeam1 3
+    3300160: IBeam1 4
+    3300162: IBeam1 5
+    3300164: IBeam2
+    3300166: IBeam2 1
+    3300168: IBeam2 2
+    3300170: IBeam2 3
+    3300172: IBeam2 4
+    3300174: IBeam2 5
+    3300176: IBeam3
+    3300178: IBeam3 1
+    3300180: IBeam3 10
+    3300182: IBeam3 11
+    3300184: IBeam3 2
+    3300186: IBeam3 3
+    3300188: IBeam3 4
+    3300190: IBeam3 5
+    3300192: IBeam3 6
+    3300194: IBeam3 7
+    3300196: IBeam3 8
+    3300198: IBeam3 9
+    3300200: pasted__IBeam
+    3300202: pasted__IBeam 1
+    3300204: pasted__IBeam 2
+    3300206: pasted__IBeam 3
+    3300208: pasted__IBeam 4
+    3300210: pasted__IBeam 5
+    3300212: pasted__IBeam1
+    3300214: pasted__IBeam1 1
+    3300216: pasted__IBeam1 2
+    3300218: pasted__IBeam1 3
+    3300220: pasted__IBeam1 4
+    3300222: pasted__IBeam1 5
+    3300224: pasted__IBeam2
+    3300226: pasted__IBeam2 1
+    3300228: pasted__IBeam2 2
+    3300230: pasted__IBeam2 3
+    3300232: pasted__IBeam2 4
+    3300234: pasted__IBeam2 5
+    3300236: pasted__IBeam3
+    3300238: pasted__IBeam3 1
+    3300240: pasted__IBeam3 2
+    3300242: pasted__IBeam3 3
+    3300244: pasted__IBeam3 4
+    3300246: pasted__IBeam3 5
+    3300248: pasted__IBeam4
+    3300250: pasted__IBeam4 1
+    3300252: pasted__IBeam4 2
+    3300254: pasted__IBeam4 3
+    3300256: pasted__IBeam4 4
+    3300258: pasted__IBeam4 5
+    3300260: pasted__pasted__IBeam10
+    3300262: pasted__pasted__IBeam10 1
+    3300264: pasted__pasted__IBeam10 2
+    3300266: pasted__pasted__IBeam10 3
+    3300268: pasted__pasted__IBeam10 4
+    3300270: pasted__pasted__IBeam11
+    3300272: pasted__pasted__IBeam11 1
+    3300274: pasted__pasted__IBeam11 2
+    3300276: pasted__pasted__IBeam11 3
+    3300278: pasted__pasted__IBeam11 4
+    3300280: pasted__pasted__IBeam12
+    3300282: pasted__pasted__IBeam12 1
+    3300284: pasted__pasted__IBeam12 2
+    3300286: pasted__pasted__IBeam12 3
+    3300288: pasted__pasted__IBeam12 4
+    3300290: pasted__pasted__IBeam13
+    3300292: pasted__pasted__IBeam13 1
+    3300294: pasted__pasted__IBeam13 2
+    3300296: pasted__pasted__IBeam13 3
+    3300298: pasted__pasted__IBeam13 4
+    3300300: pasted__pasted__IBeam14
+    3300302: pasted__pasted__IBeam14 1
+    3300304: pasted__pasted__IBeam14 2
+    3300306: pasted__pasted__IBeam14 3
+    3300308: pasted__pasted__IBeam14 4
+    3300310: pasted__pasted__IBeam4
+    3300312: pasted__pasted__IBeam4 1
+    3300314: pasted__pasted__IBeam4 2
+    3300316: pasted__pasted__IBeam4 3
+    3300318: pasted__pasted__IBeam4 4
+    3300320: pasted__pasted__IBeam5
+    3300322: pasted__pasted__IBeam5 1
+    3300324: pasted__pasted__IBeam5 2
+    3300326: pasted__pasted__IBeam5 3
+    3300328: pasted__pasted__IBeam5 4
+    3300330: pasted__pasted__IBeam6
+    3300332: pasted__pasted__IBeam6 1
+    3300334: pasted__pasted__IBeam6 2
+    3300336: pasted__pasted__IBeam6 3
+    3300338: pasted__pasted__IBeam6 4
+    3300340: pasted__pasted__IBeam7
+    3300342: pasted__pasted__IBeam7 1
+    3300344: pasted__pasted__IBeam7 2
+    3300346: pasted__pasted__IBeam7 3
+    3300348: pasted__pasted__IBeam7 4
+    3300350: pasted__pasted__IBeam8
+    3300352: pasted__pasted__IBeam8 1
+    3300354: pasted__pasted__IBeam8 2
+    3300356: pasted__pasted__IBeam8 3
+    3300358: pasted__pasted__IBeam8 4
+    3300360: pasted__pasted__IBeam9
+    3300362: pasted__pasted__IBeam9 1
+    3300364: pasted__pasted__IBeam9 2
+    3300366: pasted__pasted__IBeam9 3
+    4300000: IBeam3
+    4300002: IBeam2
+    4300004: IBeam1
+    4300006: IBeam
+    4300008: IBeam3
+    4300010: IBeam
+    4300012: IBeam3
+    4300014: IBeam
+    4300016: IBeam3
+    4300018: IBeam2
+    4300020: IBeam1
+    4300022: IBeam
+    4300024: IBeam3
+    4300026: IBeam2
+    4300028: IBeam1
+    4300030: IBeam
+    4300032: IBeam3
+    4300034: IBeam
+    4300036: pasted__IBeam
+    4300038: pasted__IBeam1
+    4300040: pasted__IBeam2
+    4300042: pasted__IBeam3
+    4300044: pasted__IBeam4
+    4300046: pasted__IBeam
+    4300048: pasted__IBeam1
+    4300050: pasted__IBeam2
+    4300052: pasted__IBeam3
+    4300054: pasted__IBeam4
+    4300056: pasted__IBeam
+    4300058: pasted__IBeam1
+    4300060: pasted__IBeam2
+    4300062: pasted__IBeam3
+    4300064: pasted__IBeam4
+    4300066: pasted__IBeam
+    4300068: pasted__IBeam1
+    4300070: pasted__IBeam2
+    4300072: pasted__IBeam3
+    4300074: pasted__IBeam4
+    4300076: pasted__IBeam
+    4300078: pasted__IBeam1
+    4300080: pasted__IBeam2
+    4300082: pasted__IBeam3
+    4300084: pasted__IBeam4
+    4300086: pasted__IBeam
+    4300088: pasted__IBeam1
+    4300090: pasted__IBeam2
+    4300092: pasted__IBeam3
+    4300094: pasted__IBeam4
+    4300096: pasted__pasted__IBeam4
+    4300098: pasted__pasted__IBeam5
+    4300100: pasted__pasted__IBeam6
+    4300102: pasted__pasted__IBeam7
+    4300104: pasted__pasted__IBeam8
+    4300106: pasted__pasted__IBeam9
+    4300108: pasted__pasted__IBeam10
+    4300110: pasted__pasted__IBeam11
+    4300112: pasted__pasted__IBeam12
+    4300114: pasted__pasted__IBeam13
+    4300116: pasted__pasted__IBeam14
+    4300118: pasted__pasted__IBeam4
+    4300120: pasted__pasted__IBeam5
+    4300122: pasted__pasted__IBeam6
+    4300124: pasted__pasted__IBeam7
+    4300126: pasted__pasted__IBeam8
+    4300128: pasted__pasted__IBeam9
+    4300130: pasted__pasted__IBeam10
+    4300132: pasted__pasted__IBeam11
+    4300134: pasted__pasted__IBeam12
+    4300136: pasted__pasted__IBeam13
+    4300138: pasted__pasted__IBeam14
+    4300140: pasted__pasted__IBeam4
+    4300142: pasted__pasted__IBeam5
+    4300144: pasted__pasted__IBeam6
+    4300146: pasted__pasted__IBeam7
+    4300148: pasted__pasted__IBeam8
+    4300150: pasted__pasted__IBeam10
+    4300152: pasted__pasted__IBeam11
+    4300154: pasted__pasted__IBeam12
+    4300156: pasted__pasted__IBeam13
+    4300158: pasted__pasted__IBeam14
+    4300160: pasted__pasted__IBeam4
+    4300162: pasted__pasted__IBeam5
+    4300164: pasted__pasted__IBeam6
+    4300166: pasted__pasted__IBeam7
+    4300168: pasted__pasted__IBeam8
+    4300170: pasted__pasted__IBeam9
+    4300172: pasted__pasted__IBeam10
+    4300174: pasted__pasted__IBeam11
+    4300176: pasted__pasted__IBeam12
+    4300178: pasted__pasted__IBeam13
+    4300180: pasted__pasted__IBeam14
+    4300182: pasted__pasted__IBeam4
+    4300184: pasted__pasted__IBeam5
+    4300186: pasted__pasted__IBeam6
+    4300188: pasted__pasted__IBeam7
+    4300190: pasted__pasted__IBeam8
+    4300192: pasted__pasted__IBeam9
+    4300194: pasted__pasted__IBeam10
+    4300196: pasted__pasted__IBeam11
+    4300198: pasted__pasted__IBeam12
+    4300200: pasted__pasted__IBeam13
+    4300202: pasted__pasted__IBeam14
+    4300204: IBeam3
+    4300206: IBeam2
+    4300208: IBeam1
+    4300210: IBeam
+    4300212: IBeam3
+    4300214: IBeam
+    4300216: IBeam3
+    4300218: IBeam
+    4300220: IBeam3
+    4300222: IBeam2
+    4300224: IBeam1
+    4300226: IBeam
+    4300228: IBeam3
+    4300230: IBeam2
+    4300232: IBeam1
+    4300234: IBeam
+    4300236: IBeam3
+    4300238: IBeam
+    4300240: floorTile10
+    4300242: floorTile11
+    4300244: floorTile12
+    4300246: floorTile13
+    4300248: floorTile5
+    4300250: floorTile4
+    4300252: floorTile3
+    4300254: floorTile2
+    4300256: floorTile1
+    4300258: floorTile6
+    4300260: floorTile7
+    4300262: floorTile8
+    4300264: floorTile9
+    4300266: floorTile15
+    4300268: floorTile16
+    4300270: floorTile17
+    4300272: floorTile18
+    4300274: floorTile19
+    4300276: floorTile20
+    4300278: floorTile21
+    4300280: floorTile22
+    4300282: floorTile23
+    4300284: floorTile24
+    4300286: floorTile14
+    4300288: FacadeBaseAngled1
+    4300290: FacadeBaseAngled2
+    4300292: FacadeBaseAngled3
+    4300294: FacadeBaseAngled4
+    4300296: FacadeBaseAngled5
+    4300298: FacadeBaseAngled6
+    4300300: FacadeBaseAngled7
+    4300302: FacadeBaseAngled8
+    4300304: FacadeBaseAngled9
+    4300306: FacadeBaseAngled10
+    4300308: FacadeBaseAngled1
+    4300310: FacadeBaseAngled2
+    4300312: FacadeBaseAngled3
+    4300314: FacadeBaseAngled4
+    4300316: FacadeBaseAngled5
+    4300318: FacadeBaseAngled6
+    4300320: FacadeBaseAngled7
+    4300322: FacadeBaseAngled8
+    4300324: FacadeBaseAngled9
+    4300326: FacadeBaseAngled10
+    4300328: FacadeBaseAngled1
+    4300330: FacadeBaseAngled2
+    4300332: FacadeBaseAngled3
+    4300334: FacadeBaseAngled4
+    4300336: FacadeBaseAngled5
+    4300338: FacadeBaseAngled6
+    4300340: FacadeBaseAngled7
+    4300342: FacadeBaseAngled8
+    4300344: FacadeBaseAngled9
+    4300346: FacadeBaseAngled10
+    4300348: FacadeBaseAngled1
+    4300350: FacadeBaseAngled2
+    4300352: FacadeBaseAngled3
+    4300354: FacadeBaseAngled4
+    4300356: FacadeBaseAngled5
+    4300358: FacadeBaseAngled6
+    4300360: FacadeBaseAngled7
+    4300362: FacadeBaseAngled8
+    4300364: FacadeBaseAngled9
+    4300366: FacadeBaseAngled10
+    7400000: BuildBase
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BuildBase
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 453
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: FacadeSide
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled1
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled2
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled3
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled4
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled5
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled6
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled7
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled8
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled9
+        weight: 1
+      - path: FacadeSide/FacadeBaseAngled10
+        weight: 1
+      - path: FacadeSide1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled1 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled2 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled3 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled4 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled5 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled6 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled7 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled8 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled9 1
+        weight: 1
+      - path: FacadeSide1/FacadeBaseAngled10 1
+        weight: 1
+      - path: FacadeSide2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled1 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled2 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled3 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled4 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled5 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled6 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled7 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled8 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled9 2
+        weight: 1
+      - path: FacadeSide2/FacadeBaseAngled10 2
+        weight: 1
+      - path: FacadeSide3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled1 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled2 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled3 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled4 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled5 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled6 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled7 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled8 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled9 3
+        weight: 1
+      - path: FacadeSide3/FacadeBaseAngled10 3
+        weight: 1
+      - path: FloorTiles
+        weight: 1
+      - path: FloorTiles/floorTile1
+        weight: 1
+      - path: FloorTiles/floorTile2
+        weight: 1
+      - path: FloorTiles/floorTile3
+        weight: 1
+      - path: FloorTiles/floorTile4
+        weight: 1
+      - path: FloorTiles/floorTile5
+        weight: 1
+      - path: FloorTiles/floorTile6
+        weight: 1
+      - path: FloorTiles/floorTile7
+        weight: 1
+      - path: FloorTiles/floorTile8
+        weight: 1
+      - path: FloorTiles/floorTile9
+        weight: 1
+      - path: FloorTiles/floorTile10
+        weight: 1
+      - path: FloorTiles/floorTile11
+        weight: 1
+      - path: FloorTiles/floorTile12
+        weight: 1
+      - path: FloorTiles/floorTile13
+        weight: 1
+      - path: FloorTiles/floorTile14
+        weight: 1
+      - path: FloorTiles/floorTile15
+        weight: 1
+      - path: FloorTiles/floorTile16
+        weight: 1
+      - path: FloorTiles/floorTile17
+        weight: 1
+      - path: FloorTiles/floorTile18
+        weight: 1
+      - path: FloorTiles/floorTile19
+        weight: 1
+      - path: FloorTiles/floorTile20
+        weight: 1
+      - path: FloorTiles/floorTile21
+        weight: 1
+      - path: FloorTiles/floorTile22
+        weight: 1
+      - path: FloorTiles/floorTile23
+        weight: 1
+      - path: FloorTiles/floorTile24
+        weight: 1
+      - path: IBeamForward
+        weight: 1
+      - path: IBeamForward/transform1
+        weight: 1
+      - path: IBeamForward/transform1/IBeamForward 1
+        weight: 1
+      - path: IBeamForward/transform1/IBeamForward 1/pasted__IBeam
+        weight: 1
+      - path: IBeamForward/transform1/IBeamForward 1/pasted__IBeam1
+        weight: 1
+      - path: IBeamForward/transform1/IBeamForward 1/pasted__IBeam2
+        weight: 1
+      - path: IBeamForward/transform1/IBeamForward 1/pasted__IBeam3
+        weight: 1
+      - path: IBeamForward/transform1/IBeamForward 1/pasted__IBeam4
+        weight: 1
+      - path: IBeamForward/transform48
+        weight: 1
+      - path: IBeamForward/transform48/IBeamForward 2
+        weight: 1
+      - path: IBeamForward/transform48/IBeamForward 2/pasted__IBeam 1
+        weight: 1
+      - path: IBeamForward/transform48/IBeamForward 2/pasted__IBeam1 1
+        weight: 1
+      - path: IBeamForward/transform48/IBeamForward 2/pasted__IBeam2 1
+        weight: 1
+      - path: IBeamForward/transform48/IBeamForward 2/pasted__IBeam3 1
+        weight: 1
+      - path: IBeamForward/transform48/IBeamForward 2/pasted__IBeam4 1
+        weight: 1
+      - path: IBeamForward/transform49
+        weight: 1
+      - path: IBeamForward/transform49/IBeamForward 3
+        weight: 1
+      - path: IBeamForward/transform49/IBeamForward 3/pasted__IBeam 2
+        weight: 1
+      - path: IBeamForward/transform49/IBeamForward 3/pasted__IBeam1 2
+        weight: 1
+      - path: IBeamForward/transform49/IBeamForward 3/pasted__IBeam2 2
+        weight: 1
+      - path: IBeamForward/transform49/IBeamForward 3/pasted__IBeam3 2
+        weight: 1
+      - path: IBeamForward/transform49/IBeamForward 3/pasted__IBeam4 2
+        weight: 1
+      - path: IBeamForward/transform50
+        weight: 1
+      - path: IBeamForward/transform50/IBeamForward 4
+        weight: 1
+      - path: IBeamForward/transform50/IBeamForward 4/pasted__IBeam 3
+        weight: 1
+      - path: IBeamForward/transform50/IBeamForward 4/pasted__IBeam1 3
+        weight: 1
+      - path: IBeamForward/transform50/IBeamForward 4/pasted__IBeam2 3
+        weight: 1
+      - path: IBeamForward/transform50/IBeamForward 4/pasted__IBeam3 3
+        weight: 1
+      - path: IBeamForward/transform50/IBeamForward 4/pasted__IBeam4 3
+        weight: 1
+      - path: IBeamForward/transform51
+        weight: 1
+      - path: IBeamForward/transform51/IBeamForward 5
+        weight: 1
+      - path: IBeamForward/transform51/IBeamForward 5/pasted__IBeam 4
+        weight: 1
+      - path: IBeamForward/transform51/IBeamForward 5/pasted__IBeam1 4
+        weight: 1
+      - path: IBeamForward/transform51/IBeamForward 5/pasted__IBeam2 4
+        weight: 1
+      - path: IBeamForward/transform51/IBeamForward 5/pasted__IBeam3 4
+        weight: 1
+      - path: IBeamForward/transform51/IBeamForward 5/pasted__IBeam4 4
+        weight: 1
+      - path: IBeamForward/transform52
+        weight: 1
+      - path: IBeamForward/transform52/IBeamForward 6
+        weight: 1
+      - path: IBeamForward/transform52/IBeamForward 6/pasted__IBeam 5
+        weight: 1
+      - path: IBeamForward/transform52/IBeamForward 6/pasted__IBeam1 5
+        weight: 1
+      - path: IBeamForward/transform52/IBeamForward 6/pasted__IBeam2 5
+        weight: 1
+      - path: IBeamForward/transform52/IBeamForward 6/pasted__IBeam3 5
+        weight: 1
+      - path: IBeamForward/transform52/IBeamForward 6/pasted__IBeam4 5
+        weight: 1
+      - path: IBeamHorizontal
+        weight: 1
+      - path: IBeamHorizontal/transform55
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam5
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam6
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam7
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam8
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam9
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam10
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam11
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam12
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam13
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz/pasted__pasted__IBeam14
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam4 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam5 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam6 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam7 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam8 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam9 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam10 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam11 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam12 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam13 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz5/pasted__pasted__IBeam14 1
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam4 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam5 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam6 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam7 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam8 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam10 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam11 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam12 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam13 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz6/pasted__pasted__IBeam14 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam4 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam5 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam6 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam7 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam8 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam9 2
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam10 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam11 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam12 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam13 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz7/pasted__pasted__IBeam14 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam4 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam5 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam6 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam7 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam8 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam9 3
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam10 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam11 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam12 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam13 4
+        weight: 1
+      - path: IBeamHorizontal/transform55/IBeamHoriz8/pasted__pasted__IBeam14 4
+        weight: 1
+      - path: IBeamVert
+        weight: 1
+      - path: IBeamVert/transform12
+        weight: 1
+      - path: IBeamVert/transform12/IBeam3
+        weight: 1
+      - path: IBeamVert/transform13
+        weight: 1
+      - path: IBeamVert/transform13/IBeam2
+        weight: 1
+      - path: IBeamVert/transform14
+        weight: 1
+      - path: IBeamVert/transform14/IBeam1
+        weight: 1
+      - path: IBeamVert/transform15
+        weight: 1
+      - path: IBeamVert/transform15/IBeam
+        weight: 1
+      - path: IBeamVert/transform16
+        weight: 1
+      - path: IBeamVert/transform16/IBeam3 1
+        weight: 1
+      - path: IBeamVert/transform19
+        weight: 1
+      - path: IBeamVert/transform19/IBeam 1
+        weight: 1
+      - path: IBeamVert/transform32
+        weight: 1
+      - path: IBeamVert/transform32/IBeam3 2
+        weight: 1
+      - path: IBeamVert/transform35
+        weight: 1
+      - path: IBeamVert/transform35/IBeam 2
+        weight: 1
+      - path: IBeamVert/transform36
+        weight: 1
+      - path: IBeamVert/transform36/IBeam3 3
+        weight: 1
+      - path: IBeamVert/transform37
+        weight: 1
+      - path: IBeamVert/transform37/IBeam2 1
+        weight: 1
+      - path: IBeamVert/transform38
+        weight: 1
+      - path: IBeamVert/transform38/IBeam1 1
+        weight: 1
+      - path: IBeamVert/transform39
+        weight: 1
+      - path: IBeamVert/transform39/IBeam 3
+        weight: 1
+      - path: IBeamVert/transform40
+        weight: 1
+      - path: IBeamVert/transform40/IBeam3 4
+        weight: 1
+      - path: IBeamVert/transform41
+        weight: 1
+      - path: IBeamVert/transform41/IBeam2 2
+        weight: 1
+      - path: IBeamVert/transform42
+        weight: 1
+      - path: IBeamVert/transform42/IBeam1 2
+        weight: 1
+      - path: IBeamVert/transform43
+        weight: 1
+      - path: IBeamVert/transform43/IBeam 4
+        weight: 1
+      - path: IBeamVert/transform44
+        weight: 1
+      - path: IBeamVert/transform44/IBeam3 5
+        weight: 1
+      - path: IBeamVert/transform47
+        weight: 1
+      - path: IBeamVert/transform47/IBeam 5
+        weight: 1
+      - path: IBeamVert1
+        weight: 1
+      - path: IBeamVert1/transform12 1
+        weight: 1
+      - path: IBeamVert1/transform12 1/IBeam3 6
+        weight: 1
+      - path: IBeamVert1/transform13 1
+        weight: 1
+      - path: IBeamVert1/transform13 1/IBeam2 3
+        weight: 1
+      - path: IBeamVert1/transform14 1
+        weight: 1
+      - path: IBeamVert1/transform14 1/IBeam1 3
+        weight: 1
+      - path: IBeamVert1/transform15 1
+        weight: 1
+      - path: IBeamVert1/transform15 1/IBeam 6
+        weight: 1
+      - path: IBeamVert1/transform16 1
+        weight: 1
+      - path: IBeamVert1/transform16 1/IBeam3 7
+        weight: 1
+      - path: IBeamVert1/transform19 1
+        weight: 1
+      - path: IBeamVert1/transform19 1/IBeam 7
+        weight: 1
+      - path: IBeamVert1/transform32 1
+        weight: 1
+      - path: IBeamVert1/transform32 1/IBeam3 8
+        weight: 1
+      - path: IBeamVert1/transform35 1
+        weight: 1
+      - path: IBeamVert1/transform35 1/IBeam 8
+        weight: 1
+      - path: IBeamVert1/transform36 1
+        weight: 1
+      - path: IBeamVert1/transform36 1/IBeam3 9
+        weight: 1
+      - path: IBeamVert1/transform37 1
+        weight: 1
+      - path: IBeamVert1/transform37 1/IBeam2 4
+        weight: 1
+      - path: IBeamVert1/transform38 1
+        weight: 1
+      - path: IBeamVert1/transform38 1/IBeam1 4
+        weight: 1
+      - path: IBeamVert1/transform39 1
+        weight: 1
+      - path: IBeamVert1/transform39 1/IBeam 9
+        weight: 1
+      - path: IBeamVert1/transform40 1
+        weight: 1
+      - path: IBeamVert1/transform40 1/IBeam3 10
+        weight: 1
+      - path: IBeamVert1/transform41 1
+        weight: 1
+      - path: IBeamVert1/transform41 1/IBeam2 5
+        weight: 1
+      - path: IBeamVert1/transform42 1
+        weight: 1
+      - path: IBeamVert1/transform42 1/IBeam1 5
+        weight: 1
+      - path: IBeamVert1/transform43 1
+        weight: 1
+      - path: IBeamVert1/transform43 1/IBeam 10
+        weight: 1
+      - path: IBeamVert1/transform44 1
+        weight: 1
+      - path: IBeamVert1/transform44 1/IBeam3 11
+        weight: 1
+      - path: IBeamVert1/transform47 1
+        weight: 1
+      - path: IBeamVert1/transform47 1/IBeam 11
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 110
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

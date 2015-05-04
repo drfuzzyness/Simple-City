@@ -252,9 +252,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   age: 0
   startBuilt: 0
-  baseFloorPrefab: {fileID: 473840, guid: 79a1be3ebeffd487398bfc3babcce90d, type: 2}
-  floorPrefab: {fileID: 456812, guid: 01f605a4e745c4f8ab05097c619d37aa, type: 2}
-  heightBetweenFloors: {x: 0, y: 5, z: 0}
+  baseFloorPrefab: {fileID: 416914, guid: 73337f97607a54b8a8d8d0fbe96ca8cf, type: 2}
+  floorPrefab: {fileID: 430948, guid: 83cbdbcfdb9464cc581a3228e81ecd30, type: 2}
+  roofPrefab: {fileID: 400000, guid: 234c19a13e6be4dafb5539c273d02754, type: 3}
+  heightBetweenFloors: {x: 0, y: 2.0999999, z: 0}
   dustParticles: {fileID: 19883450}
   plot: {fileID: 11433806}
   floors: []

@@ -1,0 +1,873 @@
+fileFormatVersion: 2
+guid: 0c282d7f237254c7cafe8999cfc2ae93
+timeCreated: 1430748033
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: FacadeBaseFlat1
+    100004: FacadeBaseFlat1 1
+    100006: FacadeBaseFlat1 2
+    100008: FacadeBaseFlat1 3
+    100010: FacadeBaseFlat10
+    100012: FacadeBaseFlat10 1
+    100014: FacadeBaseFlat10 2
+    100016: FacadeBaseFlat10 3
+    100018: FacadeBaseFlat2
+    100020: FacadeBaseFlat2 1
+    100022: FacadeBaseFlat2 2
+    100024: FacadeBaseFlat2 3
+    100026: FacadeBaseFlat3
+    100028: FacadeBaseFlat3 1
+    100030: FacadeBaseFlat3 2
+    100032: FacadeBaseFlat3 3
+    100034: FacadeBaseFlat4
+    100036: FacadeBaseFlat4 1
+    100038: FacadeBaseFlat4 2
+    100040: FacadeBaseFlat4 3
+    100042: FacadeBaseFlat5
+    100044: FacadeBaseFlat5 1
+    100046: FacadeBaseFlat5 2
+    100048: FacadeBaseFlat5 3
+    100050: FacadeBaseFlat6
+    100052: FacadeBaseFlat6 1
+    100054: FacadeBaseFlat6 2
+    100056: FacadeBaseFlat6 3
+    100058: FacadeBaseFlat7
+    100060: FacadeBaseFlat7 1
+    100062: FacadeBaseFlat7 2
+    100064: FacadeBaseFlat7 3
+    100066: FacadeBaseFlat8
+    100068: FacadeBaseFlat8 1
+    100070: FacadeBaseFlat8 2
+    100072: FacadeBaseFlat8 3
+    100074: FacadeBaseFlat9
+    100076: FacadeBaseFlat9 1
+    100078: FacadeBaseFlat9 2
+    100080: FacadeBaseFlat9 3
+    100082: FacadeSide4
+    100084: FacadeSide5
+    100086: FacadeSide6
+    100088: FacadeSide7
+    100090: IBeamBack
+    100092: IBeamCenter
+    100094: IBeamFront
+    100096: pasted__IBeam
+    100098: pasted__IBeam 1
+    100100: pasted__IBeam 2
+    100102: pasted__IBeam 3
+    100104: pasted__IBeam 4
+    100106: pasted__IBeam 5
+    100108: pasted__IBeam 6
+    100110: pasted__IBeam 7
+    100112: pasted__IBeam1
+    100114: pasted__IBeam1 1
+    100116: pasted__IBeam1 2
+    100118: pasted__IBeam1 3
+    100120: pasted__IBeam2
+    100122: pasted__IBeam2 1
+    100124: pasted__IBeam2 2
+    100126: pasted__IBeam2 3
+    100128: pasted__IBeam3
+    100130: pasted__IBeam3 1
+    100132: pasted__IBeam3 2
+    100134: pasted__IBeam3 3
+    100136: pasted__IBeam3 4
+    100138: pasted__IBeam3 5
+    100140: pasted__IBeam3 6
+    100142: pasted__IBeam3 7
+    100144: pasted__IBeamFloor1
+    100146: pasted__pasted__pasted__IBeam12
+    100148: pasted__pasted__pasted__IBeam12 1
+    100150: pasted__pasted__pasted__IBeam14
+    100152: pasted__pasted__pasted__IBeam14 1
+    100154: pasted__pasted__pasted__IBeam16
+    100156: pasted__pasted__pasted__IBeam16 1
+    100158: pasted__pasted__pasted__IBeam18
+    100160: pasted__pasted__pasted__IBeam18 1
+    100162: pasted__pasted__pasted__IBeam20
+    100164: pasted__pasted__pasted__IBeam20 1
+    100166: pasted__pasted__pasted__IBeam22
+    100168: pasted__pasted__pasted__IBeam22 1
+    100170: pasted__transform12
+    100172: pasted__transform12 1
+    100174: pasted__transform13
+    100176: pasted__transform13 1
+    100178: pasted__transform16
+    100180: pasted__transform16 1
+    100182: pasted__transform35
+    100184: pasted__transform35 1
+    100186: pasted__transform38
+    100188: pasted__transform38 1
+    100190: pasted__transform39
+    100192: pasted__transform39 1
+    100194: pasted__transform40
+    100196: pasted__transform40 1
+    100198: pasted__transform41
+    100200: pasted__transform41 1
+    100202: pasted__transform42
+    100204: pasted__transform42 1
+    100206: pasted__transform43
+    100208: pasted__transform43 1
+    100210: pasted__transform44
+    100212: pasted__transform44 1
+    100214: pasted__transform47
+    100216: pasted__transform47 1
+    100218: transform100
+    100220: transform101
+    100222: transform102
+    100224: transform103
+    100226: transform104
+    100228: transform105
+    100230: transform106
+    100232: transform107
+    100234: transform108
+    100236: transform109
+    100238: transform110
+    100240: transform111
+    100242: transform112
+    100244: transform113
+    100246: transform114
+    100248: transform91
+    100250: transform92
+    100252: transform93
+    100254: transform94
+    100256: transform95
+    100258: transform96
+    100260: transform97
+    100262: transform98
+    100264: transform99
+    400000: //RootNode
+    400002: FacadeBaseFlat1
+    400004: FacadeBaseFlat1 1
+    400006: FacadeBaseFlat1 2
+    400008: FacadeBaseFlat1 3
+    400010: FacadeBaseFlat10
+    400012: FacadeBaseFlat10 1
+    400014: FacadeBaseFlat10 2
+    400016: FacadeBaseFlat10 3
+    400018: FacadeBaseFlat2
+    400020: FacadeBaseFlat2 1
+    400022: FacadeBaseFlat2 2
+    400024: FacadeBaseFlat2 3
+    400026: FacadeBaseFlat3
+    400028: FacadeBaseFlat3 1
+    400030: FacadeBaseFlat3 2
+    400032: FacadeBaseFlat3 3
+    400034: FacadeBaseFlat4
+    400036: FacadeBaseFlat4 1
+    400038: FacadeBaseFlat4 2
+    400040: FacadeBaseFlat4 3
+    400042: FacadeBaseFlat5
+    400044: FacadeBaseFlat5 1
+    400046: FacadeBaseFlat5 2
+    400048: FacadeBaseFlat5 3
+    400050: FacadeBaseFlat6
+    400052: FacadeBaseFlat6 1
+    400054: FacadeBaseFlat6 2
+    400056: FacadeBaseFlat6 3
+    400058: FacadeBaseFlat7
+    400060: FacadeBaseFlat7 1
+    400062: FacadeBaseFlat7 2
+    400064: FacadeBaseFlat7 3
+    400066: FacadeBaseFlat8
+    400068: FacadeBaseFlat8 1
+    400070: FacadeBaseFlat8 2
+    400072: FacadeBaseFlat8 3
+    400074: FacadeBaseFlat9
+    400076: FacadeBaseFlat9 1
+    400078: FacadeBaseFlat9 2
+    400080: FacadeBaseFlat9 3
+    400082: FacadeSide4
+    400084: FacadeSide5
+    400086: FacadeSide6
+    400088: FacadeSide7
+    400090: IBeamBack
+    400092: IBeamCenter
+    400094: IBeamFront
+    400096: pasted__IBeam
+    400098: pasted__IBeam 1
+    400100: pasted__IBeam 2
+    400102: pasted__IBeam 3
+    400104: pasted__IBeam 4
+    400106: pasted__IBeam 5
+    400108: pasted__IBeam 6
+    400110: pasted__IBeam 7
+    400112: pasted__IBeam1
+    400114: pasted__IBeam1 1
+    400116: pasted__IBeam1 2
+    400118: pasted__IBeam1 3
+    400120: pasted__IBeam2
+    400122: pasted__IBeam2 1
+    400124: pasted__IBeam2 2
+    400126: pasted__IBeam2 3
+    400128: pasted__IBeam3
+    400130: pasted__IBeam3 1
+    400132: pasted__IBeam3 2
+    400134: pasted__IBeam3 3
+    400136: pasted__IBeam3 4
+    400138: pasted__IBeam3 5
+    400140: pasted__IBeam3 6
+    400142: pasted__IBeam3 7
+    400144: pasted__IBeamFloor1
+    400146: pasted__pasted__pasted__IBeam12
+    400148: pasted__pasted__pasted__IBeam12 1
+    400150: pasted__pasted__pasted__IBeam14
+    400152: pasted__pasted__pasted__IBeam14 1
+    400154: pasted__pasted__pasted__IBeam16
+    400156: pasted__pasted__pasted__IBeam16 1
+    400158: pasted__pasted__pasted__IBeam18
+    400160: pasted__pasted__pasted__IBeam18 1
+    400162: pasted__pasted__pasted__IBeam20
+    400164: pasted__pasted__pasted__IBeam20 1
+    400166: pasted__pasted__pasted__IBeam22
+    400168: pasted__pasted__pasted__IBeam22 1
+    400170: pasted__transform12
+    400172: pasted__transform12 1
+    400174: pasted__transform13
+    400176: pasted__transform13 1
+    400178: pasted__transform16
+    400180: pasted__transform16 1
+    400182: pasted__transform35
+    400184: pasted__transform35 1
+    400186: pasted__transform38
+    400188: pasted__transform38 1
+    400190: pasted__transform39
+    400192: pasted__transform39 1
+    400194: pasted__transform40
+    400196: pasted__transform40 1
+    400198: pasted__transform41
+    400200: pasted__transform41 1
+    400202: pasted__transform42
+    400204: pasted__transform42 1
+    400206: pasted__transform43
+    400208: pasted__transform43 1
+    400210: pasted__transform44
+    400212: pasted__transform44 1
+    400214: pasted__transform47
+    400216: pasted__transform47 1
+    400218: transform100
+    400220: transform101
+    400222: transform102
+    400224: transform103
+    400226: transform104
+    400228: transform105
+    400230: transform106
+    400232: transform107
+    400234: transform108
+    400236: transform109
+    400238: transform110
+    400240: transform111
+    400242: transform112
+    400244: transform113
+    400246: transform114
+    400248: transform91
+    400250: transform92
+    400252: transform93
+    400254: transform94
+    400256: transform95
+    400258: transform96
+    400260: transform97
+    400262: transform98
+    400264: transform99
+    2300000: FacadeBaseFlat1
+    2300002: FacadeBaseFlat1 1
+    2300004: FacadeBaseFlat1 2
+    2300006: FacadeBaseFlat1 3
+    2300008: FacadeBaseFlat10
+    2300010: FacadeBaseFlat10 1
+    2300012: FacadeBaseFlat10 2
+    2300014: FacadeBaseFlat10 3
+    2300016: FacadeBaseFlat2
+    2300018: FacadeBaseFlat2 1
+    2300020: FacadeBaseFlat2 2
+    2300022: FacadeBaseFlat2 3
+    2300024: FacadeBaseFlat3
+    2300026: FacadeBaseFlat3 1
+    2300028: FacadeBaseFlat3 2
+    2300030: FacadeBaseFlat3 3
+    2300032: FacadeBaseFlat4
+    2300034: FacadeBaseFlat4 1
+    2300036: FacadeBaseFlat4 2
+    2300038: FacadeBaseFlat4 3
+    2300040: FacadeBaseFlat5
+    2300042: FacadeBaseFlat5 1
+    2300044: FacadeBaseFlat5 2
+    2300046: FacadeBaseFlat5 3
+    2300048: FacadeBaseFlat6
+    2300050: FacadeBaseFlat6 1
+    2300052: FacadeBaseFlat6 2
+    2300054: FacadeBaseFlat6 3
+    2300056: FacadeBaseFlat7
+    2300058: FacadeBaseFlat7 1
+    2300060: FacadeBaseFlat7 2
+    2300062: FacadeBaseFlat7 3
+    2300064: FacadeBaseFlat8
+    2300066: FacadeBaseFlat8 1
+    2300068: FacadeBaseFlat8 2
+    2300070: FacadeBaseFlat8 3
+    2300072: FacadeBaseFlat9
+    2300074: FacadeBaseFlat9 1
+    2300076: FacadeBaseFlat9 2
+    2300078: FacadeBaseFlat9 3
+    2300080: pasted__IBeam
+    2300082: pasted__IBeam 1
+    2300084: pasted__IBeam 2
+    2300086: pasted__IBeam 3
+    2300088: pasted__IBeam 4
+    2300090: pasted__IBeam 5
+    2300092: pasted__IBeam 6
+    2300094: pasted__IBeam 7
+    2300096: pasted__IBeam1
+    2300098: pasted__IBeam1 1
+    2300100: pasted__IBeam1 2
+    2300102: pasted__IBeam1 3
+    2300104: pasted__IBeam2
+    2300106: pasted__IBeam2 1
+    2300108: pasted__IBeam2 2
+    2300110: pasted__IBeam2 3
+    2300112: pasted__IBeam3
+    2300114: pasted__IBeam3 1
+    2300116: pasted__IBeam3 2
+    2300118: pasted__IBeam3 3
+    2300120: pasted__IBeam3 4
+    2300122: pasted__IBeam3 5
+    2300124: pasted__IBeam3 6
+    2300126: pasted__IBeam3 7
+    2300128: pasted__pasted__pasted__IBeam12
+    2300130: pasted__pasted__pasted__IBeam12 1
+    2300132: pasted__pasted__pasted__IBeam14
+    2300134: pasted__pasted__pasted__IBeam14 1
+    2300136: pasted__pasted__pasted__IBeam16
+    2300138: pasted__pasted__pasted__IBeam16 1
+    2300140: pasted__pasted__pasted__IBeam18
+    2300142: pasted__pasted__pasted__IBeam18 1
+    2300144: pasted__pasted__pasted__IBeam20
+    2300146: pasted__pasted__pasted__IBeam20 1
+    2300148: pasted__pasted__pasted__IBeam22
+    2300150: pasted__pasted__pasted__IBeam22 1
+    3300000: FacadeBaseFlat1
+    3300002: FacadeBaseFlat1 1
+    3300004: FacadeBaseFlat1 2
+    3300006: FacadeBaseFlat1 3
+    3300008: FacadeBaseFlat10
+    3300010: FacadeBaseFlat10 1
+    3300012: FacadeBaseFlat10 2
+    3300014: FacadeBaseFlat10 3
+    3300016: FacadeBaseFlat2
+    3300018: FacadeBaseFlat2 1
+    3300020: FacadeBaseFlat2 2
+    3300022: FacadeBaseFlat2 3
+    3300024: FacadeBaseFlat3
+    3300026: FacadeBaseFlat3 1
+    3300028: FacadeBaseFlat3 2
+    3300030: FacadeBaseFlat3 3
+    3300032: FacadeBaseFlat4
+    3300034: FacadeBaseFlat4 1
+    3300036: FacadeBaseFlat4 2
+    3300038: FacadeBaseFlat4 3
+    3300040: FacadeBaseFlat5
+    3300042: FacadeBaseFlat5 1
+    3300044: FacadeBaseFlat5 2
+    3300046: FacadeBaseFlat5 3
+    3300048: FacadeBaseFlat6
+    3300050: FacadeBaseFlat6 1
+    3300052: FacadeBaseFlat6 2
+    3300054: FacadeBaseFlat6 3
+    3300056: FacadeBaseFlat7
+    3300058: FacadeBaseFlat7 1
+    3300060: FacadeBaseFlat7 2
+    3300062: FacadeBaseFlat7 3
+    3300064: FacadeBaseFlat8
+    3300066: FacadeBaseFlat8 1
+    3300068: FacadeBaseFlat8 2
+    3300070: FacadeBaseFlat8 3
+    3300072: FacadeBaseFlat9
+    3300074: FacadeBaseFlat9 1
+    3300076: FacadeBaseFlat9 2
+    3300078: FacadeBaseFlat9 3
+    3300080: pasted__IBeam
+    3300082: pasted__IBeam 1
+    3300084: pasted__IBeam 2
+    3300086: pasted__IBeam 3
+    3300088: pasted__IBeam 4
+    3300090: pasted__IBeam 5
+    3300092: pasted__IBeam 6
+    3300094: pasted__IBeam 7
+    3300096: pasted__IBeam1
+    3300098: pasted__IBeam1 1
+    3300100: pasted__IBeam1 2
+    3300102: pasted__IBeam1 3
+    3300104: pasted__IBeam2
+    3300106: pasted__IBeam2 1
+    3300108: pasted__IBeam2 2
+    3300110: pasted__IBeam2 3
+    3300112: pasted__IBeam3
+    3300114: pasted__IBeam3 1
+    3300116: pasted__IBeam3 2
+    3300118: pasted__IBeam3 3
+    3300120: pasted__IBeam3 4
+    3300122: pasted__IBeam3 5
+    3300124: pasted__IBeam3 6
+    3300126: pasted__IBeam3 7
+    3300128: pasted__pasted__pasted__IBeam12
+    3300130: pasted__pasted__pasted__IBeam12 1
+    3300132: pasted__pasted__pasted__IBeam14
+    3300134: pasted__pasted__pasted__IBeam14 1
+    3300136: pasted__pasted__pasted__IBeam16
+    3300138: pasted__pasted__pasted__IBeam16 1
+    3300140: pasted__pasted__pasted__IBeam18
+    3300142: pasted__pasted__pasted__IBeam18 1
+    3300144: pasted__pasted__pasted__IBeam20
+    3300146: pasted__pasted__pasted__IBeam20 1
+    3300148: pasted__pasted__pasted__IBeam22
+    3300150: pasted__pasted__pasted__IBeam22 1
+    4300000: pasted__pasted__pasted__IBeam12
+    4300002: pasted__pasted__pasted__IBeam14
+    4300004: pasted__pasted__pasted__IBeam16
+    4300006: pasted__pasted__pasted__IBeam18
+    4300008: pasted__pasted__pasted__IBeam20
+    4300010: pasted__pasted__pasted__IBeam22
+    4300012: pasted__pasted__pasted__IBeam12
+    4300014: pasted__pasted__pasted__IBeam14
+    4300016: pasted__pasted__pasted__IBeam16
+    4300018: pasted__pasted__pasted__IBeam18
+    4300020: pasted__pasted__pasted__IBeam20
+    4300022: pasted__pasted__pasted__IBeam22
+    4300024: pasted__IBeam
+    4300026: pasted__IBeam3
+    4300028: pasted__IBeam2
+    4300030: pasted__IBeam3
+    4300032: pasted__IBeam
+    4300034: pasted__IBeam1
+    4300036: pasted__IBeam
+    4300038: pasted__IBeam3
+    4300040: pasted__IBeam2
+    4300042: pasted__IBeam1
+    4300044: pasted__IBeam
+    4300046: pasted__IBeam3
+    4300048: pasted__IBeam
+    4300050: pasted__IBeam3
+    4300052: pasted__IBeam2
+    4300054: pasted__IBeam3
+    4300056: pasted__IBeam
+    4300058: pasted__IBeam1
+    4300060: pasted__IBeam
+    4300062: pasted__IBeam3
+    4300064: pasted__IBeam2
+    4300066: pasted__IBeam1
+    4300068: pasted__IBeam
+    4300070: pasted__IBeam3
+    4300072: FacadeBaseFlat1
+    4300074: FacadeBaseFlat2
+    4300076: FacadeBaseFlat3
+    4300078: FacadeBaseFlat4
+    4300080: FacadeBaseFlat5
+    4300082: FacadeBaseFlat6
+    4300084: FacadeBaseFlat7
+    4300086: FacadeBaseFlat8
+    4300088: FacadeBaseFlat9
+    4300090: FacadeBaseFlat10
+    4300092: FacadeBaseFlat1
+    4300094: FacadeBaseFlat2
+    4300096: FacadeBaseFlat3
+    4300098: FacadeBaseFlat4
+    4300100: FacadeBaseFlat5
+    4300102: FacadeBaseFlat6
+    4300104: FacadeBaseFlat7
+    4300106: FacadeBaseFlat8
+    4300108: FacadeBaseFlat9
+    4300110: FacadeBaseFlat10
+    4300112: FacadeBaseFlat1
+    4300114: FacadeBaseFlat2
+    4300116: FacadeBaseFlat3
+    4300118: FacadeBaseFlat4
+    4300120: FacadeBaseFlat5
+    4300122: FacadeBaseFlat6
+    4300124: FacadeBaseFlat7
+    4300126: FacadeBaseFlat8
+    4300128: FacadeBaseFlat9
+    4300130: FacadeBaseFlat10
+    4300132: FacadeBaseFlat1
+    4300134: FacadeBaseFlat2
+    4300136: FacadeBaseFlat3
+    4300138: FacadeBaseFlat4
+    4300140: FacadeBaseFlat5
+    4300142: FacadeBaseFlat6
+    4300144: FacadeBaseFlat7
+    4300146: FacadeBaseFlat8
+    4300148: FacadeBaseFlat9
+    4300150: FacadeBaseFlat10
+    7400000: BuildFloor
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: BuildFloor
+      takeName: Take 001
+      firstFrame: 465
+      lastFrame: 644
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: FacadeSide4
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat1
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat2
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat3
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat4
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat5
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat6
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat7
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat8
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat9
+        weight: 1
+      - path: FacadeSide4/FacadeBaseFlat10
+        weight: 1
+      - path: FacadeSide5
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat1 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat2 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat3 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat4 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat5 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat6 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat7 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat8 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat9 1
+        weight: 1
+      - path: FacadeSide5/FacadeBaseFlat10 1
+        weight: 1
+      - path: FacadeSide6
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat1 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat2 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat3 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat4 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat5 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat6 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat7 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat8 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat9 2
+        weight: 1
+      - path: FacadeSide6/FacadeBaseFlat10 2
+        weight: 1
+      - path: FacadeSide7
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat1 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat2 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat3 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat4 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat5 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat6 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat7 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat8 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat9 3
+        weight: 1
+      - path: FacadeSide7/FacadeBaseFlat10 3
+        weight: 1
+      - path: IBeamBack
+        weight: 1
+      - path: IBeamBack/pasted__pasted__pasted__IBeam12
+        weight: 1
+      - path: IBeamBack/pasted__pasted__pasted__IBeam14
+        weight: 1
+      - path: IBeamBack/pasted__pasted__pasted__IBeam16
+        weight: 1
+      - path: IBeamBack/pasted__pasted__pasted__IBeam18
+        weight: 1
+      - path: IBeamBack/pasted__pasted__pasted__IBeam20
+        weight: 1
+      - path: IBeamBack/pasted__pasted__pasted__IBeam22
+        weight: 1
+      - path: IBeamCenter
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform91
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform91/pasted__transform47 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform91/pasted__transform47 1/pasted__IBeam
+          5
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform92
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform92/pasted__transform12 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform92/pasted__transform12 1/pasted__IBeam3
+          5
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform93
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform93/pasted__transform13 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform93/pasted__transform13 1/pasted__IBeam2
+          2
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform94
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform94/pasted__transform16 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform94/pasted__transform16 1/pasted__IBeam3
+          6
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform95
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform95/pasted__transform35 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform95/pasted__transform35 1/pasted__IBeam
+          6
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform96
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform96/pasted__transform38 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform96/pasted__transform38 1/pasted__IBeam1
+          3
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform97
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform97/pasted__transform39 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform97/pasted__transform39 1/pasted__IBeam
+          7
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform98
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform98/pasted__transform40 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform98/pasted__transform40 1/pasted__IBeam3
+          7
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform99
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform99/pasted__transform41 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform99/pasted__transform41 1/pasted__IBeam2
+          3
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform100
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform100/pasted__transform42
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform100/pasted__transform42/pasted__IBeam1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform101
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform101/pasted__transform43
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform101/pasted__transform43/pasted__IBeam
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform102
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform102/pasted__transform44
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform102/pasted__transform44/pasted__IBeam3
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform103
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform103/pasted__transform47
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform103/pasted__transform47/pasted__IBeam
+          1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform104
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform104/pasted__transform12
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform104/pasted__transform12/pasted__IBeam3
+          1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform105
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform105/pasted__transform13
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform105/pasted__transform13/pasted__IBeam2
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform106
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform106/pasted__transform16
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform106/pasted__transform16/pasted__IBeam3
+          2
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform107
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform107/pasted__transform35
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform107/pasted__transform35/pasted__IBeam
+          2
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform108
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform108/pasted__transform38
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform108/pasted__transform38/pasted__IBeam1
+          1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform109
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform109/pasted__transform39
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform109/pasted__transform39/pasted__IBeam
+          3
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform110
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform110/pasted__transform40
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform110/pasted__transform40/pasted__IBeam3
+          3
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform111
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform111/pasted__transform41
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform111/pasted__transform41/pasted__IBeam2
+          1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform112
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform112/pasted__transform42 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform112/pasted__transform42 1/pasted__IBeam1
+          2
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform113
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform113/pasted__transform43 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform113/pasted__transform43 1/pasted__IBeam
+          4
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform114
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform114/pasted__transform44 1
+        weight: 1
+      - path: IBeamCenter/pasted__IBeamFloor1/transform114/pasted__transform44 1/pasted__IBeam3
+          4
+        weight: 1
+      - path: IBeamFront
+        weight: 1
+      - path: IBeamFront/pasted__pasted__pasted__IBeam12 1
+        weight: 1
+      - path: IBeamFront/pasted__pasted__pasted__IBeam14 1
+        weight: 1
+      - path: IBeamFront/pasted__pasted__pasted__IBeam16 1
+        weight: 1
+      - path: IBeamFront/pasted__pasted__pasted__IBeam18 1
+        weight: 1
+      - path: IBeamFront/pasted__pasted__pasted__IBeam20 1
+        weight: 1
+      - path: IBeamFront/pasted__pasted__pasted__IBeam22 1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 110
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

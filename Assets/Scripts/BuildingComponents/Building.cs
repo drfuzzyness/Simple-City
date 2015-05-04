@@ -16,6 +16,7 @@ public class Building : MonoBehaviour {
     [Header("Prefabs")]
 	public Transform baseFloorPrefab;
 	public Transform floorPrefab;
+	public Transform roofPrefab;
 	public Vector3 heightBetweenFloors;
 	public ParticleSystem dustParticles;
 
@@ -29,6 +30,7 @@ public class Building : MonoBehaviour {
 	public bool isBuilt;
 	public bool isRunning;
 
+	private Transform ceiling;
     private BuildingUI bldingUI;
 
     public bool CreateBuilding() {
@@ -50,6 +52,15 @@ public class Building : MonoBehaviour {
 
 	public void BuildFloor() {
 		if( isRunning ) {
+			if(floors.Count == 1 ) {
+				floors.Add( Instantiate( floorPrefab,
+			                        floors[floors.Count - 1].position,
+			                        transform.rotation ) as Transform ); // new floor above last floor
+				floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
+				// move overviewCanvas to the top of the building
+				if( bldingUI != null )
+					bldingUI.overviewCanvas.transform.position = floors[floors.Count - 1].transform.position;
+			} 
 			floors.Add( Instantiate( floorPrefab,
 			                        floors[floors.Count - 1].position + heightBetweenFloors,
 			                        transform.rotation ) as Transform ); // new floor above last floor
