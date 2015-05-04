@@ -101,7 +101,7 @@ Material:
       data:
         first:
           name: _Glossiness
-        second: .5
+        second: .270000011
       data:
         first:
           name: _BumpScale
@@ -129,7 +129,7 @@ Material:
       data:
         first:
           name: _Metallic
-        second: .219999999
+        second: .649999976
     m_Colors:
       data:
         first:

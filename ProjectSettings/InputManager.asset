@@ -137,16 +137,16 @@ InputManager:
     m_Name: Mouse ScrollWheel
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
+    negativeButton: ']'
+    positiveButton: '['
     altNegativeButton: 
     altPositiveButton: 
-    gravity: 0
+    gravity: .100000001
     dead: 0
     sensitivity: .100000001
     snap: 0
     invert: 0
-    type: 1
+    type: 0
     axis: 2
     joyNum: 0
   - serializedVersion: 3

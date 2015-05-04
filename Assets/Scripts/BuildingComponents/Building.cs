@@ -57,29 +57,54 @@ public class Building : MonoBehaviour {
 			                        floors[floors.Count - 1].position,
 			                        transform.rotation ) as Transform ); // new floor above last floor
 				floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
+				// start ceiling moving up
+				StartCoroutine( "MoveRoofUp", bldingUI.overviewCanvas.transform.position);
 				// move overviewCanvas to the top of the building
 				if( bldingUI != null )
-					bldingUI.overviewCanvas.transform.position = floors[floors.Count - 1].transform.position;
+					bldingUI.overviewCanvas.transform.position = floors[floors.Count - 1].transform.position +
+											Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
+				
 			} 
-			floors.Add( Instantiate( floorPrefab,
+			else {
+				floors.Add( Instantiate( floorPrefab,
 			                        floors[floors.Count - 1].position + heightBetweenFloors,
 			                        transform.rotation ) as Transform ); // new floor above last floor
-			floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
-			// move overviewCanvas to the top of the building
-			if( bldingUI != null )
-				bldingUI.overviewCanvas.transform.position = floors[floors.Count - 1].transform.position +
-										Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
+				floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
+				// move overviewCanvas to the top of the building
+				// start ceiling moving up
+				if( bldingUI != null )
+					bldingUI.overviewCanvas.transform.position = floors[floors.Count - 1].transform.position +
+											Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
+			}
 			dustParticles.Play();
 		}
 	}
 
 
 	IEnumerator Construct( Animator anim ) {
-		int buildState = Animator.StringToHash("Build");
+		int buildState = Animator.StringToHash("BuildBase");
 		while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash == buildState ) {
 			yield return null;
 		}
 		isRunning = true;
+		StartCoroutine( CreateRoof() );
+	}
+	IEnumerator CreateRoof() {
+		ceiling = Instantiate( roofPrefab, transform.position, transform.rotation ) as Transform;
+		Animator anim = ceiling.GetComponent<Animator>();
+		int state = Animator.StringToHash("BuildBase");
+		while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash == state ) {
+			yield return null;
+		}
+	}
+	IEnumerator MoveRoofUp( Vector3 target) {
+		ceiling.transform.position = target;
+		Animator anim = ceiling.GetComponent<Animator>();
+		int state = Animator.StringToHash("BuildFloor");
+		anim.Play( state );
+		while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash == state ) {
+			yield return null;
+		}
 	}
 
 	void Update () {

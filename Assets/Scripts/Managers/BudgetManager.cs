@@ -113,6 +113,7 @@ public class BudgetManager : MonoBehaviour {
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
 			thisBuilding.BuildFloor();
 		}
+		CalculateRevenue();
 	}
 
 	void UpdateCostToBuildForPlots() {
