@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Road
   - Terrain
+  - Building
   layers:
   - Default
   - TransparentFX

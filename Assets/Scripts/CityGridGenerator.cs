@@ -22,6 +22,15 @@ public class CityGridGenerator : MonoBehaviour {
 		}
 	}
 
+	void OnDrawGizmos() {
+		Vector3 center = transform.position;
+		center.x += buildingsGrid.x * sizeOfBuilding.x / 2;
+		center.z += buildingsGrid.y * sizeOfBuilding.z / 2;
+		Vector3 size = sizeOfBuilding;
+		size.x *= buildingsGrid.x + 1;
+		size.z *= buildingsGrid.y + 1;
+		Gizmos.DrawWireCube( center, size );
+	}
 
 	// Use this for initialization
 	void Start () {

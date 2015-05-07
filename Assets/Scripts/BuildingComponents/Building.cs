@@ -7,6 +7,8 @@ public class Building : MonoBehaviour {
 
 	[Header("Status")]
 	public int age;
+	public bool isBuilt;
+	public bool isRunning;
 
 	[Header("Balance")]
 	public bool startBuilt;
@@ -27,8 +29,7 @@ public class Building : MonoBehaviour {
 
 	[Header("Data")]
 	public List<Transform> floors;
-	public bool isBuilt;
-	public bool isRunning;
+	
 
 	private Transform ceiling;
     private BuildingUI bldingUI;
@@ -42,7 +43,7 @@ public class Building : MonoBehaviour {
 		bldingUI.overviewCanvas.gameObject.SetActive( true );
 		bldingUI.overviewCanvas.transform.position = newFloor.position + newFloor.up * ( newFloor.localScale.y / 2 + .3f );
 		dustParticles.Play();
-		newFloor.GetComponent<Animator>().Play( "Build" );
+		newFloor.GetComponent<Animator>().Play( "BuildBase" );
 		StartCoroutine( "Construct", newFloor.GetComponent<Animator>() );
 		return true;
 
@@ -51,32 +52,35 @@ public class Building : MonoBehaviour {
 
 
 	public void BuildFloor() {
-		if( isRunning ) {
-			if(floors.Count == 1 ) {
-				floors.Add( Instantiate( floorPrefab,
-			                        floors[floors.Count - 1].position,
-			                        transform.rotation ) as Transform ); // new floor above last floor
-				floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
+		if( isBuilt ) {
+			if( isRunning ) {
+				if(floors.Count == 1 ) {
+					floors.Add( Instantiate( floorPrefab,
+				                        floors[floors.Count - 1].position,
+				                        transform.rotation ) as Transform ); // new floor above last floor
+					floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
+				} 
+				else {
+					floors.Add( Instantiate( floorPrefab,
+				                        floors[floors.Count - 1].position,
+				                        transform.rotation ) as Transform ); // new floor above last floor
+					floors[floors.Count - 1].Translate(heightBetweenFloors, Space.Self);
+					floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
+					
+				}
+				Animator anim = floors[floors.Count - 1].GetComponent<Animator>();
+				int state = Animator.StringToHash("BuildFloor");
+				anim.Play( state );
+				// move overviewCanvas to the top of the building
 				// start ceiling moving up
 				StartCoroutine( "MoveRoofUp", bldingUI.overviewCanvas.transform.position);
-				// move overviewCanvas to the top of the building
 				if( bldingUI != null )
 					bldingUI.overviewCanvas.transform.position = floors[floors.Count - 1].transform.position +
-											Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
-				
-			} 
-			else {
-				floors.Add( Instantiate( floorPrefab,
-			                        floors[floors.Count - 1].position + heightBetweenFloors,
-			                        transform.rotation ) as Transform ); // new floor above last floor
-				floors[floors.Count - 1].SetParent( transform ); // parent new floor to building
-				// move overviewCanvas to the top of the building
-				// start ceiling moving up
-				if( bldingUI != null )
-					bldingUI.overviewCanvas.transform.position = floors[floors.Count - 1].transform.position +
-											Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
+									Vector3.up * ( floors[floors.Count - 1].transform.localScale.y / 2 + .3f );
+				dustParticles.Play();
+			} else {
+				Debug.LogWarning(gameObject.name + " hasn't finished building and can't BuildFloor()");
 			}
-			dustParticles.Play();
 		}
 	}
 
@@ -91,11 +95,14 @@ public class Building : MonoBehaviour {
 	}
 	IEnumerator CreateRoof() {
 		ceiling = Instantiate( roofPrefab, transform.position, transform.rotation ) as Transform;
+		ceiling.SetParent( transform );
+		ceiling.Translate( -heightBetweenFloors, Space.Self );
 		Animator anim = ceiling.GetComponent<Animator>();
 		int state = Animator.StringToHash("BuildBase");
 		while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash == state ) {
 			yield return null;
 		}
+// 		isRunning = true;
 	}
 	IEnumerator MoveRoofUp( Vector3 target) {
 		ceiling.transform.position = target;
@@ -111,12 +118,16 @@ public class Building : MonoBehaviour {
 		
 	}
 
+	void Awake() {
+		bldingUI = GetComponent<BuildingUI>();
+	}
+
     void Start() {
-        bldingUI = GetComponent<BuildingUI>();
+        
         age = 0;
 		isBuilt = false;
 		if( startBuilt ) {
-			Destroy( plot.gameObject );
+			plot.gameObject.SetActive( false );
 			CreateBuilding();
 		}
 	}

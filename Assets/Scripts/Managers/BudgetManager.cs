@@ -14,6 +14,7 @@ public class BudgetManager : MonoBehaviour {
 	public float timePerPaycheck;
 	public int paychecksPerConstruction;
 	public float costToBuildIncreaseRate;
+	public bool buildFloorsEveryConstruction;
 
 	[Header("Setup")]
 
@@ -93,7 +94,7 @@ public class BudgetManager : MonoBehaviour {
 
 	void ApplyPaycheck() {
 		paychecks++;
-		if( paychecks%paychecksPerConstruction == 0) {
+		if( buildFloorsEveryConstruction && paychecks%paychecksPerConstruction == 0) {
 			BuildFloorOnAll();
 		}
 		CalculateRevenue();
