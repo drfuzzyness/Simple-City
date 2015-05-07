@@ -11,7 +11,7 @@ public class BuildingUI : MonoBehaviour {
 	public Color negativeCashflowColor;
 	public MeshRenderer buildingPlot;
 	public Material hoverMaterial;
-	public Material passiveMaterial;
+	public Material invisibleMaterial;
 	private Building blding;
 	
 	private BuildingRevenue bldingRev;
@@ -41,7 +41,7 @@ public class BuildingUI : MonoBehaviour {
 	public void MouseEnter() {
 		if( !blding.isBuilt ){
 			buildingPlot.material = hoverMaterial;
-			overviewCanvas.gameObject.SetActive(true);
+// 			overviewCanvas.gameObject.SetActive(true);
 		} else if( blding.isBuilt && blding.isRunning ) {
 			overviewCanvas.gameObject.SetActive( true );
 			Debug.Log("sup");
@@ -50,9 +50,9 @@ public class BuildingUI : MonoBehaviour {
 	
 	public void MouseExit() {
 		if( !blding.isBuilt ){
-// 			buildingPlot.material = passiveMaterial;
-			buildingPlot.gameObject.SetActive( false );
-			overviewCanvas.gameObject.SetActive(false);
+			buildingPlot.material = invisibleMaterial;
+// 			buildingPlot.GetComponent<Renderer>().material
+// 			overviewCanvas.gameObject.SetActive(false);
 		} else if( blding.isBuilt && blding.isRunning ) {
 			overviewCanvas.gameObject.SetActive( false );
 			Debug.Log("bye");

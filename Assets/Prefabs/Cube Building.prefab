@@ -28,6 +28,7 @@ GameObject:
   - 33: {fileID: 3308786}
   - 23: {fileID: 2301150}
   - 114: {fileID: 11433806}
+  - 114: {fileID: 11474168}
   m_Layer: 0
   m_Name: Building Plot
   m_TagString: Untagged
@@ -65,9 +66,8 @@ GameObject:
   - 114: {fileID: 11450940}
   - 114: {fileID: 11475652}
   - 114: {fileID: 11468858}
-  - 65: {fileID: 6529316}
   m_Layer: 0
-  m_Name: Building
+  m_Name: Cube Building
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,18 +160,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110674}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &6529316
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155092}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 20, y: 5, z: 20}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &11433806
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,10 +205,10 @@ MonoBehaviour:
   isBuilt: 0
   isRunning: 0
   startBuilt: 0
-  baseFloorPrefab: {fileID: 416914, guid: 73337f97607a54b8a8d8d0fbe96ca8cf, type: 2}
-  floorPrefab: {fileID: 430948, guid: 83cbdbcfdb9464cc581a3228e81ecd30, type: 2}
-  roofPrefab: {fileID: 400000, guid: 234c19a13e6be4dafb5539c273d02754, type: 3}
-  heightBetweenFloors: {x: 0, y: 2.0999999, z: 0}
+  baseFloorPrefab: {fileID: 456812, guid: 01f605a4e745c4f8ab05097c619d37aa, type: 2}
+  floorPrefab: {fileID: 456812, guid: 01f605a4e745c4f8ab05097c619d37aa, type: 2}
+  roofPrefab: {fileID: 0}
+  heightBetweenFloors: {x: 0, y: 5, z: 0}
   dustParticles: {fileID: 19883450}
   plot: {fileID: 11433806}
   floors: []
@@ -263,7 +251,19 @@ MonoBehaviour:
   negativeCashflowColor: {r: 1, g: .310344756, b: 0, a: 1}
   buildingPlot: {fileID: 2301150}
   hoverMaterial: {fileID: 2100000, guid: 6270810d877934f1fb39e4a1d22e4be1, type: 2}
-  passiveMaterial: {fileID: 2100000, guid: aa02b39bd167f4ee795a43ce1ceeac5a, type: 2}
+  invisibleMaterial: {fileID: 2100000, guid: 0b062ce31df3d482299fd2290a411e03, type: 2}
+--- !u!114 &11474168
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4990fec0d0be49aba6972c4a6a0c222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 0}
 --- !u!114 &11475652
 MonoBehaviour:
   m_ObjectHideFlags: 1

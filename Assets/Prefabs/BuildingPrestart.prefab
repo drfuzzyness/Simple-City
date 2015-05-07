@@ -30,6 +30,7 @@ GameObject:
   - 65: {fileID: 6515130}
   - 23: {fileID: 2313074}
   - 114: {fileID: 11423888}
+  - 114: {fileID: 11498476}
   m_Layer: 0
   m_Name: Building Plot
   m_TagString: Untagged
@@ -237,6 +238,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   age: 0
+  isBuilt: 0
+  isRunning: 0
   startBuilt: 1
   baseFloorPrefab: {fileID: 473840, guid: 79a1be3ebeffd487398bfc3babcce90d, type: 2}
   floorPrefab: {fileID: 400000, guid: 0c282d7f237254c7cafe8999cfc2ae93, type: 3}
@@ -245,8 +248,6 @@ MonoBehaviour:
   dustParticles: {fileID: 19893590}
   plot: {fileID: 11423888}
   floors: []
-  isBuilt: 0
-  isRunning: 0
 --- !u!114 &11404184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -261,7 +262,11 @@ MonoBehaviour:
   overviewCanvas: {fileID: 22307374}
   revText: {fileID: 11487648}
   positiveCashflowColor: {r: .365484446, g: .441176474, b: .145977512, a: 1}
+  neutralColor: {r: 0, g: 0, b: 0, a: 0}
   negativeCashflowColor: {r: 1, g: .310344756, b: 0, a: 1}
+  buildingPlot: {fileID: 2313074}
+  hoverMaterial: {fileID: 2100000, guid: 6270810d877934f1fb39e4a1d22e4be1, type: 2}
+  invisibleMaterial: {fileID: 2100000, guid: 0b062ce31df3d482299fd2290a411e03, type: 2}
 --- !u!114 &11423888
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -402,6 +407,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: $20
+--- !u!114 &11498476
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 134634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4990fec0d0be49aba6972c4a6a0c222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  building: {fileID: 11403258}
 --- !u!198 &19893590
 ParticleSystem:
   m_ObjectHideFlags: 1

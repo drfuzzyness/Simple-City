@@ -3,14 +3,15 @@ using System.Collections;
 
 public class Floor : MonoBehaviour {
 	
+	public Building building;
 	private BuildingUI bldingUI;
 
 	// Use this for initialization
 	void Start () {
-		bldingUI = transform.parent.GetComponent<BuildingUI>();
-		if( bldingUI == null) {
+		if( building == null) {
 			Debug.LogError( gameObject.name + " can't get parent BuildingUI." );
 		}
+		bldingUI = building.GetComponent<BuildingUI>();
 	}
 	
 	// Update is called once per frame

@@ -13,7 +13,7 @@ public class BuildingRevenue : MonoBehaviour {
 	private BuildingUI bldingUI;
 	
 	public bool BuyBuilding() {
-		if( BudgetManager.instance.purchase( costToBuild ) ) {
+		if( BudgetManager.instance.Purchase( costToBuild ) ) {
 			revenuePerFloor = Mathf.Ceil(costToBuild / 5);
 			CalculateRevenue();
 			blding.CreateBuilding();

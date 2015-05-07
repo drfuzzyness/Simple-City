@@ -29,8 +29,9 @@ public class BudgetManager : MonoBehaviour {
 
 	private int numBuiltBuildings;
 	private int paychecks;
+	public bool paused;
 
-	public bool purchase( float price ) {
+	public bool Purchase( float price ) {
 		if( money > price ) {
 			money -= price;
 			numBuiltBuildings++;
@@ -38,8 +39,17 @@ public class BudgetManager : MonoBehaviour {
 			UpdateUI();
 			return true;
 		}
+		PlayerUIManager.instance.NotEnoughtMoney();
 		return false;
 	}
+	
+// 	public void Pause() {
+// 		paused = true;
+// 	}
+// 	
+// 	public void Resume() {
+// 		paused = false;
+// 	}
 
 	void Awake() {
 		instance = this;
@@ -48,6 +58,7 @@ public class BudgetManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		paused = false;
 		countdown = timePerPaycheck;
 		CalculateRevenue();
 		UpdateUI();
@@ -83,7 +94,9 @@ public class BudgetManager : MonoBehaviour {
 	}
 
 	void UpdateCountdown() {
-		countdown -= Time.deltaTime;
+		if( !paused ) {
+			countdown -= Time.deltaTime;
+		}
 		if( countdown < 0 ) {
 			countdown = timePerPaycheck;
 			ApplyPaycheck();
