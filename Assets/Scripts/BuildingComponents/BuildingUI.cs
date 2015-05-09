@@ -12,8 +12,10 @@ public class BuildingUI : MonoBehaviour {
 	public MeshRenderer buildingPlot;
 	public Material hoverMaterial;
 	public Material invisibleMaterial;
+	public enum NeighborVisualization { Off, Spheres, Connections };
+	public NeighborVisualization neighborVisualization;
 	private Building blding;
-	
+	private SphereOfInfluence sphrinf;
 	private BuildingRevenue bldingRev;
 	
 	
@@ -21,11 +23,42 @@ public class BuildingUI : MonoBehaviour {
 	void Start () {
 		blding = GetComponent<Building>();
 		bldingRev = GetComponent<BuildingRevenue>();
+		sphrinf = GetComponent<SphereOfInfluence>();
 	}
 	
 	void Update () {
 		if( bldingRev != null )
 			UpdateMoneyCanvas();
+	}
+	
+	void OnPostRender() {
+		DrawSphereVisualization();	
+	}
+	
+	
+	void DrawSphereVisualization() {
+		if( blding.isRunning ) {
+			switch( neighborVisualization ) {
+				case NeighborVisualization.Spheres:
+					Gizmos.DrawWireSphere( transform.position, sphrinf.radius );
+					break;
+				case NeighborVisualization.Connections:
+					foreach( Building thisBld in sphrinf.neighbors) {
+// 						Gizmos.DrawLine( transform.position, thisBld.transform.position );
+						Color bldColor = negativeCashflowColor;
+						if( this.GetComponent<BuildingRevenue>().revenue >= 0 ) {
+							bldColor = positiveCashflowColor;
+						}
+						SimpleLineRenderer.RenderLine( thisBld.transform.position,
+													   transform.position,
+													   bldColor, Color.white );
+					}
+					break;
+				default: 
+					break;
+			}
+			
+		}
 	}
 	
 	public void MouseDown() {

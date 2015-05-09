@@ -6,8 +6,7 @@ public class SphereOfInfluence : MonoBehaviour {
 	
 	public enum InfluenceMode { AllInRadius, ScaledWithDistance };
 	public enum CalculationMode { AverageValue, LinearBuildings };
-	public enum VisualizationsMode { Spheres, Connections };
-	public VisualizationsMode debugVisualizationMode;
+	
 	public float radius;
 	public List<Building> neighbors;
 	private Building blding;
@@ -24,26 +23,25 @@ public class SphereOfInfluence : MonoBehaviour {
 	
 	}
 	
-	void OnDrawGizmos() {
-		if( blding.isRunning ) {
-			switch( debugVisualizationMode ) {
-				case VisualizationsMode.Spheres:
-					Gizmos.DrawWireSphere( transform.position, radius );
-					break;
-				case VisualizationsMode.Connections:
-					foreach( Building thisBld in neighbors) {
-						Gizmos.DrawLine( transform.position, thisBld.transform.position );
-					}
-					break;
-			}
-			
-		}
-	}
+// 	void OnDrawGizmos() {
+// 		if( blding.isRunning ) {
+// 			switch( debugVisualizationMode ) {
+// 				case VisualizationsMode.Spheres:
+// 					Gizmos.DrawWireSphere( transform.position, radius );
+// 					break;
+// 				case VisualizationsMode.Connections:
+// 					foreach( Building thisBld in neighbors) {
+// 						Gizmos.DrawLine( transform.position, thisBld.transform.position );
+// 					}
+// 					break;
+// 			}
+// 			
+// 		}
+// 	}
 	
 	// Update is called once per frame
 	void Update () {
-		UpdateNeighborsList();
-		
+		UpdateNeighborsList();	
 	}
 	
 	 public void UpdateNeighborsList() {
