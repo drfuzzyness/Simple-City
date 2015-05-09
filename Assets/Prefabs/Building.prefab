@@ -55,7 +55,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &155092
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 26.1443653, y: 28.7999992, z: -179.348404}
+  m_LocalPosition: {x: 98.8593903, y: 212.181122, z: -110.749161}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417310}
@@ -184,9 +184,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ce3cb0e657a4483c8b8de18fc66458b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pricetag: {fileID: 0}
-  hoverMaterial: {fileID: 2100000, guid: 6270810d877934f1fb39e4a1d22e4be1, type: 2}
-  passiveMaterial: {fileID: 2100000, guid: 0b062ce31df3d482299fd2290a411e03, type: 2}
 --- !u!114 &11441602
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +215,7 @@ MonoBehaviour:
   isBuilt: 0
   isRunning: 0
   startBuilt: 0
+  animationsEnabled: 0
   baseFloorPrefab: {fileID: 416914, guid: 73337f97607a54b8a8d8d0fbe96ca8cf, type: 2}
   floorPrefab: {fileID: 430948, guid: 83cbdbcfdb9464cc581a3228e81ecd30, type: 2}
   roofPrefab: {fileID: 421974, guid: 99734accbcc884cf48b57e200919d0cf, type: 2}
@@ -277,8 +275,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   revenue: 0
-  costToBuild: 3
-  revenuePerFloor: 0
+  marketValue: 0
+  perFloorMultiplier: 0
+  negativePerFloorMultiplier: 0
   modifierForNegativeFloors: .5
   numPositiveFloors: 5
 --- !u!114 &11497078
@@ -1452,7 +1451,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 3.05101275e-06, y: 2.5999999}
+  m_AnchoredPosition: {x: 0, y: .289999992}
   m_SizeDelta: {x: 202.5, y: 202.5}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22491584

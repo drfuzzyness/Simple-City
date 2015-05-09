@@ -3,8 +3,6 @@ using System.Collections;
 
 [RequireComponent( typeof( MeshCollider ))]
 public class Planet : MonoBehaviour {
-
-	
 	public static Vector3 GetNormalFromRay( Ray ray ) {
 		RaycastHit hit = new RaycastHit();
 		if ( Physics.Raycast( ray, out hit) ) {
@@ -22,14 +20,5 @@ public class Planet : MonoBehaviour {
 			return Vector3.Cross( (p1 - p0), (p2 - p0) );
 		}
 		return Vector3.zero;
-	}
-	
-	void Start() {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 }

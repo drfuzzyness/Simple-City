@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class BuildingUI : MonoBehaviour {
 
-	public Canvas overviewCanvas;
+	public Transform overviewCanvas;
 	public Text revText;
 	public Color positiveCashflowColor;
 	public Color neutralColor;
@@ -41,10 +41,9 @@ public class BuildingUI : MonoBehaviour {
 	public void MouseEnter() {
 		if( !blding.isBuilt ){
 			buildingPlot.material = hoverMaterial;
-// 			overviewCanvas.gameObject.SetActive(true);
+			overviewCanvas.gameObject.SetActive(true);
 		} else if( blding.isBuilt && blding.isRunning ) {
 			overviewCanvas.gameObject.SetActive( true );
-			Debug.Log("sup");
 		}
 	}
 	
@@ -52,10 +51,9 @@ public class BuildingUI : MonoBehaviour {
 		if( !blding.isBuilt ){
 			buildingPlot.material = invisibleMaterial;
 // 			buildingPlot.GetComponent<Renderer>().material
-// 			overviewCanvas.gameObject.SetActive(false);
+			overviewCanvas.gameObject.SetActive(false);
 		} else if( blding.isBuilt && blding.isRunning ) {
 			overviewCanvas.gameObject.SetActive( false );
-			Debug.Log("bye");
 		}
 	}
 	
@@ -71,7 +69,7 @@ public class BuildingUI : MonoBehaviour {
 			}
 		} else if ( !blding.isBuilt ) {
 			revText.color = neutralColor;
-			revText.text = "$" + bldingRev.costToBuild;
+			revText.text = "$" + bldingRev.combinedValue;
 		}
 	}
 

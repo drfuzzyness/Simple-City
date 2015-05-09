@@ -4,10 +4,10 @@ using UnityEngine.UI;
 
 public class BuildingPlot : MonoBehaviour {
 
-	public Text pricetag;
-	public Material hoverMaterial;
-	public Material passiveMaterial;
-	private BuildingRevenue bldRev;
+// 	public Text pricetag;
+// 	public Material hoverMaterial;
+// 	public Material passiveMaterial;
+// 	private BuildingRevenue bldRev;
 
 	// Use this for initialization
 	void Start () {

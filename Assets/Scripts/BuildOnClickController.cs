@@ -27,11 +27,12 @@ public class BuildOnClickController : MonoBehaviour {
 							if( hit.collider.tag == "Terrain" ) {
 								// try to build a building on terrain
 								Building newBuild = Instantiate( buildingPrefab, hit.point, Quaternion.identity ) as Building;
+								newBuild.CreateBuilding();
 								BuildingManager.instance.buildings.Add( newBuild );
 							}
 						break;
 					case BuildMode.ClickOnMesh:
-						Vector3 normal = Planet.GetNormalFromRay( clickRay );
+						Vector3 normal = GetNormalFromRay( clickRay );
 						Quaternion rotation = Quaternion.LookRotation( normal );
 						rotation *= Quaternion.Euler( Vector3.right * 90f);
 						Debug.Log( rotation );
@@ -45,4 +46,23 @@ public class BuildOnClickController : MonoBehaviour {
 		}
 		// buttons
 	}
+	public static Vector3 GetNormalFromRay( Ray ray ) {
+		RaycastHit hit = new RaycastHit();
+		if ( Physics.Raycast( ray, out hit) ) {
+			MeshCollider meshCollider = hit.collider as MeshCollider;
+			Mesh mesh = meshCollider.sharedMesh;
+			Vector3[] vertices = mesh.vertices;
+			int[] triangles = mesh.triangles;
+			Vector3 p0 = vertices[triangles[hit.triangleIndex * 3 + 0]];
+	        Vector3 p1 = vertices[triangles[hit.triangleIndex * 3 + 1]];
+	        Vector3 p2 = vertices[triangles[hit.triangleIndex * 3 + 2]];
+			Transform hitTransform = hit.collider.transform;
+	        p0 = hitTransform.TransformPoint(p0);
+	        p1 = hitTransform.TransformPoint(p1);
+	        p2 = hitTransform.TransformPoint(p2);
+			return Vector3.Cross( (p1 - p0), (p2 - p0) );
+		}
+		return Vector3.zero;
+	}
+	
 }

@@ -3,53 +3,86 @@ using System.Collections;
 
 public class BuildingRevenue : MonoBehaviour {
 	
+	public enum ValueCalculationMode {QualityOfLife, PunishHighrises }
+	
+	[Header("Status")]
 	public float revenue;
-	public float costToBuild;
-	public float revenuePerFloor;
+	public float combinedValue; // changes with the surrounding neighborhood
+	[SerializeField]
+	private ValueCalculationMode valueCalculationMode;
+	
+	[Header("Quality of Life Algorithum")]
+	public float marketValue;
+	public float structureValue; // value based on the actual structure independant of 
+	
+	[Header("Punish Highrise Algorithum")]
+	public float perFloorMultiplier; // should be multiplied against the marketValue
+	public float negativePerFloorMultiplier; // used to punish high-rise buildings
 	public float modifierForNegativeFloors;
 	public int numPositiveFloors;
 	
+	
+	private delegate void ValueCalculation();
+	private ValueCalculation TheValueCalculation;
 	private Building blding;
 	private BuildingUI bldingUI;
 	
 	public bool BuyBuilding() {
-		if( BudgetManager.instance.Purchase( costToBuild ) ) {
-			revenuePerFloor = Mathf.Ceil(costToBuild / 5);
+		if( BudgetManager.instance.Purchase( combinedValue ) ) {
+			perFloorMultiplier = Mathf.Ceil(marketValue / 5);
 			CalculateRevenue();
 			blding.CreateBuilding();
 			return true;
 		}
 		else {
-			Debug.LogWarning( "not enough money" );
+// 			Debug.LogWarning( "not enough money" );
 			return false;
 		}
 	}
 	
-	public void CalculateRevenue() {
+	void CalculateRevenueBasedOnFloors() {
 		if( blding.floors.Count < numPositiveFloors ) {
-			revenue = revenuePerFloor * blding.floors.Count;
+			revenue = perFloorMultiplier * blding.floors.Count;
 		}
 		else {
-			revenue = (revenuePerFloor * numPositiveFloors) - 
-				Mathf.Round( (blding.floors.Count - numPositiveFloors) * revenuePerFloor / 0.4f );
+			revenue = (perFloorMultiplier * numPositiveFloors) - 
+				Mathf.Round( (blding.floors.Count - numPositiveFloors) * negativePerFloorMultiplier);
 		}
 
+	}
+	
+	void CalculateRevenueQualityOfLife() {
+		
 	}
 	
 	public void UpdateCostToBuild( float increaseRate ) {
 		// Increase rate should be >= 1
 		if( !blding.isBuilt ) {
-			costToBuild = Mathf.Round( costToBuild * increaseRate );
-			blding.plot.updatePricetagDisplay();
+			marketValue = Mathf.Round( marketValue * increaseRate );
 		}
 	}
+	
+	void CalculateRevenue() {
+		TheValueCalculation();
+	}
 
-	void Start () {
+	void Awake () {
 		blding = GetComponent<Building>();
 		bldingUI = GetComponent<BuildingUI>();
 	}
 	
+	void Start () {
+		switch( valueCalculationMode ) {
+			case ValueCalculationMode.PunishHighrises:
+				TheValueCalculation = CalculateRevenueBasedOnFloors;
+				break;
+			case ValueCalculationMode.QualityOfLife:
+				TheValueCalculation = CalculateRevenueQualityOfLife;
+				break;
+		}
+	}
+	
 	void Update () {
-			CalculateRevenue();
+		CalculateRevenue();
 	}
 }
