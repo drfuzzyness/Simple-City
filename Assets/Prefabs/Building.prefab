@@ -99,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 166.855286, y: 9.91633701, z: -43.4820251}
+  m_LocalPosition: {x: 95.0999985, y: 9.51000023, z: -98.7900009}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417310}
@@ -217,9 +217,9 @@ MonoBehaviour:
   isRunning: 0
   startBuilt: 0
   animationsEnabled: 1
-  baseFloorPrefab: {fileID: 416914, guid: 73337f97607a54b8a8d8d0fbe96ca8cf, type: 2}
-  floorPrefab: {fileID: 430948, guid: 83cbdbcfdb9464cc581a3228e81ecd30, type: 2}
-  roofPrefab: {fileID: 0}
+  baseFloorPrefab: {fileID: 405856, guid: 59ee3bb9b04e844df8a47f8b12294173, type: 2}
+  floorPrefab: {fileID: 466616, guid: 23460a192ede241f4b7651be98158037, type: 2}
+  roofPrefab: {fileID: 444916, guid: a5788e2d5f3bb4951b44e09e316fb763, type: 2}
   heightBetweenFloors: {x: 0, y: 2.0999999, z: 0}
   dustParticles: {fileID: 19883450}
   plot: {fileID: 11433806}
@@ -311,6 +311,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 11450940}
+  size: {x: 0, y: 0, z: 0}
 --- !u!114 &11499660
 MonoBehaviour:
   m_ObjectHideFlags: 1

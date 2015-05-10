@@ -39,25 +39,25 @@ public class BuildingUI : MonoBehaviour {
 	
 	public void DrawSphereVisualization() {
 		if( blding.isRunning ) {
-			Debug.Log( "Trying to visualize" );
+// 			Debug.Log( "Trying to visualize" );
 			switch( neighborVisualization ) {
 				case NeighborVisualization.Spheres:
 					Gizmos.DrawWireSphere( transform.position, sphrinf.radius );
 					break;
 				case NeighborVisualization.Connections:
-					Debug.Log("y");
+// 					Debug.Log("y");
 					foreach( Building thisBld in sphrinf.neighbors) {
 // 						Gizmos.DrawLine( transform.position, thisBld.transform.position );
 						Color bldColor = negativeCashflowColor;
-						Debug.Log("z");
+// 						Debug.Log("z");
 						if( this.GetComponent<BuildingRevenue>().revenue >= 0 ) {
 							bldColor = positiveCashflowColor;
 						}
-						Debug.Log("a");
+// 						Debug.Log("a");
 						SimpleLineRenderer.instance.RenderLine( thisBld.transform.position,
 													   transform.position,
 													   Color.red, Color.white );
-					    Debug.Log("b");
+// 					    Debug.Log("b");
 					}
 					break;
 				default: 
@@ -69,8 +69,8 @@ public class BuildingUI : MonoBehaviour {
 	
 	public void MouseDown() {
 		if( !blding.isBuilt) {
-			if( bldingRev.BuyBuilding() ) {
-				buildingPlot.gameObject.SetActive( false );
+			if( bldingRev.BuyNewBuilding() ) {
+// 				buildingPlot.gameObject.SetActive( false );
 // 				gameObject.SetActive( false );
 			}
 		}

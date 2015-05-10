@@ -4,6 +4,7 @@ using System.Collections;
 public class Floor : MonoBehaviour {
 	
 	public Building building;
+	public Vector3 size;
 	private BuildingUI bldingUI;
 
 	// Use this for initialization
@@ -12,11 +13,6 @@ public class Floor : MonoBehaviour {
 			Debug.LogError( gameObject.name + " can't get parent BuildingUI." );
 		}
 		bldingUI = building.GetComponent<BuildingUI>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 	
 	void OnMouseDown() {

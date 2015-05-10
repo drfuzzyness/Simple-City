@@ -7,12 +7,12 @@ public class BuildingRevenue : MonoBehaviour {
 	
 	[Header("Status")]
 	public float revenue;
-	public float combinedValue; // changes with the surrounding neighborhood
+	public float combinedValue; 
 	[SerializeField]
 	private ValueCalculationMode valueCalculationMode;
 	
 	[Header("Quality of Life Algorithum")]
-	public float marketValue;
+	public float marketValue; // changes with the surrounding neighborhood
 	public float structureValue; // value based on the actual structure independant of 
 	
 	[Header("Punish Highrise Algorithum")]
@@ -27,11 +27,22 @@ public class BuildingRevenue : MonoBehaviour {
 	private Building blding;
 	private BuildingUI bldingUI;
 	
-	public bool BuyBuilding() {
+	public bool BuyNewBuilding() {
 		if( BudgetManager.instance.Purchase( combinedValue ) ) {
 			perFloorMultiplier = Mathf.Ceil(marketValue / 5);
-			CalculateRevenue();
 			blding.CreateBuilding();
+			return true;
+		}
+		else {
+// 			Debug.LogWarning( "not enough money" );
+			return false;
+		}
+	}
+	
+	public bool BuyExistingBuilding() {
+		Debug.LogError( "BuyExistingBuilding() is not yet implemented." );
+		if( BudgetManager.instance.Purchase( combinedValue ) ) {
+			perFloorMultiplier = Mathf.Ceil(marketValue / 5);
 			return true;
 		}
 		else {
