@@ -45,15 +45,19 @@ public class BuildingUI : MonoBehaviour {
 					Gizmos.DrawWireSphere( transform.position, sphrinf.radius );
 					break;
 				case NeighborVisualization.Connections:
+					Debug.Log("y");
 					foreach( Building thisBld in sphrinf.neighbors) {
 // 						Gizmos.DrawLine( transform.position, thisBld.transform.position );
 						Color bldColor = negativeCashflowColor;
+						Debug.Log("z");
 						if( this.GetComponent<BuildingRevenue>().revenue >= 0 ) {
 							bldColor = positiveCashflowColor;
 						}
+						Debug.Log("a");
 						SimpleLineRenderer.instance.RenderLine( thisBld.transform.position,
 													   transform.position,
 													   Color.red, Color.white );
+					    Debug.Log("b");
 					}
 					break;
 				default: 

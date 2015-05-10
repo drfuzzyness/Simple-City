@@ -92,9 +92,9 @@ public class Building : MonoBehaviour {
 
 	IEnumerator Construct( Transform newBase ) {
 		Animator anim = newBase.GetComponent<Animator>();
-		int buildState = Animator.StringToHash("BuildBase");
+		int doneState = Animator.StringToHash("Done");
 		if( animationsEnabled ) {
-			while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash == buildState ) {
+			while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash != doneState ) {
 				yield return null;
 			}
 		}
@@ -109,8 +109,8 @@ public class Building : MonoBehaviour {
 			ceiling.SetParent( transform );
 			ceiling.Translate( -heightBetweenFloors, Space.Self );
 			Animator anim = ceiling.GetComponent<Animator>();
-			int state = Animator.StringToHash("BuildBase");
-			while( animationsEnabled && anim.GetCurrentAnimatorStateInfo(0).shortNameHash == state ) {
+			int doneState = Animator.StringToHash("Idle");
+			while( animationsEnabled && anim.GetCurrentAnimatorStateInfo(0).shortNameHash != doneState ) {
 				yield return null;
 			}
 		}
@@ -119,8 +119,9 @@ public class Building : MonoBehaviour {
 	}
 	IEnumerator MoveRoofUp( Vector3 target) {
 		if( roofPrefab != null ) {
-			ceiling.transform.position = target;
+// 			ceiling.transform.position = target;
 			Animator anim = ceiling.GetComponent<Animator>();
+			anim.SetTrigger( "RaiseRoof" );
 			int state = Animator.StringToHash("BuildFloor");
 			if( animationsEnabled ) {
 				anim.Play( state );

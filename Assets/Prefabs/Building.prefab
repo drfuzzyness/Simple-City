@@ -55,7 +55,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &155092
 GameObject:
   m_ObjectHideFlags: 0
@@ -67,6 +67,7 @@ GameObject:
   - 114: {fileID: 11450940}
   - 114: {fileID: 11475652}
   - 114: {fileID: 11468858}
+  - 114: {fileID: 11454964}
   m_Layer: 0
   m_Name: Building
   m_TagString: Building
@@ -98,7 +99,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 98.8593903, y: 212.181122, z: -110.749161}
+  m_LocalPosition: {x: 166.855286, y: 9.91633701, z: -43.4820251}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417310}
@@ -215,14 +216,27 @@ MonoBehaviour:
   isBuilt: 0
   isRunning: 0
   startBuilt: 0
-  animationsEnabled: 0
+  animationsEnabled: 1
   baseFloorPrefab: {fileID: 416914, guid: 73337f97607a54b8a8d8d0fbe96ca8cf, type: 2}
   floorPrefab: {fileID: 430948, guid: 83cbdbcfdb9464cc581a3228e81ecd30, type: 2}
-  roofPrefab: {fileID: 421974, guid: 99734accbcc884cf48b57e200919d0cf, type: 2}
+  roofPrefab: {fileID: 0}
   heightBetweenFloors: {x: 0, y: 2.0999999, z: 0}
   dustParticles: {fileID: 19883450}
   plot: {fileID: 11433806}
   floors: []
+--- !u!114 &11454964
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee23e329cae7b4dab9effd4a77e96ec3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  radius: 70
+  neighbors: []
 --- !u!114 &11462764
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,7 +269,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45c6f5e8fc0e6482195b8a0c6df2eb61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overviewCanvas: {fileID: 22370676}
+  overviewCanvas: {fileID: 22438884}
   revText: {fileID: 11499660}
   positiveCashflowColor: {r: .549019635, g: .909803987, b: .352941185, a: 1}
   neutralColor: {r: .875, g: .875, b: .875, a: 1}
@@ -263,6 +277,8 @@ MonoBehaviour:
   buildingPlot: {fileID: 2301150}
   hoverMaterial: {fileID: 2100000, guid: 6270810d877934f1fb39e4a1d22e4be1, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 0b062ce31df3d482299fd2290a411e03, type: 2}
+  lineRenderMat: {fileID: 2100000, guid: 1f4f3a54424754f03b39e316d3b9ece9, type: 2}
+  neighborVisualization: 2
 --- !u!114 &11475652
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -275,7 +291,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   revenue: 0
+  combinedValue: 0
+  valueCalculationMode: 1
   marketValue: 0
+  structureValue: 0
   perFloorMultiplier: 0
   negativePerFloorMultiplier: 0
   modifierForNegativeFloors: .5
