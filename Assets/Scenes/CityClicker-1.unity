@@ -36,7 +36,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 0}
+  m_Sun: {fileID: 1951553086}
 --- !u!127 &3
 LevelGameManager:
   m_ObjectHideFlags: 0
@@ -121,8 +121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingPrefab: {fileID: 471090, guid: 88a00c37410de4f6f81bc4e96dbb3528, type: 2}
-  buildingsGrid: {x: 10, y: 10}
-  sizeOfBuilding: {x: 20, y: 5, z: 20}
+  buildingsGrid: {x: 8, y: 8}
+  sizeOfBuilding: {x: 25, y: 5, z: 25}
 --- !u!4 &176887848
 Transform:
   m_ObjectHideFlags: 0
@@ -130,7 +130,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 176887846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2, y: 10, z: -140}
+  m_LocalPosition: {x: -20.2000008, y: 10, z: -163.600006}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -476,7 +476,7 @@ Prefab:
     - target: {fileID: 11460086, guid: ff9e3977ab71b4165932cd9ef4d8a72b, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1484477439}
+      objectReference: {fileID: 0}
     - target: {fileID: 22418032, guid: ff9e3977ab71b4165932cd9ef4d8a72b, type: 2}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -827,6 +827,7 @@ GameObject:
   - 114: {fileID: 1175001298}
   - 114: {fileID: 1175001299}
   - 114: {fileID: 1175001300}
+  - 114: {fileID: 1175001301}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -980,6 +981,22 @@ MonoBehaviour:
   blurAndFlaresShader: {fileID: 4800000, guid: be6e39cf196f146d5be72fbefb18ed75, type: 3}
   brightPassFilterShader: {fileID: 4800000, guid: 0aeaa4cb29f5d4e9c8455f04c8575c8c,
     type: 3}
+--- !u!114 &1175001301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1175001292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 066911fbc6c17459b95f2b8a1d945408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  budgetFlashColor: {r: 1, g: .310344756, b: 0, a: .392156869}
+  budgetNumFlashes: 1
+  budgetDurationOfFlashes: .300000012
+  budgetPanel: {fileID: 321045607}
+  wireframeMaterial: {fileID: 0}
 --- !u!114 &1288425966
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11426228, guid: ff9e3977ab71b4165932cd9ef4d8a72b,
@@ -1068,13 +1085,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1484477434}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 066911fbc6c17459b95f2b8a1d945408, type: 3}
+  m_Script: {fileID: 11500000, guid: e8e579e6175114af28b9ee9975fa6211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  budgetFlashColor: {r: 1, g: .310344756, b: 0, a: .392156869}
-  budgetNumFlashes: 1
-  budgetDurationOfFlashes: .300000012
-  budgetPanel: {fileID: 321045607}
 --- !u!1001 &1506049734
 Prefab:
   m_ObjectHideFlags: 0
@@ -1145,7 +1158,6 @@ GameObject:
   - 4: {fileID: 1803744689}
   - 218: {fileID: 1803744688}
   - 154: {fileID: 1803744687}
-  - 95: {fileID: 1803744690}
   m_Layer: 0
   m_Name: Island
   m_TagString: Untagged
@@ -1208,23 +1220,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
---- !u!95 &1803744690
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1803744686}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 998bb93f9242949be882e490f7619df7, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1951553085
 GameObject:
   m_ObjectHideFlags: 0

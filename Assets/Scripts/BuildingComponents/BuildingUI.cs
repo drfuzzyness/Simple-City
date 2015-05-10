@@ -12,6 +12,7 @@ public class BuildingUI : MonoBehaviour {
 	public MeshRenderer buildingPlot;
 	public Material hoverMaterial;
 	public Material invisibleMaterial;
+	public Material lineRenderMat;
 	public enum NeighborVisualization { Off, Spheres, Connections };
 	public NeighborVisualization neighborVisualization;
 	private Building blding;
@@ -31,13 +32,14 @@ public class BuildingUI : MonoBehaviour {
 			UpdateMoneyCanvas();
 	}
 	
-	void OnPostRender() {
-		DrawSphereVisualization();	
-	}
+// 	void OnPostRender() {
+// 		DrawSphereVisualization();	
+// 	}
 	
 	
-	void DrawSphereVisualization() {
+	public void DrawSphereVisualization() {
 		if( blding.isRunning ) {
+			Debug.Log( "Trying to visualize" );
 			switch( neighborVisualization ) {
 				case NeighborVisualization.Spheres:
 					Gizmos.DrawWireSphere( transform.position, sphrinf.radius );
@@ -49,9 +51,9 @@ public class BuildingUI : MonoBehaviour {
 						if( this.GetComponent<BuildingRevenue>().revenue >= 0 ) {
 							bldColor = positiveCashflowColor;
 						}
-						SimpleLineRenderer.RenderLine( thisBld.transform.position,
+						SimpleLineRenderer.instance.RenderLine( thisBld.transform.position,
 													   transform.position,
-													   bldColor, Color.white );
+													   Color.red, Color.white, lineRenderMat );
 					}
 					break;
 				default: 

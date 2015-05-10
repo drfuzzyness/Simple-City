@@ -234,6 +234,8 @@ MonoBehaviour:
   buildingPlot: {fileID: 2392468}
   hoverMaterial: {fileID: 2100000, guid: 6270810d877934f1fb39e4a1d22e4be1, type: 2}
   invisibleMaterial: {fileID: 2100000, guid: 0b062ce31df3d482299fd2290a411e03, type: 2}
+  lineRenderMat: {fileID: 2100000, guid: 1f4f3a54424754f03b39e316d3b9ece9, type: 2}
+  neighborVisualization: 2
 --- !u!114 &11428728
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -306,7 +308,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   revenue: 0
+  combinedValue: 0
+  valueCalculationMode: 1
   marketValue: 0
+  structureValue: 0
   perFloorMultiplier: 0
   negativePerFloorMultiplier: 0
   modifierForNegativeFloors: .5
@@ -348,7 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee23e329cae7b4dab9effd4a77e96ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  debugVisualizationMode: 0
   radius: 70
   neighbors: []
 --- !u!114 &11495478
