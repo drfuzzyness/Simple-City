@@ -53,7 +53,7 @@ public class BuildingUI : MonoBehaviour {
 						}
 						SimpleLineRenderer.instance.RenderLine( thisBld.transform.position,
 													   transform.position,
-													   Color.red, Color.white, lineRenderMat );
+													   Color.red, Color.white );
 					}
 					break;
 				default: 
