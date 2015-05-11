@@ -18,6 +18,7 @@ public class BuildingUI : MonoBehaviour {
 	private Building blding;
 	private SphereOfInfluence sphrinf;
 	private BuildingRevenue bldingRev;
+	private bool showMoreInfoDisplay;
 	
 	
 	
@@ -73,6 +74,12 @@ public class BuildingUI : MonoBehaviour {
 // 				buildingPlot.gameObject.SetActive( false );
 // 				gameObject.SetActive( false );
 			}
+		} else if( blding.isRunning ) {
+			if( Input.GetMouseButtonDown( 0 ) ) { // leftclick
+				bldingRev.AddFloor();
+			} else if ( Input.GetMouseButtonDown( 1 ) ) { // rightclick
+				// attempt to toggle More Info display
+			}
 		}
 	}
 
@@ -94,6 +101,15 @@ public class BuildingUI : MonoBehaviour {
 		} else if( blding.isBuilt && blding.isRunning ) {
 			overviewCanvas.gameObject.SetActive( false );
 		}
+	}
+	
+	IEnumerator MoreInfoDisplay() {
+		showMoreInfoDisplay = true;
+		// animate to display
+		while( showMoreInfoDisplay ) {
+			yield return null;
+		}
+		// animate away display
 	}
 	
 	void UpdateMoneyCanvas() {

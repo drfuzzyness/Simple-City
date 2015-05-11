@@ -133,7 +133,7 @@ public class BudgetManager : MonoBehaviour {
 	void UpdateCostToBuildForPlots() {
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
 			if( !thisBuilding.isBuilt ) {
-				thisBuilding.GetComponent<BuildingRevenue>().UpdateCostToBuild( costToBuildIncreaseRate );
+// 				thisBuilding.GetComponent<BuildingRevenue>().UpdateCostToBuild( costToBuildIncreaseRate );
 			}
 		}
 	}

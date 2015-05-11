@@ -2,12 +2,12 @@
 using System.Collections;
 
 public class BuildingRevenue : MonoBehaviour {
-	
 	public enum ValueCalculationMode {QualityOfLife, PunishHighrises }
 	
 	[Header("Status")]
 	public float revenue;
 	public float combinedValue; 
+	public float floorConstructionCost;
 	[SerializeField]
 	private ValueCalculationMode valueCalculationMode;
 	
@@ -16,7 +16,8 @@ public class BuildingRevenue : MonoBehaviour {
 	public float structureValue; // value based on the actual structure independant of 
 	
 	[Header("Punish Highrise Algorithum")]
-	public float perFloorMultiplier; // should be multiplied against the marketValue
+	public float perFloorValue; // should be multiplied against the marketValue
+	public float perFloorRent;
 	public float negativePerFloorMultiplier; // used to punish high-rise buildings
 	public float modifierForNegativeFloors;
 	public int numPositiveFloors;
@@ -29,7 +30,7 @@ public class BuildingRevenue : MonoBehaviour {
 	
 	public bool BuyNewBuilding() {
 		if( BudgetManager.instance.Purchase( combinedValue ) ) {
-			perFloorMultiplier = Mathf.Ceil(marketValue / 5);
+			perFloorValue = Mathf.Ceil(marketValue / 5);
 			blding.CreateBuilding();
 			return true;
 		}
@@ -42,7 +43,7 @@ public class BuildingRevenue : MonoBehaviour {
 	public bool BuyExistingBuilding() {
 		Debug.LogError( "BuyExistingBuilding() is not yet implemented." );
 		if( BudgetManager.instance.Purchase( combinedValue ) ) {
-			perFloorMultiplier = Mathf.Ceil(marketValue / 5);
+			perFloorValue = Mathf.Ceil(marketValue / 5);
 			return true;
 		}
 		else {
@@ -51,15 +52,23 @@ public class BuildingRevenue : MonoBehaviour {
 		}
 	}
 	
-	void CalculateRevenueBasedOnFloors() {
+	public bool AddFloor() {
+		if( BudgetManager.instance.Purchase( floorConstructionCost )) {
+			blding.BuildFloor();
+			return true;
+		}
+		return false;
+	}
+	
+	void CalculateHighriseValue() {
 		if( blding.floors.Count < numPositiveFloors ) {
-			revenue = perFloorMultiplier * blding.floors.Count;
+			revenue = perFloorValue * blding.floors.Count;
 		}
 		else {
-			revenue = (perFloorMultiplier * numPositiveFloors) - 
+			revenue = (perFloorValue * numPositiveFloors) - 
 				Mathf.Round( (blding.floors.Count - numPositiveFloors) * negativePerFloorMultiplier);
 		}
-
+		
 	}
 	
 	void CalculateRevenueQualityOfLife() {
@@ -69,12 +78,13 @@ public class BuildingRevenue : MonoBehaviour {
 	public void UpdateCostToBuild( float increaseRate ) {
 		// Increase rate should be >= 1
 		if( !blding.isBuilt ) {
-			marketValue = Mathf.Round( marketValue * increaseRate );
+			combinedValue = Mathf.Round( marketValue + structureValue );
 		}
 	}
 	
 	void CalculateRevenue() {
 		TheValueCalculation();
+		combinedValue = Mathf.Round( marketValue + structureValue );
 	}
 
 	void Awake () {
@@ -85,7 +95,7 @@ public class BuildingRevenue : MonoBehaviour {
 	void Start () {
 		switch( valueCalculationMode ) {
 			case ValueCalculationMode.PunishHighrises:
-				TheValueCalculation = CalculateRevenueBasedOnFloors;
+				TheValueCalculation = CalculateHighriseValue;
 				break;
 			case ValueCalculationMode.QualityOfLife:
 				TheValueCalculation = CalculateRevenueQualityOfLife;
