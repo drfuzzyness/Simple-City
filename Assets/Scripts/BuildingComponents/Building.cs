@@ -69,6 +69,7 @@ public class Building : MonoBehaviour {
 
 
 	public void BuildFloor() {
+		Debug.Log("BuildFloor()");
 		if( isBuilt ) {
 			if( isRunning ) {
 // 				if(floors.Count == 1 && animationsEnabled ) {
@@ -92,7 +93,7 @@ public class Building : MonoBehaviour {
 				} 
 				// move overviewCanvas to the top of the building
 				// start ceiling moving up
-				StartCoroutine( "MoveRoofUp", bldingUI.overviewCanvas.transform.position);
+				StartCoroutine( MoveRoofUp() );
 				if( bldingUI != null ) {
 // 					bldingUI.overviewCanvas.transform.position = lastFloor.transform.position +
 // 									heightBetweenFloors;
@@ -132,25 +133,32 @@ public class Building : MonoBehaviour {
 			while( animationsEnabled && anim.GetCurrentAnimatorStateInfo(0).shortNameHash != doneState ) {
 				yield return null;
 			}
+			Debug.Log( "Done Creating Roof");
 			roof.transform.Translate( lastFloor.size, Space.Self );
 		}
-		yield return null;
 		isRunning = true;
+		yield return null;
+		
 	}
-	IEnumerator MoveRoofUp( Vector3 target) {
-		if( roofPrefab != null ) {
+	IEnumerator MoveRoofUp() {
+		Debug.Log( "Trying to MoveRoofUp()" );
+		if( roof != null ) {
 // 			ceiling.transform.position = target;
-			roof.transform.Translate( -lastFloor.size * 2, Space.Self );
+			
+// 			roof.transform.Translate( -lastFloor.size, Space.Self );
 			Animator anim = roof.GetComponent<Animator>();
 			anim.SetTrigger( "RaiseRoof" );
 			int state = Animator.StringToHash("Idle");
 			if( animationsEnabled ) {
 // 				anim.Play( state );
+				yield return new WaitForSeconds( .5f );
 				while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash != state ) {
+// 					Debug.Log( anim.GetCurrentAnimatorStateInfo(0) + ", waiting for " + state );
 					yield return null;
 				}
 			}
-			roof.transform.Translate( lastFloor.size * 3, Space.Self );
+			Debug.Log( "Done MoveRoofUp()" );
+			roof.transform.Translate( lastFloor.size, Space.Self ); // You will never believe how long it took to figure out the roof problem
 		}
 		yield return null;
 	}
