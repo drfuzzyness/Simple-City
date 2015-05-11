@@ -151,7 +151,7 @@ public class Building : MonoBehaviour {
 			int state = Animator.StringToHash("Idle");
 			if( animationsEnabled ) {
 // 				anim.Play( state );
-				yield return new WaitForSeconds( .5f );
+				yield return new WaitForSeconds( .5f ); // praise the sun
 				while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash != state ) {
 // 					Debug.Log( anim.GetCurrentAnimatorStateInfo(0) + ", waiting for " + state );
 					yield return null;
