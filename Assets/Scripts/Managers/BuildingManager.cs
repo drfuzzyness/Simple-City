@@ -7,6 +7,7 @@ public class BuildingManager : MonoBehaviour {
 
 	[Header("Data")]
 	public List<Building> buildings;
+	public List<Building> unownedBuildings;
 
 	public static BuildingManager instance;
 

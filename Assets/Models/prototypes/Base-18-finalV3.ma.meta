@@ -1095,8 +1095,8 @@ ModelImporter:
     - serializedVersion: 16
       name: BuildBase
       takeName: Take 001
-      firstFrame: 470
-      lastFrame: 588
+      firstFrame: 0
+      lastFrame: 448
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

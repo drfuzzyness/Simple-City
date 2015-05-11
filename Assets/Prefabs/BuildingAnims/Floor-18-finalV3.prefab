@@ -1987,21 +1987,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &192684
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 498074}
-  m_Layer: 0
-  m_Name: sunDirection
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &193494
 GameObject:
   m_ObjectHideFlags: 1
@@ -3288,11 +3273,10 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 115.720001, y: 9.51000023, z: -83.0500031}
+  m_LocalPosition: {x: 118.78714, y: 12.014924, z: -105.552025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 442058}
-  - {fileID: 498074}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &467506
@@ -3884,18 +3868,6 @@ Transform:
   - {fileID: 491800}
   m_Father: {fileID: 400962}
   m_RootOrder: 4
---- !u!4 &498074
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192684}
-  m_LocalRotation: {x: .130526185, y: 0, z: 0, w: .991444886}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: .99999994}
-  m_Children: []
-  m_Father: {fileID: 466616}
-  m_RootOrder: 1
 --- !u!4 &498700
 Transform:
   m_ObjectHideFlags: 1
@@ -6438,6 +6410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
+  size: {x: 0, y: 2.0999999, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

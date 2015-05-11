@@ -55,7 +55,7 @@ public class PlayerUIManager : MonoBehaviour {
 	void OnPostRender() {
 		foreach( Building thisBld in BuildingManager.instance.buildings ) {
 			thisBld.GetComponent<BuildingUI>().DrawSphereVisualization();
-			foreach( Transform thisFloor in thisBld.floors ) {
+			foreach( Floor thisFloor in thisBld.floors ) {
 // 				SimpleLineRenderer.instance.RenderWireframeMesh( thisFloor.GetComponent<MeshRenderer>(),
 // 													    thisBld.GetComponent<MeshFilter>(),
 // 														wireframeMaterial );

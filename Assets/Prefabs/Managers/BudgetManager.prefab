@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &126216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 469544}
+  - 114: {fileID: 11440430}
+  m_Layer: 0
+  m_Name: BudgetManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &469544
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126216}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11440430
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23260fceddc254af1a65e22db667d6ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  money: 10
+  revenue: 0
+  timePerPaycheck: 4
+  paychecksPerConstruction: 2
+  costToBuildIncreaseRate: 1.5
+  buildFloorsEveryConstruction: 1
+  moneyText: {fileID: 0}
+  revenueText: {fileID: 0}
+  countdownText: {fileID: 0}
+  countdownSlider: {fileID: 0}
+  positiveCashflowColor: {r: .365484446, g: .441176474, b: .145977512, a: 1}
+  negativeCashflowColor: {r: .441176474, g: .274236351, b: .145977497, a: 1}
+  paused: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 126216}
+  m_IsPrefabParent: 1
