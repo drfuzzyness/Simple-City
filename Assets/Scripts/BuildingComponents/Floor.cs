@@ -23,6 +23,11 @@ public class Floor : MonoBehaviour {
 	void OnMouseEnter() {
 		bldingUI.MouseEnter();
 	}
+	void OnMouseOver() {
+		if( Input.GetMouseButtonDown(1) ) {
+			bldingUI.MouseDown();
+		}
+	}
 	void OnMouseExit() {
 		bldingUI.MouseExit();
 	}

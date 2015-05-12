@@ -55,7 +55,7 @@ public class Building : MonoBehaviour {
 		lastFloor.building = this;
 		
 		lastFloor.transform.SetParent( transform );
-		bldingUI.overviewCanvas.gameObject.SetActive( false );
+		bldingUI.UITransform.gameObject.SetActive( false );
 		
 		dustParticles.Play();
 		if( animationsEnabled ) {
@@ -101,8 +101,8 @@ public class Building : MonoBehaviour {
 			roof = Instantiate( roofPrefab, transform.position, transform.rotation ) as Transform;
 			roof.SetParent( transform );
 			roof.Translate( -lastFloor.size, Space.Self );
-			bldingUI.overviewCanvas.parent = roof.GetChild(0);
-			bldingUI.overviewCanvas.Translate( transform.forward * -1.5f, Space.Self);
+			bldingUI.UITransform.parent = roof.GetChild(0);
+// 			bldingUI.UITransform.Translate( transform.forward * -1.5f, Space.Self);
 			Animator anim = roof.GetComponent<Animator>();
 			int doneState = Animator.StringToHash("Idle");
 			while( animationsEnabled && anim.GetCurrentAnimatorStateInfo(0).shortNameHash != doneState ) {
@@ -113,6 +113,8 @@ public class Building : MonoBehaviour {
 			
 		}
 		isRunning = true;
+		Debug.Log( "Enabling UI");
+		bldingUI.UITransform.gameObject.SetActive( true );
 		yield return null;
 		
 	}

@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class BuildingUI : MonoBehaviour {
 
-	public Transform overviewCanvas;
+	public Transform UITransform;
+	
 	public Text revText;
 	public Color positiveCashflowColor;
 	public Color neutralColor;
@@ -15,6 +16,7 @@ public class BuildingUI : MonoBehaviour {
 	public Material lineRenderMat;
 	public enum NeighborVisualization { Off, Spheres, Connections };
 	public enum MouseAction { Ignore, BuildFloor, Info };
+	
 	public MouseAction leftMouseAction;
 	public MouseAction rightMouseAction;
 	public NeighborVisualization neighborVisualization;
@@ -22,6 +24,10 @@ public class BuildingUI : MonoBehaviour {
 	private SphereOfInfluence sphrinf;
 	private BuildingRevenue bldingRev;
 	private bool showMoreInfoDisplay;
+	[HideInInspector]
+	public Transform overviewCanvas;
+	[HideInInspector]
+	public Transform detailsCanvas;
 	
 	
 	
@@ -29,6 +35,8 @@ public class BuildingUI : MonoBehaviour {
 		blding = GetComponent<Building>();
 		bldingRev = GetComponent<BuildingRevenue>();
 		sphrinf = GetComponent<SphereOfInfluence>();
+		overviewCanvas = UITransform.GetChild(0);
+		detailsCanvas = UITransform.GetChild(1);
 	}
 	
 	void Update () {
@@ -78,10 +86,31 @@ public class BuildingUI : MonoBehaviour {
 // 				gameObject.SetActive( false );
 			}
 		} else if( blding.isRunning ) {
-			if( Input.GetMouseButtonDown( 0 ) ) { // leftclick
-				bldingRev.AddFloor();
-			} else if ( Input.GetMouseButtonDown( 1 ) ) { // rightclick
-				// attempt to toggle More Info display
+			if( Input.GetMouseButtonDown( 0 ) ) {
+				Debug.Log("lmb"); // leftclick
+				switch( leftMouseAction ) {
+					case MouseAction.BuildFloor:
+						bldingRev.AddFloor();
+						break;
+					case MouseAction.Info:
+						ToggleDisplayDetails();
+						break;
+					default: 
+						break;
+				}
+			}
+			if ( Input.GetMouseButtonDown( 1 ) ) { // rightclick
+				Debug.Log("rmb");
+				switch( rightMouseAction ) {
+					case MouseAction.BuildFloor:
+						bldingRev.AddFloor();
+						break;
+					case MouseAction.Info:
+						ToggleDisplayDetails();
+						break;
+					default: 
+						break;
+				}
 			}
 		}
 	}
@@ -99,19 +128,31 @@ public class BuildingUI : MonoBehaviour {
 	public void MouseExit() {
 		if( !blding.isBuilt ){
 			buildingPlot.material = invisibleMaterial;
-// 			buildingPlot.GetComponent<Renderer>().material
 			overviewCanvas.gameObject.SetActive(false);
 		} else if( blding.isBuilt && blding.isRunning ) {
 			overviewCanvas.gameObject.SetActive( false );
+// 			showMoreInfoDisplay = false;
+		}
+	}
+	
+	void ToggleDisplayDetails() {
+		if( showMoreInfoDisplay ) {
+			showMoreInfoDisplay = false;
+		} else {
+			showMoreInfoDisplay = true;
+			StartCoroutine( MoreInfoDisplay() );
 		}
 	}
 	
 	IEnumerator MoreInfoDisplay() {
-		showMoreInfoDisplay = true;
+		detailsCanvas.gameObject.SetActive( true );
+		BudgetManager.instance.paused = true;
 		// animate to display
 		while( showMoreInfoDisplay ) {
 			yield return null;
 		}
+		BudgetManager.instance.paused = false;
+		detailsCanvas.gameObject.SetActive( false );
 		// animate away display
 	}
 	

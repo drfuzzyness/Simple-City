@@ -125,7 +125,8 @@ public class BudgetManager : MonoBehaviour {
 
 	void BuildFloorOnAll() {
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
-			thisBuilding.BuildFloor();
+			if( thisBuilding.isRunning )
+				thisBuilding.BuildFloor();
 		}
 		CalculateRevenue();
 	}
