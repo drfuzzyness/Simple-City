@@ -14,6 +14,9 @@ public class BuildingUI : MonoBehaviour {
 	public Material invisibleMaterial;
 	public Material lineRenderMat;
 	public enum NeighborVisualization { Off, Spheres, Connections };
+	public enum MouseAction { Ignore, BuildFloor, Info };
+	public MouseAction leftMouseAction;
+	public MouseAction rightMouseAction;
 	public NeighborVisualization neighborVisualization;
 	private Building blding;
 	private SphereOfInfluence sphrinf;

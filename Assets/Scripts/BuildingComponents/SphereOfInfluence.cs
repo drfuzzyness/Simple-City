@@ -16,7 +16,7 @@ public class SphereOfInfluence : MonoBehaviour {
 	Buildings influence eachother by changing their own respective rates or values.
 	*/
 	void Awake() {
-		blding = GetComponent<Building>();
+// 		blding = GetComponent<Building>();
 	}
 	
 	void Start () {

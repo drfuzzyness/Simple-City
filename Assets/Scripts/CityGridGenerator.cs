@@ -11,7 +11,7 @@ public class CityGridGenerator : MonoBehaviour {
 	public Vector3 sizeOfBuilding;
 
 	private int maxX, maxY;
-	private int numBuiltBuildings;
+// 	private int numBuiltBuildings;
 
 	public Building getBuilding( int x, int y ) {
 		if( ( 0 < x && x <= maxX ) && ( 0 < y && y <= maxY ) )
@@ -36,7 +36,7 @@ public class CityGridGenerator : MonoBehaviour {
 	void Start () {
 		maxX = Mathf.FloorToInt( buildingsGrid.x );
 		maxY = Mathf.FloorToInt( buildingsGrid.y );
-		numBuiltBuildings = 0;
+// 		numBuiltBuildings = 0;
 		GenerateGridOfBuildings();
 	}
 	

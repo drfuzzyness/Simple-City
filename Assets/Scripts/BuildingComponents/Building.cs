@@ -55,7 +55,7 @@ public class Building : MonoBehaviour {
 		lastFloor.building = this;
 		
 		lastFloor.transform.SetParent( transform );
-// 		bldingUI.overviewCanvas.gameObject.SetActive( true );
+		bldingUI.overviewCanvas.gameObject.SetActive( false );
 		
 		dustParticles.Play();
 		if( animationsEnabled ) {
@@ -72,34 +72,7 @@ public class Building : MonoBehaviour {
 		Debug.Log("BuildFloor()");
 		if( isBuilt ) {
 			if( isRunning ) {
-// 				if(floors.Count == 1 && animationsEnabled ) {
-// 					floors.Add( Instantiate( floorPrefab,
-// 				                        lastFloor.transform.position,
-// 				                        transform.rotation ) as Floor ); // new floor above last floor
-// 				} 
-// 				else {
-					Transform newFloor = Instantiate( floorPrefab,
-				                        lastFloor.transform.position,
-				                        transform.rotation ) as Transform; // new floor above last floor
-					floors.Add( newFloor.GetComponent<Floor>() );
-					lastFloor.transform.Translate(floors[floors.Count - 2].size, Space.Self);	
-// 				}
-				lastFloor.transform.SetParent( floors[floors.Count - 2].transform ); // parent new floor to building
-				lastFloor.building = this;
-				Animator anim = lastFloor.GetComponent<Animator>();
-				int state = Animator.StringToHash("BuildFloor");
-				if( animationsEnabled ) {
-					anim.Play( state );
-				} 
-				// move overviewCanvas to the top of the building
-				// start ceiling moving up
-				StartCoroutine( MoveRoofUp() );
-				if( bldingUI != null ) {
-// 					bldingUI.overviewCanvas.transform.position = lastFloor.transform.position +
-// 									heightBetweenFloors;
-					bldingUI.overviewCanvas.transform.Translate( lastFloor.size, Space.Self );
-				}
-				dustParticles.Play();
+				StartCoroutine( BuildNextFloor() );
 			} else {
 				Debug.LogWarning(gameObject.name + " hasn't finished building and can't BuildFloor()");
 			}
@@ -128,6 +101,8 @@ public class Building : MonoBehaviour {
 			roof = Instantiate( roofPrefab, transform.position, transform.rotation ) as Transform;
 			roof.SetParent( transform );
 			roof.Translate( -lastFloor.size, Space.Self );
+			bldingUI.overviewCanvas.parent = roof.GetChild(0);
+			bldingUI.overviewCanvas.Translate( transform.forward * -1.5f, Space.Self);
 			Animator anim = roof.GetComponent<Animator>();
 			int doneState = Animator.StringToHash("Idle");
 			while( animationsEnabled && anim.GetCurrentAnimatorStateInfo(0).shortNameHash != doneState ) {
@@ -135,11 +110,47 @@ public class Building : MonoBehaviour {
 			}
 			Debug.Log( "Done Creating Roof");
 			roof.transform.Translate( lastFloor.size, Space.Self );
+			
 		}
 		isRunning = true;
 		yield return null;
 		
 	}
+	
+	IEnumerator BuildNextFloor() {
+	// 				if(floors.Count == 1 && animationsEnabled ) {
+// 					floors.Add( Instantiate( floorPrefab,
+// 				                        lastFloor.transform.position,
+// 				                        transform.rotation ) as Floor ); // new floor above last floor
+// 				} 
+// 				else {
+			Transform newFloor = Instantiate( floorPrefab,
+		                        lastFloor.transform.position,
+		                        transform.rotation ) as Transform; // new floor above last floor
+			floors.Add( newFloor.GetComponent<Floor>() );
+			lastFloor.transform.Translate(floors[floors.Count - 2].size, Space.Self);	
+// 				}
+			lastFloor.transform.SetParent( floors[floors.Count - 2].transform ); // parent new floor to building
+			lastFloor.building = this;
+			
+			StartCoroutine( MoveRoofUp() );
+			dustParticles.Play();
+			
+			Animator anim = lastFloor.transform.GetChild(0).GetComponent<Animator>();
+			int state = Animator.StringToHash("BuildFloor");
+			if( animationsEnabled ) {
+				anim.Play( state );
+				yield return new WaitForSeconds( .5f ); // praise the sun
+				while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash == state ) {
+					yield return null;
+				}
+				// swap to lowres model
+				lastFloor.transform.GetChild(0).gameObject.SetActive( false );
+				lastFloor.transform.GetChild(1).gameObject.SetActive( true );
+			} 
+			
+	}
+	
 	IEnumerator MoveRoofUp() {
 		Debug.Log( "Trying to MoveRoofUp()" );
 		if( roof != null ) {
