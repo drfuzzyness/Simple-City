@@ -36,6 +36,7 @@ public class BuildOnClickController : MonoBehaviour {
 								// click hit
 								if( hit.collider.tag == "Terrain" ) {
 									// try to build a building on terrain
+									Debug.Log("Building on fresh terrain.");
 									if( BudgetManager.instance.Purchase( BudgetManager.instance.baseValue ) ) {
 										Building newBuild = Instantiate( buildingPrefab, hit.point, Quaternion.identity ) as Building;
 										newBuild.CreateBuilding();

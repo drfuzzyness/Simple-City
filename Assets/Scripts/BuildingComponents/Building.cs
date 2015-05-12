@@ -195,10 +195,6 @@ public class Building : MonoBehaviour {
 	}
 
     void Start() {
-        
-        age = 0;
-		isBuilt = false;
-		isRunning = false;
 		if( startBuilt ) {
 			CreateBuilding();
 		}

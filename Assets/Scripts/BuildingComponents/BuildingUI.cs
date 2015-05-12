@@ -92,6 +92,7 @@ public class BuildingUI : MonoBehaviour {
 	
 	public void MouseDown() {
 		if( !blding.isBuilt) {
+			Debug.Log("Building on Plot");
 			blding.buildingRevenue.BuyNewBuilding();
 		} else if( blding.isRunning ) {
 			if( Input.GetMouseButtonDown( 0 ) ) {
