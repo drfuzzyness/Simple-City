@@ -399,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &412160
 Transform:
   m_ObjectHideFlags: 1
@@ -407,7 +407,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 155092}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 111.699997, y: 27.6000004, z: -108.699997}
+  m_LocalPosition: {x: 110.793121, y: 9.51492405, z: -52.1202393}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 417310}
@@ -865,6 +865,10 @@ MonoBehaviour:
   dustParticles: {fileID: 19883450}
   plot: {fileID: 11433806}
   floors: []
+  buildingRevenue: {fileID: 0}
+  buildingExports: {fileID: 0}
+  sphereOfInfluence: {fileID: 0}
+  buildingUI: {fileID: 0}
 --- !u!114 &11451220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1062,16 +1066,10 @@ MonoBehaviour:
   revenue: 0
   combinedValue: 0
   floorConstructionCost: 0
-  valueCalculationMode: 1
   perFloorValue: 0
   marketValue: 0
-  valuePerNeighbor: 0
   structureValue: 0
   baseValue: 0
-  perFloorRent: 0
-  negativePerFloorMultiplier: 0
-  numPositiveFloors: 5
-  rentToValueConversion: 5
 --- !u!114 &11477140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2794,7 +2792,7 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 15.4399996, y: -4}
+  m_AnchoredPosition: {x: 15.4399996, y: 4.61999989}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: .5, y: .5}
 --- !u!1001 &100100000

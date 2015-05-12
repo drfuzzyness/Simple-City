@@ -14,7 +14,7 @@ public class BudgetManager : MonoBehaviour {
 	[Header("Time")]
 	public float timePerPaycheck;
 	public int paychecksPerConstruction;
-	public bool buildFloorsEveryConstruction;
+	
 	
 	public enum IncreaseRate { Zero, Linear, Exponential };
 	private delegate void IncreaseRateFunc();
@@ -39,12 +39,19 @@ public class BudgetManager : MonoBehaviour {
 	public float perFloorRent;
 	public float negativePerFloorMultiplier; // used to punish high-rise buildings
 	public int numPositiveFloors;
+	[Header("Build Floors")]
+// 	public IncreaseRate floorsIncreaseRate;
+	public bool buildFloorsEveryConstruction;
+// 	public float newFloorLinear = 5f;
+	public float newFloorRatioOfValue;
 
 	[Header("UI Display")]
 
 	public Text moneyText;
 	public Text revenueText;
+	public Text valueText;
 	public Text countdownText;
+	public Text pausedText;
 	public Slider countdownSlider;
 	public Color positiveCashflowColor;
 	public Color negativeCashflowColor;
@@ -56,7 +63,7 @@ public class BudgetManager : MonoBehaviour {
 	
 
 	public bool Purchase( float price ) {
-		if( money > price ) {
+		if( money >= price ) {
 			money -= price;
 			return true;
 		}
@@ -119,7 +126,13 @@ public class BudgetManager : MonoBehaviour {
 			revenueText.text = "-$" + Mathf.Abs( sumRevenue );
 			revenueText.color = negativeCashflowColor;
 		}
+		valueText.text = "$" + baseValue;
 		countdownText.text = ( paychecks % paychecksPerConstruction + 1 ) + "/" + paychecksPerConstruction ;
+		if( isPaused ) {
+			pausedText.text = "GAME PAUSED";
+		} else {
+			pausedText.text = "";
+		}
 
 	}
 
@@ -156,7 +169,6 @@ public class BudgetManager : MonoBehaviour {
 			if( thisBuilding.isRunning )
 				thisBuilding.BuildFloor();
 		}
-		CalculateRevenue();
 	}
 	
 	void UpdateBaseValuesExponential() {
@@ -169,6 +181,7 @@ public class BudgetManager : MonoBehaviour {
 	void UpdateBaseValuesLinear() {
 		baseValue = originalBaseValue + linearValuePerBuilding * numOwnedBuildings;
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
+// 			Debug.Log("Applying baseValue of " + baseValue + " to " + thisBuilding);
 			thisBuilding.buildingRevenue.baseValue = baseValue;
 		}
 	}

@@ -21,7 +21,7 @@ public class BuildOnClickController : MonoBehaviour {
 			Ray clickRay = Camera.main.ScreenPointToRay( Input.mousePosition );
 			RaycastHit hit = new RaycastHit();
 			if( Physics.Raycast( clickRay, out hit ) && hit.collider.tag == "Terrain" ) {
-				Collider[] cols = Physics.OverlapSphere( hit.point,buildingPrefab.baseFloorPrefab.GetComponent<BoxCollider>().size.x * 1.5f );
+				Collider[] cols = Physics.OverlapSphere( hit.point,buildingPrefab.baseFloorPrefab.GetComponent<BoxCollider>().size.x * 1f );
 				bool doBuild = true;
 				foreach( Collider thisCol in cols ) {
 					if( thisCol.tag == "Building" || thisCol.tag == "Floor" ) {
@@ -40,6 +40,7 @@ public class BuildOnClickController : MonoBehaviour {
 									if( BudgetManager.instance.Purchase( BudgetManager.instance.baseValue ) ) {
 										Building newBuild = Instantiate( buildingPrefab, hit.point, Quaternion.identity ) as Building;
 										newBuild.CreateBuilding();
+										newBuild.buildingRevenue.isOwned = true;
 										BuildingManager.instance.buildings.Add( newBuild );
 									}
 								}
@@ -52,6 +53,7 @@ public class BuildOnClickController : MonoBehaviour {
 								Debug.Log( rotation );
 								Building bld = Instantiate( buildingPrefab, hit.point + normal.normalized * 2f, rotation ) as Building;
 								bld.transform.SetParent( hit.transform );
+								bld.buildingRevenue.isOwned = true;
 								BuildingManager.instance.buildings.Add( bld );
 							}
 							break;		

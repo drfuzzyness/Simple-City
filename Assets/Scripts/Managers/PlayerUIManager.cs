@@ -7,6 +7,7 @@ public class PlayerUIManager : MonoBehaviour {
 	[Header("Budget Flashes")]
 	public Color budgetFlashColor;
 	public int budgetNumFlashes;
+	private bool isFlashing;
 	public float budgetDurationOfFlashes;
 	[Header("Configuration")]
 	public Image budgetPanel;
@@ -41,7 +42,8 @@ public class PlayerUIManager : MonoBehaviour {
 //         startVertex = new Vector3(0, 0, 0);
 //     }
 	public void NotEnoughtMoney() {
-		StartCoroutine( FlashBudgetPanel() );
+		if( !isFlashing )
+			StartCoroutine( FlashBudgetPanel() );
 	}
 	
 	public void IncorrectPlacement() {
@@ -68,6 +70,7 @@ public class PlayerUIManager : MonoBehaviour {
 // 	}
 	
 	IEnumerator FlashBudgetPanel() {
+		isFlashing = true;
 		float flashDuration = budgetDurationOfFlashes / budgetNumFlashes;
 		Color baseColor = budgetPanel.color;
 		for( int flash = 0; flash < budgetNumFlashes; flash++) {
@@ -81,6 +84,8 @@ public class PlayerUIManager : MonoBehaviour {
 			}
 			budgetPanel.color = baseColor;
 		}
+		budgetPanel.color = baseColor;
+		isFlashing = false;
 	}
 
 	void Awake() {

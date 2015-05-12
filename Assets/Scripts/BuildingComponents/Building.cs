@@ -133,6 +133,7 @@ public class Building : MonoBehaviour {
 // 				                        transform.rotation ) as Floor ); // new floor above last floor
 // 				} 
 // 				else {
+			int rotationNdx = Random.Range(-1, 2);
 			Transform newFloor = Instantiate( floorPrefab,
 		                        lastFloor.transform.position,
 		                        transform.rotation ) as Transform; // new floor above last floor
@@ -140,6 +141,7 @@ public class Building : MonoBehaviour {
 			lastFloor.transform.Translate(floors[floors.Count - 2].size, Space.Self);	
 // 				}
 			lastFloor.transform.SetParent( floors[floors.Count - 2].transform ); // parent new floor to building
+			lastFloor.transform.Rotate( 0f, rotationNdx * 90f, 0f, Space.Self);
 			lastFloor.building = this;
 			
 			StartCoroutine( MoveRoofUp() );

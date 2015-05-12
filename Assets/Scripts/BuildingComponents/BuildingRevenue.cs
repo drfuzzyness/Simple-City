@@ -27,8 +27,6 @@ public class BuildingRevenue : MonoBehaviour {
 	private delegate void ValueCalculation();
 	private ValueCalculation TheValueCalculation;
 	private Building blding;
-	private BuildingUI bldingUI;
-	private SphereOfInfluence sphrInf;
 	
 	public void BuyNewBuilding() {
 		if( BudgetManager.instance.Purchase( combinedValue ) ) {
@@ -74,14 +72,16 @@ public class BuildingRevenue : MonoBehaviour {
 				Mathf.Round( (blding.floors.Count - BudgetManager.instance.numPositiveFloors) * BudgetManager.instance.negativePerFloorMultiplier);
 		}
 		combinedValue = Mathf.Round( revenue * BudgetManager.instance.rentToValueConversion + baseValue );
+		floorConstructionCost = combinedValue * BudgetManager.instance.newFloorRatioOfValue;
 	}
 	
 	void CalculateRevenueNeighbors() {
 		// Simulates value through being close to neighbors
-		marketValue = sphrInf.neighbors.Count * BudgetManager.instance.valuePerNeighbor;
+		marketValue = blding.sphereOfInfluence.neighbors.Count * BudgetManager.instance.valuePerNeighbor;
 		structureValue = blding.floors.Count * perFloorValue;
 		combinedValue = Mathf.Round( marketValue + structureValue );
 		revenue = combinedValue / BudgetManager.instance.rentToValueConversion;
+		floorConstructionCost = structureValue * BudgetManager.instance.newFloorRatioOfValue;
 	}
 	
 	void CalculateRevenue() {
@@ -90,12 +90,13 @@ public class BuildingRevenue : MonoBehaviour {
 
 	void Awake () {
 		blding = GetComponent<Building>();
-		bldingUI = GetComponent<BuildingUI>();
-		sphrInf = GetComponent<SphereOfInfluence>();
 	}
 	
 	void Start () {
-		isOwned = false;
+
+	}
+	
+	void Update () {
 		switch( BudgetManager.instance.valueCalculationMode ) {
 			case BudgetManager.ValueCalculationMode.PunishHighrises:
 				TheValueCalculation = CalculateHighriseValue;
@@ -104,9 +105,6 @@ public class BuildingRevenue : MonoBehaviour {
 				TheValueCalculation = CalculateRevenueNeighbors;
 				break;
 		}
-	}
-	
-	void Update () {
 		CalculateRevenue();
 	}
 }

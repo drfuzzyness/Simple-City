@@ -22,6 +22,7 @@ public class BuildingUI : MonoBehaviour {
 	public Text detFloors;
 	public Text detRevenue;
 	public Text detValue;
+	public Text detFloorPrice;
 	public Button buyButton;
 	public Button addFloorButton;
 	
@@ -158,8 +159,11 @@ public class BuildingUI : MonoBehaviour {
 		BudgetManager.instance.isPaused = true;
 		// animate to display
 		while( showMoreInfoDisplay ) {
+			// keep canvas above ground
 			UpdateDescriptionCanvas();
 			yield return null;
+			if( Input.GetMouseButtonDown(1) )
+				showMoreInfoDisplay = false;
 		}
 		BudgetManager.instance.isPaused = false;
 		detailsCanvas.gameObject.SetActive( false );
@@ -207,7 +211,8 @@ public class BuildingUI : MonoBehaviour {
 			buyButton.gameObject.SetActive( true );
 			addFloorButton.gameObject.SetActive( false );
 		}
-			
+		
+		detFloorPrice.text = "$" + blding.buildingRevenue.floorConstructionCost;
 	}
 	
 	public static void RenderMoneyTextPretty( float value, Text target ) {
