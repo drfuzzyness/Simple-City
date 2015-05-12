@@ -4,19 +4,41 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class BudgetManager : MonoBehaviour {
-
+	
+	[Header("Status")]
 	public bool isPaused;	
 	public float money;
 	public float sumRevenue;
 	private float countdown;
 
-	[Header("Balance")]
+	[Header("Time")]
 	public float timePerPaycheck;
 	public int paychecksPerConstruction;
+	public bool buildFloorsEveryConstruction;
+	
+	public enum IncreaseRate { Zero, Linear, Exponential };
+	private delegate void IncreaseRateFunc();
+	private IncreaseRateFunc increaseRateFunc;
+	
+	[Header("Base Value")]
 	public float baseValue;
 	private float originalBaseValue;
-	public float baseValuePerBuilding;
-	public bool buildFloorsEveryConstruction;
+	public IncreaseRate valueIncreaseRate;
+	public float linearValuePerBuilding;
+	public float exponent;
+	
+	
+	public enum ValueCalculationMode {Neighbors, PunishHighrises };
+	[Header("Building Calculation Mode")]
+	public ValueCalculationMode valueCalculationMode;
+	public float rentToValueConversion = 5f;
+	[Header("Building Calculation Mode: Neighbors")]
+	public float valuePerNeighbor;
+	
+	[Header("Building Calculation Mode: Punish Highrises")]
+	public float perFloorRent;
+	public float negativePerFloorMultiplier; // used to punish high-rise buildings
+	public int numPositiveFloors;
 
 	[Header("UI Display")]
 
@@ -58,9 +80,21 @@ public class BudgetManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		switch( valueIncreaseRate ) {
+			case IncreaseRate.Linear:
+				increaseRateFunc = UpdateBaseValuesLinear;
+				break;
+			case IncreaseRate.Exponential:
+				increaseRateFunc = UpdateBaseValuesExponential;
+				break;
+			case IncreaseRate.Zero:
+				increaseRateFunc = null;
+				break;
+		}
+		
 		UpdateCountdown();
 		UpdateOwnedAndRunningBuildings();
-// 		UpdateBaseValuesLinear();
+		increaseRateFunc(); // changes based on mode
 		UpdateCostToBuildForPlots();
 		CalculateRevenue();
 		UpdateUI();
@@ -125,8 +159,15 @@ public class BudgetManager : MonoBehaviour {
 		CalculateRevenue();
 	}
 	
+	void UpdateBaseValuesExponential() {
+		baseValue = originalBaseValue + Mathf.Pow( linearValuePerBuilding * numOwnedBuildings, exponent );
+		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
+			thisBuilding.buildingRevenue.baseValue = baseValue;
+		}
+	}
+	
 	void UpdateBaseValuesLinear() {
-		baseValue = originalBaseValue + baseValuePerBuilding * numOwnedBuildings;
+		baseValue = originalBaseValue + linearValuePerBuilding * numOwnedBuildings;
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
 			thisBuilding.buildingRevenue.baseValue = baseValue;
 		}

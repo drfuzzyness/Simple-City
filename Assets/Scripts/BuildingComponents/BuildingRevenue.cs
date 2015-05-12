@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BuildingRevenue : MonoBehaviour {
-	public enum ValueCalculationMode {Neighbors, PunishHighrises }
+	
 	
 	[Header("Status")]
 	public bool isOwned;
@@ -10,22 +10,18 @@ public class BuildingRevenue : MonoBehaviour {
 	public float combinedValue; 
 	public float floorConstructionCost;
 	[SerializeField]
-	private ValueCalculationMode valueCalculationMode;
+	
 	[Header("Algorithum Components")]
 	public float perFloorValue;
 	
 	[Header("Neighbors Algorithum")]
 	public float marketValue; // changes with the surrounding neighborhood
-	public float valuePerNeighbor;
 	public float structureValue; // value based on the actual structure independant of 
 	
 	[Header("Punish Highrise Algorithum")]
 	public float baseValue;
-	public float perFloorRent;
-	 // 
-	public float negativePerFloorMultiplier; // used to punish high-rise buildings
-	public int numPositiveFloors;
-	public float rentToValueConversion = 5f;
+	
+	
 	
 	
 	private delegate void ValueCalculation();
@@ -70,22 +66,22 @@ public class BuildingRevenue : MonoBehaviour {
 	
 	void CalculateHighriseValue() {
 		// This is the classic formula that made the classic, argubly political, and unfun game
-		if( blding.floors.Count < numPositiveFloors ) {
-			revenue = perFloorRent * blding.floors.Count;
+		if( blding.floors.Count < BudgetManager.instance.numPositiveFloors ) { 
+			revenue = BudgetManager.instance.perFloorRent * blding.floors.Count;
 		}
 		else {
-			revenue = (perFloorRent * numPositiveFloors) - 
-				Mathf.Round( (blding.floors.Count - numPositiveFloors) * negativePerFloorMultiplier);
+			revenue = (BudgetManager.instance.perFloorRent * BudgetManager.instance.numPositiveFloors) - 
+				Mathf.Round( (blding.floors.Count - BudgetManager.instance.numPositiveFloors) * BudgetManager.instance.negativePerFloorMultiplier);
 		}
-		combinedValue = Mathf.Round( revenue * rentToValueConversion + baseValue );
+		combinedValue = Mathf.Round( revenue * BudgetManager.instance.rentToValueConversion + baseValue );
 	}
 	
 	void CalculateRevenueNeighbors() {
 		// Simulates value through being close to neighbors
-		marketValue = sphrInf.neighbors.Count * valuePerNeighbor;
+		marketValue = sphrInf.neighbors.Count * BudgetManager.instance.valuePerNeighbor;
 		structureValue = blding.floors.Count * perFloorValue;
 		combinedValue = Mathf.Round( marketValue + structureValue );
-		revenue = combinedValue / rentToValueConversion;
+		revenue = combinedValue / BudgetManager.instance.rentToValueConversion;
 	}
 	
 	void CalculateRevenue() {
@@ -100,11 +96,11 @@ public class BuildingRevenue : MonoBehaviour {
 	
 	void Start () {
 		isOwned = false;
-		switch( valueCalculationMode ) {
-			case ValueCalculationMode.PunishHighrises:
+		switch( BudgetManager.instance.valueCalculationMode ) {
+			case BudgetManager.ValueCalculationMode.PunishHighrises:
 				TheValueCalculation = CalculateHighriseValue;
 				break;
-			case ValueCalculationMode.Neighbors:
+			case BudgetManager.ValueCalculationMode.Neighbors:
 				TheValueCalculation = CalculateRevenueNeighbors;
 				break;
 		}

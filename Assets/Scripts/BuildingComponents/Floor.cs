@@ -6,7 +6,6 @@ public class Floor : MonoBehaviour {
 	public Building building;
 	public Vector3 size;
 	public Vector3 rightfulLocalPosition;
-	private BuildingUI bldingUI;
 
 	// Use this for initialization
 	void Start () {
@@ -18,24 +17,24 @@ public class Floor : MonoBehaviour {
 	
 	void OnMouseDown() {
 		if( CheckIfMouseUnobstructed() ) {
-			bldingUI.MouseDown();
+			building.buildingUI.MouseDown();
 		}
 	}
 	void OnMouseEnter() {
 		if( CheckIfMouseUnobstructed() ) {
-			bldingUI.MouseEnter();
+			building.buildingUI.MouseEnter();
 		}
 	}
 	void OnMouseOver() {
 		if( CheckIfMouseUnobstructed() ) {
 			if( Input.GetMouseButtonDown(1) ) {
-				bldingUI.MouseDown();
+				building.buildingUI.MouseDown();
 			}
 		}
 	}
 	void OnMouseExit() {
 // 		if( CheckIfMouseUnobstructed() ) {
-			bldingUI.MouseExit();
+			building.buildingUI.MouseExit();
 // 		}
 	}
 	

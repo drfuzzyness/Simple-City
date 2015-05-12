@@ -39,19 +39,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23260fceddc254af1a65e22db667d6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPaused: 0
   money: 10
-  revenue: 0
+  sumRevenue: 0
   timePerPaycheck: 4
   paychecksPerConstruction: 2
-  costToBuildIncreaseRate: 1.5
-  buildFloorsEveryConstruction: 1
+  buildFloorsEveryConstruction: 0
+  baseValue: 5
+  valueIncreaseRate: 1
+  linearValuePerBuilding: 6
+  exponent: 2
+  valueCalculationMode: 0
+  rentToValueConversion: 5
+  valuePerNeighbor: 10
+  perFloorRent: 5
+  negativePerFloorMultiplier: -.5
+  numPositiveFloors: 4
   moneyText: {fileID: 0}
   revenueText: {fileID: 0}
   countdownText: {fileID: 0}
   countdownSlider: {fileID: 0}
   positiveCashflowColor: {r: .365484446, g: .441176474, b: .145977512, a: 1}
   negativeCashflowColor: {r: .441176474, g: .274236351, b: .145977497, a: 1}
-  paused: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

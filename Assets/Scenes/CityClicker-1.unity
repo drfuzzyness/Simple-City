@@ -946,7 +946,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 469544, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 11440430, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
       propertyPath: moneyText
@@ -964,10 +964,6 @@ Prefab:
       propertyPath: countdownSlider
       value: 
       objectReference: {fileID: 1288425966}
-    - target: {fileID: 11440430, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
-      propertyPath: buildFloorsEveryConstruction
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
   m_IsPrefabParent: 0
@@ -49322,16 +49318,10 @@ MonoBehaviour:
   revenue: 0
   combinedValue: 0
   floorConstructionCost: 0
-  valueCalculationMode: 1
   perFloorValue: 0
   marketValue: 0
-  valuePerNeighbor: 0
   structureValue: 0
   baseValue: 0
-  perFloorRent: 0
-  negativePerFloorMultiplier: 0
-  numPositiveFloors: 5
-  rentToValueConversion: 5
 --- !u!1 &1857023727
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,9 +36,6 @@ public class BuildingUI : MonoBehaviour {
 	
 	
 	private Building blding;
-	private BuildingExports bldingExports;
-	private SphereOfInfluence sphrinf;
-	private BuildingRevenue bldingRev;
 	private bool showMoreInfoDisplay;
 	[HideInInspector]
 	public Transform overviewCanvas;
@@ -49,7 +46,6 @@ public class BuildingUI : MonoBehaviour {
 	
 	void Start () {
 		blding = GetComponent<Building>();
-		sphrinf = GetComponent<SphereOfInfluence>();
 		overviewCanvas = UITransform.GetChild(0);
 		detailsCanvas = UITransform.GetChild(1);
 	}
@@ -69,11 +65,11 @@ public class BuildingUI : MonoBehaviour {
 // 			Debug.Log( "Trying to visualize" );
 			switch( neighborVisualization ) {
 				case NeighborVisualization.Spheres:
-					Gizmos.DrawWireSphere( transform.position, sphrinf.radius );
+					Gizmos.DrawWireSphere( transform.position, blding.sphereOfInfluence.radius );
 					break;
 				case NeighborVisualization.Connections:
 // 					Debug.Log("y");
-					foreach( Building thisBld in sphrinf.neighbors) {
+					foreach( Building thisBld in blding.sphereOfInfluence.neighbors) {
 // 						Gizmos.DrawLine( transform.position, thisBld.transform.position );
 						Color bldColor = negativeCashflowColor;
 // 						Debug.Log("z");
@@ -96,7 +92,7 @@ public class BuildingUI : MonoBehaviour {
 	
 	public void MouseDown() {
 		if( !blding.isBuilt) {
-			bldingRev.BuyNewBuilding();
+			blding.buildingRevenue.BuyNewBuilding();
 		} else if( blding.isRunning ) {
 			if( Input.GetMouseButtonDown( 0 ) ) {
 				Debug.Log("lmb"); // leftclick
@@ -172,16 +168,16 @@ public class BuildingUI : MonoBehaviour {
 	void UpdateMoneyCanvas() {
 		if( blding.isRunning ) {
 			if( blding.buildingRevenue.revenue >= 0 ) {
-				revText.text = "$" + bldingRev.revenue;
+				revText.text = "$" + blding.buildingRevenue.revenue;
 				revText.color = positiveCashflowColor;
 			}
 			else {
-				revText.text = "-$" + Mathf.Abs( bldingRev.revenue );
+				revText.text = "-$" + Mathf.Abs( blding.buildingRevenue.revenue );
 				revText.color = negativeCashflowColor;
 			}
 		} else if ( !blding.isBuilt ) {
 			revText.color = neutralColor;
-			revText.text = "$" + bldingRev.combinedValue;
+			revText.text = "$" + blding.buildingRevenue.combinedValue;
 		}
 	}
 	
