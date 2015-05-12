@@ -1,12 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class BuildingUI : MonoBehaviour {
 
+	
+	public enum NeighborVisualization { Off, Spheres, Connections };
+	public enum MouseAction { Ignore, BuildFloor, Info };
+	
+	[Header("Controls")]
+	public MouseAction leftMouseAction;
+	public MouseAction rightMouseAction;
+	public NeighborVisualization neighborVisualization;	
+	[Header("Overview Panel")]	
 	public Transform UITransform;
 	
 	public Text revText;
+	[Header("Details Panel")]
+	public Text detTitle;
+	public Text detFloors;
+	public Text detRevenue;
+	public Text detValue;
+	public Button buyButton;
+	public Button addFloorButton;
+	
+	[Header("Colors")]
 	public Color positiveCashflowColor;
 	public Color neutralColor;
 	public Color negativeCashflowColor;
@@ -14,13 +33,10 @@ public class BuildingUI : MonoBehaviour {
 	public Material hoverMaterial;
 	public Material invisibleMaterial;
 	public Material lineRenderMat;
-	public enum NeighborVisualization { Off, Spheres, Connections };
-	public enum MouseAction { Ignore, BuildFloor, Info };
 	
-	public MouseAction leftMouseAction;
-	public MouseAction rightMouseAction;
-	public NeighborVisualization neighborVisualization;
+	
 	private Building blding;
+	private BuildingExports bldingExports;
 	private SphereOfInfluence sphrinf;
 	private BuildingRevenue bldingRev;
 	private bool showMoreInfoDisplay;
@@ -35,6 +51,7 @@ public class BuildingUI : MonoBehaviour {
 		blding = GetComponent<Building>();
 		bldingRev = GetComponent<BuildingRevenue>();
 		sphrinf = GetComponent<SphereOfInfluence>();
+		bldingExports = GetComponent<BuildingExports>();
 		overviewCanvas = UITransform.GetChild(0);
 		detailsCanvas = UITransform.GetChild(1);
 	}
@@ -81,10 +98,7 @@ public class BuildingUI : MonoBehaviour {
 	
 	public void MouseDown() {
 		if( !blding.isBuilt) {
-			if( bldingRev.BuyNewBuilding() ) {
-// 				buildingPlot.gameObject.SetActive( false );
-// 				gameObject.SetActive( false );
-			}
+			bldingRev.BuyNewBuilding();
 		} else if( blding.isRunning ) {
 			if( Input.GetMouseButtonDown( 0 ) ) {
 				Debug.Log("lmb"); // leftclick
@@ -170,6 +184,44 @@ public class BuildingUI : MonoBehaviour {
 			revText.color = neutralColor;
 			revText.text = "$" + bldingRev.combinedValue;
 		}
+	}
+	
+	void UpdateDescriptionCanvas() {
+		switch( bldingExports.type ) {
+			case BuildingExports.BuildingType.Commercial:
+				detTitle.text = "Commercial Building";
+				break;
+			case BuildingExports.BuildingType.Industrial:
+				detTitle.text = "Industrial Building";
+				break;
+			default:
+				detTitle.text = "Residential Building";
+				break;
+		}
+		
+		detFloors.text = blding.floors.Count.ToString();
+		if( bldingRev.revenue >= 0 ) {
+			detRevenue.text = "$" + bldingRev.revenue;
+		}
+		else {
+			detRevenue.text = "-$" + Mathf.Abs( bldingRev.revenue );
+		}
+		
+		if( bldingRev.combinedValue >= 0 ) {
+			detValue.text = "$" + bldingRev.combinedValue;
+		}
+		else {
+			detValue.text = "-$" + Mathf.Abs( bldingRev.combinedValue );
+		}
+		
+		if( bldingRev.isOwned ) {
+			buyButton.gameObject.SetActive( false );
+			addFloorButton.gameObject.SetActive( true );
+		} else {
+			buyButton.gameObject.SetActive( true );
+			addFloorButton.gameObject.SetActive( false );
+		}
+			
 	}
 
 }

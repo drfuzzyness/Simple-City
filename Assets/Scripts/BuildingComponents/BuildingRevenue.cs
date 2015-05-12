@@ -5,6 +5,7 @@ public class BuildingRevenue : MonoBehaviour {
 	public enum ValueCalculationMode {QualityOfLife, PunishHighrises }
 	
 	[Header("Status")]
+	public bool isOwned;
 	public float revenue;
 	public float combinedValue; 
 	public float floorConstructionCost;
@@ -28,36 +29,38 @@ public class BuildingRevenue : MonoBehaviour {
 	private Building blding;
 	private BuildingUI bldingUI;
 	
-	public bool BuyNewBuilding() {
+	public void BuyNewBuilding() {
 		if( BudgetManager.instance.Purchase( combinedValue ) ) {
 			perFloorValue = Mathf.Ceil(marketValue / 5);
 			blding.CreateBuilding();
-			return true;
+			isOwned = true;
+// 			return true;
 		}
 		else {
 // 			Debug.LogWarning( "not enough money" );
-			return false;
+// 			return false;
 		}
 	}
 	
-	public bool BuyExistingBuilding() {
+	public void BuyExistingBuilding() {
 		Debug.LogError( "BuyExistingBuilding() is not yet implemented." );
 		if( BudgetManager.instance.Purchase( combinedValue ) ) {
 			perFloorValue = Mathf.Ceil(marketValue / 5);
-			return true;
+			isOwned = true;
+// 			return true;
 		}
 		else {
 // 			Debug.LogWarning( "not enough money" );
-			return false;
+// 			return false;
 		}
 	}
 	
-	public bool AddFloor() {
+	public void AddFloor() {
 		if( BudgetManager.instance.Purchase( floorConstructionCost )) {
 			blding.BuildFloor();
-			return true;
+// 			return true;
 		}
-		return false;
+// 		return false;
 	}
 	
 	void CalculateHighriseValue() {
@@ -93,6 +96,7 @@ public class BuildingRevenue : MonoBehaviour {
 	}
 	
 	void Start () {
+		isOwned = false;
 		switch( valueCalculationMode ) {
 			case ValueCalculationMode.PunishHighrises:
 				TheValueCalculation = CalculateHighriseValue;
