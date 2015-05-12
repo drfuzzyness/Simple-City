@@ -49,15 +49,13 @@ public class BuildingUI : MonoBehaviour {
 	
 	void Start () {
 		blding = GetComponent<Building>();
-		bldingRev = GetComponent<BuildingRevenue>();
 		sphrinf = GetComponent<SphereOfInfluence>();
-		bldingExports = GetComponent<BuildingExports>();
 		overviewCanvas = UITransform.GetChild(0);
 		detailsCanvas = UITransform.GetChild(1);
 	}
 	
 	void Update () {
-		if( bldingRev != null )
+		if( blding.buildingRevenue != null )
 			UpdateMoneyCanvas();
 	}
 	
@@ -104,7 +102,7 @@ public class BuildingUI : MonoBehaviour {
 				Debug.Log("lmb"); // leftclick
 				switch( leftMouseAction ) {
 					case MouseAction.BuildFloor:
-						bldingRev.AddFloor();
+						blding.buildingRevenue.AddFloor();
 						break;
 					case MouseAction.Info:
 						ToggleDisplayDetails();
@@ -117,7 +115,7 @@ public class BuildingUI : MonoBehaviour {
 				Debug.Log("rmb");
 				switch( rightMouseAction ) {
 					case MouseAction.BuildFloor:
-						bldingRev.AddFloor();
+						blding.buildingRevenue.AddFloor();
 						break;
 					case MouseAction.Info:
 						ToggleDisplayDetails();
@@ -160,20 +158,20 @@ public class BuildingUI : MonoBehaviour {
 	
 	IEnumerator MoreInfoDisplay() {
 		detailsCanvas.gameObject.SetActive( true );
-		BudgetManager.instance.paused = true;
+		BudgetManager.instance.isPaused = true;
 		// animate to display
 		while( showMoreInfoDisplay ) {
 			UpdateDescriptionCanvas();
 			yield return null;
 		}
-		BudgetManager.instance.paused = false;
+		BudgetManager.instance.isPaused = false;
 		detailsCanvas.gameObject.SetActive( false );
 		// animate away display
 	}
 	
 	void UpdateMoneyCanvas() {
 		if( blding.isRunning ) {
-			if( bldingRev.revenue >= 0 ) {
+			if( blding.buildingRevenue.revenue >= 0 ) {
 				revText.text = "$" + bldingRev.revenue;
 				revText.color = positiveCashflowColor;
 			}
@@ -188,7 +186,7 @@ public class BuildingUI : MonoBehaviour {
 	}
 	
 	void UpdateDescriptionCanvas() {
-		switch( bldingExports.type ) {
+		switch( blding.buildingExports.type ) {
 			case BuildingExports.BuildingType.Commercial:
 				detTitle.text = "Commercial Building";
 				break;
@@ -202,10 +200,10 @@ public class BuildingUI : MonoBehaviour {
 		
 		detFloors.text = blding.floors.Count.ToString();
 		
-		RenderMoneyTextPretty( bldingRev.revenue, detRevenue );
-		RenderMoneyTextPretty( bldingRev.combinedValue, detValue );
+		RenderMoneyTextPretty( blding.buildingRevenue.revenue, detRevenue );
+		RenderMoneyTextPretty( blding.buildingRevenue.combinedValue, detValue );
 		
-		if( bldingRev.isOwned ) {
+		if( blding.buildingRevenue.isOwned ) {
 			buyButton.gameObject.SetActive( false );
 			addFloorButton.gameObject.SetActive( true );
 		} else {

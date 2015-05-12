@@ -13,7 +13,6 @@ public class Floor : MonoBehaviour {
 		if( building == null) {
 			Debug.LogError( gameObject.name + " can't get parent BuildingUI." );
 		}
-		bldingUI = building.GetComponent<BuildingUI>();
 		rightfulLocalPosition = transform.localPosition;
 	}
 	
@@ -40,7 +39,7 @@ public class Floor : MonoBehaviour {
 // 		}
 	}
 	
-	bool CheckIfMouseUnobstructed() {
+	public static bool CheckIfMouseUnobstructed() {
 // 		Debug.Log(  UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() );
 		return !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(); 
 		// solution via via http://answers.unity3d.com/questions/822273/how-to-prevent-raycast-when-clicking-46-ui.html

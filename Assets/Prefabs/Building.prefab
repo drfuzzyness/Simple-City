@@ -49,7 +49,7 @@ GameObject:
   - 114: {fileID: 11497078}
   m_Layer: 0
   m_Name: Building Plot
-  m_TagString: Building
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,6 +186,7 @@ GameObject:
   - 114: {fileID: 11468858}
   - 114: {fileID: 11454964}
   - 114: {fileID: 11464334}
+  - 135: {fileID: 13553022}
   m_Layer: 0
   m_Name: Building
   m_TagString: Building
@@ -759,7 +760,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
-  m_BlockingObjects: 0
+  m_BlockingObjects: 3
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1062,13 +1063,15 @@ MonoBehaviour:
   combinedValue: 0
   floorConstructionCost: 0
   valueCalculationMode: 1
-  marketValue: 0
-  structureValue: 0
   perFloorValue: 0
+  marketValue: 0
+  valuePerNeighbor: 0
+  structureValue: 0
+  baseValue: 0
   perFloorRent: 0
   negativePerFloorMultiplier: 0
-  modifierForNegativeFloors: .5
   numPositiveFloors: 5
+  rentToValueConversion: 5
 --- !u!114 &11477140
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1230,6 +1233,18 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: $20
+--- !u!135 &13553022
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &19883450
 ParticleSystem:
   m_ObjectHideFlags: 1

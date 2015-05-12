@@ -5,18 +5,20 @@ using UnityEngine.UI;
 
 public class BudgetManager : MonoBehaviour {
 
-
+	public bool isPaused;	
 	public float money;
-	public float revenue;
+	public float sumRevenue;
 	private float countdown;
 
 	[Header("Balance")]
 	public float timePerPaycheck;
 	public int paychecksPerConstruction;
-	public float costToBuildIncreaseRate;
+	public float baseValue;
+	private float originalBaseValue;
+	public float baseValuePerBuilding;
 	public bool buildFloorsEveryConstruction;
 
-	[Header("Setup")]
+	[Header("UI Display")]
 
 	public Text moneyText;
 	public Text revenueText;
@@ -27,29 +29,18 @@ public class BudgetManager : MonoBehaviour {
 
 	public static BudgetManager instance;
 
-	private int numBuiltBuildings;
+	private int numOwnedBuildings;
 	private int paychecks;
-	public bool paused;
+	
 
 	public bool Purchase( float price ) {
 		if( money > price ) {
 			money -= price;
-			numBuiltBuildings++;
-			UpdateCostToBuildForPlots();
-			UpdateUI();
 			return true;
 		}
 		PlayerUIManager.instance.NotEnoughtMoney();
 		return false;
 	}
-	
-// 	public void Pause() {
-// 		paused = true;
-// 	}
-// 	
-// 	public void Resume() {
-// 		paused = false;
-// 	}
 
 	void Awake() {
 		instance = this;
@@ -58,35 +49,40 @@ public class BudgetManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		paused = false;
+		isPaused = false;
 		countdown = timePerPaycheck;
 		CalculateRevenue();
 		UpdateUI();
-		numBuiltBuildings = 0;
+		originalBaseValue = baseValue;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		UpdateCountdown();
+		UpdateOwnedAndRunningBuildings();
+// 		UpdateBaseValuesLinear();
+		UpdateCostToBuildForPlots();
+		CalculateRevenue();
+		UpdateUI();
 	}
 
 	void CalculateRevenue() {
-		revenue = 0;
+		sumRevenue = 0f;
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
-			if( thisBuilding.isRunning )
-				revenue += thisBuilding.GetComponent<BuildingRevenue>().revenue;
+			if( thisBuilding.isRunning && thisBuilding.buildingRevenue.isOwned )
+				sumRevenue += thisBuilding.buildingRevenue.revenue;
 		}
 	}
 
 	void UpdateUI() {
 		moneyText.text = "$" + money;
 
-		if( revenue >= 0 ) {
-			revenueText.text = "+$" + revenue;
+		if( sumRevenue >= 0 ) {
+			revenueText.text = "+$" + sumRevenue;
 			revenueText.color = positiveCashflowColor;
 		}
 		else {
-			revenueText.text = "-$" + Mathf.Abs( revenue );
+			revenueText.text = "-$" + Mathf.Abs( sumRevenue );
 			revenueText.color = negativeCashflowColor;
 		}
 		countdownText.text = ( paychecks % paychecksPerConstruction + 1 ) + "/" + paychecksPerConstruction ;
@@ -94,7 +90,7 @@ public class BudgetManager : MonoBehaviour {
 	}
 
 	void UpdateCountdown() {
-		if( !paused ) {
+		if( !isPaused ) {
 			countdown -= Time.deltaTime;
 		}
 		if( countdown < 0 ) {
@@ -111,7 +107,7 @@ public class BudgetManager : MonoBehaviour {
 			BuildFloorOnAll();
 		}
 		CalculateRevenue();
-		money += revenue;
+		money += sumRevenue;
 
 
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
@@ -119,8 +115,6 @@ public class BudgetManager : MonoBehaviour {
 				thisBuilding.age++;
 			}
 		}
-
-		UpdateUI();
 	}
 
 	void BuildFloorOnAll() {
@@ -130,11 +124,27 @@ public class BudgetManager : MonoBehaviour {
 		}
 		CalculateRevenue();
 	}
+	
+	void UpdateBaseValuesLinear() {
+		baseValue = originalBaseValue + baseValuePerBuilding * numOwnedBuildings;
+		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
+			thisBuilding.buildingRevenue.baseValue = baseValue;
+		}
+	}
 
 	void UpdateCostToBuildForPlots() {
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
 			if( !thisBuilding.isBuilt ) {
 // 				thisBuilding.GetComponent<BuildingRevenue>().UpdateCostToBuild( costToBuildIncreaseRate );
+			}
+		}
+	}
+	
+	void UpdateOwnedAndRunningBuildings() {
+		numOwnedBuildings = 0;
+		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
+			if( thisBuilding.isRunning && thisBuilding.buildingRevenue.isOwned ) {
+				
 			}
 		}
 	}

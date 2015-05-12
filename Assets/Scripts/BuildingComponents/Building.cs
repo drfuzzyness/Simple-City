@@ -34,9 +34,16 @@ public class Building : MonoBehaviour {
 		}
 	}
 	
-
+	[HideInInspector]
+	public BuildingRevenue buildingRevenue;
+	[HideInInspector]
+	public BuildingExports buildingExports;
+	[HideInInspector]
+	public SphereOfInfluence sphereOfInfluence;
+	[HideInInspector]	
 	private Transform roof;
-    private BuildingUI bldingUI;
+	[HideInInspector]
+    public BuildingUI buildingUI;
 
     public bool CreateBuilding() {
 		if( isBuilt ) {
@@ -55,7 +62,7 @@ public class Building : MonoBehaviour {
 		lastFloor.building = this;
 		
 		lastFloor.transform.SetParent( transform );
-		bldingUI.UITransform.gameObject.SetActive( false );
+		buildingUI.UITransform.gameObject.SetActive( false );
 		
 		dustParticles.Play();
 		if( animationsEnabled ) {
@@ -101,7 +108,7 @@ public class Building : MonoBehaviour {
 			roof = Instantiate( roofPrefab, transform.position, transform.rotation ) as Transform;
 			roof.SetParent( transform );
 			roof.Translate( -lastFloor.size, Space.Self );
-			bldingUI.UITransform.parent = roof.GetChild(0);
+			buildingUI.UITransform.parent = roof.GetChild(0);
 // 			bldingUI.UITransform.Translate( transform.forward * -1.5f, Space.Self);
 			Animator anim = roof.GetComponent<Animator>();
 			int doneState = Animator.StringToHash("Idle");
@@ -114,7 +121,7 @@ public class Building : MonoBehaviour {
 		}
 		isRunning = true;
 		Debug.Log( "Enabling UI");
-		bldingUI.UITransform.gameObject.SetActive( true );
+		buildingUI.UITransform.gameObject.SetActive( true );
 		yield return null;
 		
 	}
@@ -181,7 +188,10 @@ public class Building : MonoBehaviour {
 	}
 
 	void Awake() {
-		bldingUI = GetComponent<BuildingUI>();
+		buildingUI = GetComponent<BuildingUI>();
+		buildingRevenue = GetComponent<BuildingRevenue>();
+		buildingExports = GetComponent<BuildingExports>();
+		sphereOfInfluence = GetComponent<SphereOfInfluence>();
 	}
 
     void Start() {

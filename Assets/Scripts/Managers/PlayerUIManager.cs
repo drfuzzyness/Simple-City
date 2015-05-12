@@ -44,11 +44,15 @@ public class PlayerUIManager : MonoBehaviour {
 		StartCoroutine( FlashBudgetPanel() );
 	}
 	
+	public void IncorrectPlacement() {
+		
+	}
+	
 	public void TogglePause() {
-		if( BudgetManager.instance.paused ) {
-			BudgetManager.instance.paused = false;
+		if( BudgetManager.instance.isPaused ) {
+			BudgetManager.instance.isPaused = false;
 		} else {
-			BudgetManager.instance.paused = true;
+			BudgetManager.instance.isPaused = true;
 		}
 	}
 	
