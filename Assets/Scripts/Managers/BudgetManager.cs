@@ -105,6 +105,9 @@ public class BudgetManager : MonoBehaviour {
 		UpdateCostToBuildForPlots();
 		CalculateRevenue();
 		UpdateUI();
+		if( money < 0 ) {
+			PlayerUIManager.instance.GameOver();
+		}
 	}
 
 	void CalculateRevenue() {
