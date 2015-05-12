@@ -49,7 +49,7 @@ GameObject:
   - 114: {fileID: 11497078}
   m_Layer: 0
   m_Name: Building Plot
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -185,6 +185,7 @@ GameObject:
   - 114: {fileID: 11475652}
   - 114: {fileID: 11468858}
   - 114: {fileID: 11454964}
+  - 114: {fileID: 11464334}
   m_Layer: 0
   m_Name: Building
   m_TagString: Building
@@ -296,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &178012
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +930,18 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+--- !u!114 &11464334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155092}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb853e32520f04d32bf0003043d98fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
 --- !u!114 &11468858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -945,14 +958,12 @@ MonoBehaviour:
   neighborVisualization: 0
   UITransform: {fileID: 489404}
   revText: {fileID: 11499660}
-  detTitle: {fileID: 0}
-  detFloors: {fileID: 0}
-  detRevenue: {fileID: 0}
-  detValue: {fileID: 0}
-  neighborListPrefab: {fileID: 105514, guid: 308d2d7e978e74694872ab1e8af1093a, type: 2}
-  neighborListStart: {fileID: 0}
-  neighborListOffset: {x: 0, y: 0, z: 0}
-  detNeighborsList: []
+  detTitle: {fileID: 11492170}
+  detFloors: {fileID: 11423280}
+  detRevenue: {fileID: 11402138}
+  detValue: {fileID: 11438374}
+  buyButton: {fileID: 11490088}
+  addFloorButton: {fileID: 11402034}
   positiveCashflowColor: {r: .549019635, g: .909803987, b: .352941185, a: 1}
   neutralColor: {r: .875, g: .875, b: .875, a: 1}
   negativeCashflowColor: {r: 1, g: .310344756, b: 0, a: 1}
@@ -1046,6 +1057,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34248930a7e645dbba0074a7712ad40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOwned: 0
   revenue: 0
   combinedValue: 0
   floorConstructionCost: 0

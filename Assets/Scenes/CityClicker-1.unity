@@ -30635,15 +30635,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 412160, guid: a8b83ec39cf8046ad8479f607a46ce6f, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 11468858, guid: a8b83ec39cf8046ad8479f607a46ce6f, type: 2}
-      propertyPath: neighborListStart
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 176318, guid: a8b83ec39cf8046ad8479f607a46ce6f, type: 2}
+    - target: {fileID: 155092, guid: a8b83ec39cf8046ad8479f607a46ce6f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 110674, guid: a8b83ec39cf8046ad8479f607a46ce6f, type: 2}
+      propertyPath: m_TagString
+      value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 110674, guid: a8b83ec39cf8046ad8479f607a46ce6f, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a8b83ec39cf8046ad8479f607a46ce6f, type: 2}
@@ -48159,6 +48163,22 @@ Transform:
   - {fileID: 821254437}
   m_Father: {fileID: 32753555}
   m_RootOrder: 0
+--- !u!1 &1812151932
+GameObject:
+  m_PrefabParentObject: {fileID: 155092, guid: a8b83ec39cf8046ad8479f607a46ce6f, type: 2}
+  m_PrefabInternal: {fileID: 1189102920}
+--- !u!135 &1812151938
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1812151932}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1813248776
 GameObject:
   m_ObjectHideFlags: 0
@@ -49337,10 +49357,8 @@ MonoBehaviour:
   detFloors: {fileID: 0}
   detRevenue: {fileID: 0}
   detValue: {fileID: 0}
-  neighborListPrefab: {fileID: 0}
-  neighborListStart: {fileID: 0}
-  neighborListOffset: {x: 0, y: 0, z: 0}
-  detNeighborsList: []
+  buyButton: {fileID: 0}
+  addFloorButton: {fileID: 0}
   positiveCashflowColor: {r: .549019635, g: .909803987, b: .352941185, a: 1}
   neutralColor: {r: .875, g: .875, b: .875, a: 1}
   negativeCashflowColor: {r: 1, g: .310344756, b: 0, a: 1}
@@ -49362,6 +49380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34248930a7e645dbba0074a7712ad40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isOwned: 0
   revenue: 0
   combinedValue: 0
   floorConstructionCost: 0

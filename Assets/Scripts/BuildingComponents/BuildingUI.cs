@@ -163,6 +163,7 @@ public class BuildingUI : MonoBehaviour {
 		BudgetManager.instance.paused = true;
 		// animate to display
 		while( showMoreInfoDisplay ) {
+			UpdateDescriptionCanvas();
 			yield return null;
 		}
 		BudgetManager.instance.paused = false;
@@ -200,19 +201,9 @@ public class BuildingUI : MonoBehaviour {
 		}
 		
 		detFloors.text = blding.floors.Count.ToString();
-		if( bldingRev.revenue >= 0 ) {
-			detRevenue.text = "$" + bldingRev.revenue;
-		}
-		else {
-			detRevenue.text = "-$" + Mathf.Abs( bldingRev.revenue );
-		}
 		
-		if( bldingRev.combinedValue >= 0 ) {
-			detValue.text = "$" + bldingRev.combinedValue;
-		}
-		else {
-			detValue.text = "-$" + Mathf.Abs( bldingRev.combinedValue );
-		}
+		RenderMoneyTextPretty( bldingRev.revenue, detRevenue );
+		RenderMoneyTextPretty( bldingRev.combinedValue, detValue );
 		
 		if( bldingRev.isOwned ) {
 			buyButton.gameObject.SetActive( false );
@@ -222,6 +213,15 @@ public class BuildingUI : MonoBehaviour {
 			addFloorButton.gameObject.SetActive( false );
 		}
 			
+	}
+	
+	public static void RenderMoneyTextPretty( float value, Text target ) {
+		if( value >= 0 ) {
+			target.text = "$" + value;
+		}
+		else {
+			target.text = "-$" + Mathf.Abs( value );
+		}
 	}
 
 }

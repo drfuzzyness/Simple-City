@@ -18,19 +18,41 @@ public class Floor : MonoBehaviour {
 	}
 	
 	void OnMouseDown() {
-		bldingUI.MouseDown();
-	}
-	void OnMouseEnter() {
-		bldingUI.MouseEnter();
-	}
-	void OnMouseOver() {
-		if( Input.GetMouseButtonDown(1) ) {
+		if( CheckIfMouseUnobstructed() ) {
 			bldingUI.MouseDown();
 		}
 	}
+	void OnMouseEnter() {
+		if( CheckIfMouseUnobstructed() ) {
+			bldingUI.MouseEnter();
+		}
+	}
+	void OnMouseOver() {
+		if( CheckIfMouseUnobstructed() ) {
+			if( Input.GetMouseButtonDown(1) ) {
+				bldingUI.MouseDown();
+			}
+		}
+	}
 	void OnMouseExit() {
-		bldingUI.MouseExit();
+// 		if( CheckIfMouseUnobstructed() ) {
+			bldingUI.MouseExit();
+// 		}
 	}
 	
+	bool CheckIfMouseUnobstructed() {
+// 		Debug.Log(  UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() );
+		return !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(); 
+		// solution via via http://answers.unity3d.com/questions/822273/how-to-prevent-raycast-when-clicking-46-ui.html
+		
+// 		Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+// 		RaycastHit hit = new RaycastHit();
+// 		
+// 		if( Physics.Raycast( ray, out hit ) ) {
+// 			Debug.Log( hit.collider );
+// 			return hit.collider.tag == "Floor" || hit.collider.tag == "Building";
+// 		}
+// 		return false;
+	}
 	
 }
