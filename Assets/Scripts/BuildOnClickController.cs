@@ -37,7 +37,7 @@ public class BuildOnClickController : MonoBehaviour {
 								if( hit.collider.tag == "Terrain" ) {
 									// try to build a building on terrain
 									Debug.Log("Building on fresh terrain.");
-									if( BudgetManager.instance.Purchase( BudgetManager.instance.baseValue ) ) {
+									if( BudgetManager.instance.Purchase( BudgetManager.instance.landValue ) ) {
 										Building newBuild = Instantiate( buildingPrefab, hit.point, Quaternion.identity ) as Building;
 										newBuild.CreateBuilding();
 										newBuild.buildingRevenue.isOwned = true;
@@ -46,12 +46,13 @@ public class BuildOnClickController : MonoBehaviour {
 								}
 							break;
 						case BuildMode.ClickOnMesh:
-							if( BudgetManager.instance.Purchase( BudgetManager.instance.baseValue ) ) {
+							if( BudgetManager.instance.Purchase( BudgetManager.instance.landValue ) ) {
 								Vector3 normal = GetNormalFromRay( clickRay );
 								Quaternion rotation = Quaternion.LookRotation( normal );
 								rotation *= Quaternion.Euler( Vector3.right * 90f);
 								Debug.Log( rotation );
 								Building bld = Instantiate( buildingPrefab, hit.point + normal.normalized * 2f, rotation ) as Building;
+								bld.CreateBuilding();
 								bld.transform.SetParent( hit.transform );
 								bld.buildingRevenue.isOwned = true;
 								BuildingManager.instance.buildings.Add( bld );

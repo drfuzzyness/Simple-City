@@ -21,8 +21,8 @@ public class BudgetManager : MonoBehaviour {
 	private IncreaseRateFunc increaseRateFunc;
 	
 	[Header("Base Value")]
-	public float baseValue;
-	private float originalBaseValue;
+	public float landValue;
+	private float originalLandValue;
 	public IncreaseRate valueIncreaseRate;
 	public float linearValuePerBuilding;
 	public float exponent;
@@ -82,7 +82,7 @@ public class BudgetManager : MonoBehaviour {
 		countdown = timePerPaycheck;
 		CalculateRevenue();
 		UpdateUI();
-		originalBaseValue = baseValue;
+		originalLandValue = landValue;
 	}
 	
 	// Update is called once per frame
@@ -129,7 +129,7 @@ public class BudgetManager : MonoBehaviour {
 			revenueText.text = "-$" + Mathf.Abs( sumRevenue );
 			revenueText.color = negativeCashflowColor;
 		}
-		valueText.text = "$" + baseValue;
+		valueText.text = "$" + landValue;
 		countdownText.text = ( paychecks % paychecksPerConstruction + 1 ) + "/" + paychecksPerConstruction ;
 		if( isPaused ) {
 			pausedText.text = "GAME PAUSED";
@@ -175,17 +175,17 @@ public class BudgetManager : MonoBehaviour {
 	}
 	
 	void UpdateBaseValuesExponential() {
-		baseValue = originalBaseValue + Mathf.Pow( linearValuePerBuilding * numOwnedBuildings, exponent );
+		landValue = originalLandValue + Mathf.Pow( linearValuePerBuilding * numOwnedBuildings, exponent );
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
-			thisBuilding.buildingRevenue.baseValue = baseValue;
+			thisBuilding.buildingRevenue.landValue = landValue;
 		}
 	}
 	
 	void UpdateBaseValuesLinear() {
-		baseValue = originalBaseValue + linearValuePerBuilding * numOwnedBuildings;
+		landValue = originalLandValue + linearValuePerBuilding * numOwnedBuildings;
 		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
 // 			Debug.Log("Applying baseValue of " + baseValue + " to " + thisBuilding);
-			thisBuilding.buildingRevenue.baseValue = baseValue;
+			thisBuilding.buildingRevenue.landValue = landValue;
 		}
 	}
 

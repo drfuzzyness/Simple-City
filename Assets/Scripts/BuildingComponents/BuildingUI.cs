@@ -156,7 +156,7 @@ public class BuildingUI : MonoBehaviour {
 	
 	IEnumerator MoreInfoDisplay() {
 		detailsCanvas.gameObject.SetActive( true );
-		BudgetManager.instance.isPaused = true;
+// 		BudgetManager.instance.isPaused = true;
 		// animate to display
 		while( showMoreInfoDisplay ) {
 			// keep canvas above ground
@@ -165,7 +165,7 @@ public class BuildingUI : MonoBehaviour {
 			if( Input.GetMouseButtonDown(1) )
 				showMoreInfoDisplay = false;
 		}
-		BudgetManager.instance.isPaused = false;
+// 		BudgetManager.instance.isPaused = false;
 		detailsCanvas.gameObject.SetActive( false );
 		// animate away display
 	}

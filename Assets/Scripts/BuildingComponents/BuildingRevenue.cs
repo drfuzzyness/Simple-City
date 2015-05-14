@@ -19,7 +19,7 @@ public class BuildingRevenue : MonoBehaviour {
 	public float structureValue; // value based on the actual structure independant of 
 	
 	[Header("Punish Highrise Algorithum")]
-	public float baseValue;
+	public float landValue;
 	
 	
 	
@@ -71,7 +71,7 @@ public class BuildingRevenue : MonoBehaviour {
 			revenue = (BudgetManager.instance.perFloorRent * BudgetManager.instance.numPositiveFloors) - 
 				Mathf.Round( (blding.floors.Count - BudgetManager.instance.numPositiveFloors) * BudgetManager.instance.negativePerFloorMultiplier);
 		}
-		combinedValue = Mathf.Round( revenue * BudgetManager.instance.rentToValueConversion + baseValue );
+		combinedValue = Mathf.Round( revenue * BudgetManager.instance.rentToValueConversion + landValue );
 		floorConstructionCost = combinedValue * BudgetManager.instance.newFloorRatioOfValue;
 	}
 	
