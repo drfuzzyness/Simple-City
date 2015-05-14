@@ -972,6 +972,26 @@ Prefab:
       propertyPath: countdownSlider
       value: 
       objectReference: {fileID: 1288425966}
+    - target: {fileID: 11440430, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
+      propertyPath: buildFloorsEveryConstruction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440430, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
+      propertyPath: valueIncreaseRate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440430, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
+      propertyPath: negativePerFloorMultiplier
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440430, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
+      propertyPath: paychecksPerConstruction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11440430, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
+      propertyPath: timePerPaycheck
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 44221c3543d0940e184c9ef1f850329b, type: 2}
   m_IsPrefabParent: 0
@@ -5418,7 +5438,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &176887847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27348,8 +27368,6 @@ Prefab:
 
         LMB to Build
 
-        RMB for Info
-
         Scroll to Zoom
 
         ESC to Exit
@@ -48758,7 +48776,7 @@ Prefab:
       objectReference: {fileID: 321045607}
     - target: {fileID: 11491504, guid: 2bd099a257c60433b83173ae19c7e626, type: 2}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11407404, guid: 2bd099a257c60433b83173ae19c7e626, type: 2}
       propertyPath: gameoverTransition.m_Curve.Array.data[1].time

@@ -3,74 +3,85 @@ using System.Collections;
 
 public class BuildingRevenue : MonoBehaviour {
 	
-	public enum ValueCalculationMode {QualityOfLife, PunishHighrises }
 	
 	[Header("Status")]
+	public bool isOwned;
 	public float revenue;
 	public float combinedValue; 
+	public float floorConstructionCost;
 	[SerializeField]
-	private ValueCalculationMode valueCalculationMode;
 	
-	[Header("Quality of Life Algorithum")]
+	[Header("Algorithum Components")]
+	public float perFloorValue;
+	
+	[Header("Neighbors Algorithum")]
 	public float marketValue; // changes with the surrounding neighborhood
 	public float structureValue; // value based on the actual structure independant of 
 	
 	[Header("Punish Highrise Algorithum")]
-	public float perFloorMultiplier; // should be multiplied against the marketValue
-	public float negativePerFloorMultiplier; // used to punish high-rise buildings
-	public float modifierForNegativeFloors;
-	public int numPositiveFloors;
+	public float landValue;
+	
+	
 	
 	
 	private delegate void ValueCalculation();
 	private ValueCalculation TheValueCalculation;
 	private Building blding;
-	private BuildingUI bldingUI;
 	
-	public bool BuyNewBuilding() {
+	public void BuyNewBuilding() {
 		if( BudgetManager.instance.Purchase( combinedValue ) ) {
-			perFloorMultiplier = Mathf.Ceil(marketValue / 5);
+// 			perFloorValue = Mathf.Ceil(marketValue / 5);
 			blding.CreateBuilding();
-			return true;
+			isOwned = true;
+// 			return true;
 		}
 		else {
 // 			Debug.LogWarning( "not enough money" );
-			return false;
+// 			return false;
 		}
 	}
 	
-	public bool BuyExistingBuilding() {
+	public void BuyExistingBuilding() {
 		Debug.LogError( "BuyExistingBuilding() is not yet implemented." );
+		if( isOwned ) {
+			Debug.LogError( "Building is already owned by you." );
+			return;
+		}
 		if( BudgetManager.instance.Purchase( combinedValue ) ) {
-			perFloorMultiplier = Mathf.Ceil(marketValue / 5);
-			return true;
+			perFloorValue = Mathf.Ceil(marketValue / 5);
+			isOwned = true;
+// 			return true;
+		}
+	}
+	
+	public void AddFloor() {
+		if( BudgetManager.instance.Purchase( floorConstructionCost )) {
+			blding.BuildFloor();
+// 			return true;
+		}
+// 		return false;
+	}
+	
+	void CalculateHighriseValue() {
+		// This is the classic formula that made the classic, argubly political, and unfun game
+		if( blding.floors.Count < BudgetManager.instance.numPositiveFloors ) { 
+			revenue = BudgetManager.instance.perFloorRent * blding.floors.Count;
 		}
 		else {
-// 			Debug.LogWarning( "not enough money" );
-			return false;
+			revenue = (BudgetManager.instance.perFloorRent * BudgetManager.instance.numPositiveFloors) - 
+				Mathf.Round( (blding.floors.Count - BudgetManager.instance.numPositiveFloors) * BudgetManager.instance.negativePerFloorMultiplier);
 		}
+		combinedValue = Mathf.Round( revenue * BudgetManager.instance.rentToValueConversion + landValue );
+		floorConstructionCost = combinedValue * BudgetManager.instance.newFloorRatioOfValue;
 	}
 	
-	void CalculateRevenueBasedOnFloors() {
-		if( blding.floors.Count < numPositiveFloors ) {
-			revenue = perFloorMultiplier * blding.floors.Count;
-		}
-		else {
-			revenue = (perFloorMultiplier * numPositiveFloors) - 
-				Mathf.Round( (blding.floors.Count - numPositiveFloors) * negativePerFloorMultiplier);
-		}
-
-	}
-	
-	void CalculateRevenueQualityOfLife() {
-		
-	}
-	
-	public void UpdateCostToBuild( float increaseRate ) {
-		// Increase rate should be >= 1
-		if( !blding.isBuilt ) {
-			marketValue = Mathf.Round( marketValue * increaseRate );
-		}
+	void CalculateRevenueNeighbors() {
+		// Simulates value through being close to neighbors
+		marketValue = blding.sphereOfInfluence.neighbors.Count * BudgetManager.instance.valuePerNeighbor;
+		structureValue = blding.floors.Count * perFloorValue;
+		combinedValue = Mathf.Round( marketValue + structureValue );
+		revenue = combinedValue / BudgetManager.instance.rentToValueConversion;
+		floorConstructionCost = structureValue * BudgetManager.instance.newFloorRatioOfValue;
 	}
 	
 	void CalculateRevenue() {
@@ -79,21 +90,21 @@ public class BuildingRevenue : MonoBehaviour {
 
 	void Awake () {
 		blding = GetComponent<Building>();
-		bldingUI = GetComponent<BuildingUI>();
 	}
 	
 	void Start () {
-		switch( valueCalculationMode ) {
-			case ValueCalculationMode.PunishHighrises:
-				TheValueCalculation = CalculateRevenueBasedOnFloors;
-				break;
-			case ValueCalculationMode.QualityOfLife:
-				TheValueCalculation = CalculateRevenueQualityOfLife;
-				break;
-		}
+
 	}
 	
 	void Update () {
+		switch( BudgetManager.instance.valueCalculationMode ) {
+			case BudgetManager.ValueCalculationMode.PunishHighrises:
+				TheValueCalculation = CalculateHighriseValue;
+				break;
+			case BudgetManager.ValueCalculationMode.Neighbors:
+				TheValueCalculation = CalculateRevenueNeighbors;
+				break;
+		}
 		CalculateRevenue();
 	}
 }

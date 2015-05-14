@@ -17,30 +17,48 @@ public class BuildOnClickController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		// click
-		if( Input.GetMouseButtonDown( 0 ) ) {
+		if( Input.GetMouseButtonDown( 0 ) && Floor.CheckIfMouseUnobstructed() ) {
 			Ray clickRay = Camera.main.ScreenPointToRay( Input.mousePosition );
 			RaycastHit hit = new RaycastHit();
-			if( Physics.Raycast( clickRay, out hit ) ) {
-			switch( buildMode ) {
-					case BuildMode.ClickOnPlane:
-							// click hit
-							if( hit.collider.tag == "Terrain" ) {
-								// try to build a building on terrain
-								Building newBuild = Instantiate( buildingPrefab, hit.point, Quaternion.identity ) as Building;
-								newBuild.CreateBuilding();
-								BuildingManager.instance.buildings.Add( newBuild );
+			if( Physics.Raycast( clickRay, out hit ) && hit.collider.tag == "Terrain" ) {
+				Collider[] cols = Physics.OverlapSphere( hit.point,buildingPrefab.baseFloorPrefab.GetComponent<BoxCollider>().size.x * 1f );
+				bool doBuild = true;
+				foreach( Collider thisCol in cols ) {
+					if( thisCol.tag == "Building" || thisCol.tag == "Floor" ) {
+						Debug.Log( "Too close to " + thisCol );
+						doBuild = false;
+						PlayerUIManager.instance.IncorrectPlacement();
+					}
+				}
+				if( doBuild ) {
+					switch( buildMode ) {
+						case BuildMode.ClickOnPlane:
+								// click hit
+								if( hit.collider.tag == "Terrain" ) {
+									// try to build a building on terrain
+									Debug.Log("Building on fresh terrain.");
+									if( BudgetManager.instance.Purchase( BudgetManager.instance.landValue ) ) {
+										Building newBuild = Instantiate( buildingPrefab, hit.point, Quaternion.identity ) as Building;
+										newBuild.CreateBuilding();
+										newBuild.buildingRevenue.isOwned = true;
+										BuildingManager.instance.buildings.Add( newBuild );
+									}
+								}
+							break;
+						case BuildMode.ClickOnMesh:
+							if( BudgetManager.instance.Purchase( BudgetManager.instance.landValue ) ) {
+								Vector3 normal = GetNormalFromRay( clickRay );
+								Quaternion rotation = Quaternion.LookRotation( normal );
+								rotation *= Quaternion.Euler( Vector3.right * 90f);
+								Debug.Log( rotation );
+								Building bld = Instantiate( buildingPrefab, hit.point + normal.normalized * 2f, rotation ) as Building;
+								bld.CreateBuilding();
+								bld.transform.SetParent( hit.transform );
+								bld.buildingRevenue.isOwned = true;
+								BuildingManager.instance.buildings.Add( bld );
 							}
-						break;
-					case BuildMode.ClickOnMesh:
-						Vector3 normal = GetNormalFromRay( clickRay );
-						Quaternion rotation = Quaternion.LookRotation( normal );
-						rotation *= Quaternion.Euler( Vector3.right * 90f);
-						Debug.Log( rotation );
-						Building bld = Instantiate( buildingPrefab, hit.point + normal.normalized * 2f, rotation ) as Building;
-						bld.transform.SetParent( hit.transform );
-						BuildingManager.instance.buildings.Add( bld );
-						break;
-							
+							break;		
+					}
 				}
 			}
 		}

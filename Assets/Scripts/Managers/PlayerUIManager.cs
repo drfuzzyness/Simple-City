@@ -1,69 +1,46 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityStandardAssets.ImageEffects;
 
 public class PlayerUIManager : MonoBehaviour {
+	
+	public bool isGamePlayable;
+	[Header("Gameover")]
+	public float gameoverDOF;
+	public AnimationCurve gameoverTransition;
+	public float gameoverDelay;
+	public Text bankruptText;
 	
 	[Header("Budget Flashes")]
 	public Color budgetFlashColor;
 	public int budgetNumFlashes;
+	private bool isFlashing;
 	public float budgetDurationOfFlashes;
 	[Header("Configuration")]
 	public Image budgetPanel;
 	public Material wireframeMaterial;
 	public static PlayerUIManager instance;
 
-// 	public Material mat;
-//     private Vector3 startVertex;
-//     private Vector3 mousePos;
-//     void Update() {
-//         mousePos = Input.mousePosition;
-//         if (Input.GetKeyDown(KeyCode.Space))
-//             startVertex = new Vector3(mousePos.x / Screen.width, mousePos.y / Screen.height, 0);
-//         
-//     }
-//     void OnPostRender() {
-//         if (!mat) {
-//             Debug.LogError("Please Assign a material on the inspector");
-//             return;
-//         }
-//         GL.PushMatrix();
-//         mat.SetPass(0);
-//         GL.LoadOrtho();
-//         GL.Begin(GL.LINES);
-//         GL.Color(Color.red);
-//         GL.Vertex(startVertex);
-//         GL.Vertex(new Vector3(mousePos.x / Screen.width, mousePos.y / Screen.height, 0));
-//         GL.End();
-//         GL.PopMatrix();
-//     }
-//     void Example() {
-//         startVertex = new Vector3(0, 0, 0);
-//     }
 	public void NotEnoughtMoney() {
-		StartCoroutine( FlashBudgetPanel() );
+		if( !isFlashing )
+			StartCoroutine( FlashBudgetPanel() );
+	}
+	
+	public void IncorrectPlacement() {
+		
 	}
 	
 	public void TogglePause() {
-		if( BudgetManager.instance.paused ) {
-			BudgetManager.instance.paused = false;
+		if( BudgetManager.instance.isPaused ) {
+			BudgetManager.instance.isPaused = false;
 		} else {
-			BudgetManager.instance.paused = true;
+			BudgetManager.instance.isPaused = true;
 		}
 	}
-	
-	void OnPostRender() {
-		foreach( Building thisBld in BuildingManager.instance.buildings ) {
-			thisBld.GetComponent<BuildingUI>().DrawSphereVisualization();
-			foreach( Floor thisFloor in thisBld.floors ) {
-// 				SimpleLineRenderer.instance.RenderWireframeMesh( thisFloor.GetComponent<MeshRenderer>(),
-// 													    thisBld.GetComponent<MeshFilter>(),
-// 														wireframeMaterial );
-			}
-		}
-	}
-	
+
 	IEnumerator FlashBudgetPanel() {
+		isFlashing = true;
 		float flashDuration = budgetDurationOfFlashes / budgetNumFlashes;
 		Color baseColor = budgetPanel.color;
 		for( int flash = 0; flash < budgetNumFlashes; flash++) {
@@ -77,12 +54,46 @@ public class PlayerUIManager : MonoBehaviour {
 			}
 			budgetPanel.color = baseColor;
 		}
+		budgetPanel.color = baseColor;
+		isFlashing = false;
 	}
+	
+	IEnumerator GameOverDisplay() {
+		VignetteAndChromaticAberration vignette = GetComponent<VignetteAndChromaticAberration>();
+		vignette.enabled = true;
+		bankruptText.gameObject.SetActive( true );
+		float prevBlur = vignette.blurDistance;
+		float ratio = 0f;
+		BudgetManager.instance.isPaused = true;
+		yield return null;
+		for( float timer = 0f; timer > gameoverDelay; timer += Time.deltaTime) {
+// 			Debug.Log( "flashing " + timer );
+			ratio = timer / gameoverDelay;
+// 			Debug.Log( Mathf.Lerp( prevExposure, flashExposurePeak, flashTransition.Evaluate( ratio ) ) );
+			vignette.blurDistance = Mathf.Lerp( prevBlur, gameoverDOF, gameoverTransition.Evaluate( ratio ) );
+			vignette.blur = Mathf.Lerp( prevBlur, gameoverDOF, gameoverTransition.Evaluate( ratio ) );
+			yield return null;
+		}
+		// go to main menu
+	}
+	
+	public void GameOver() {
+		if( !isGamePlayable )
+			return;
+		isGamePlayable = false;
+		StartCoroutine( GameOverDisplay() );
+	}
+	
 
 	void Awake() {
 		instance = this;
 	}
 	
 	void Update() {
+		
+	}
+	
+	void Start() {
+		isGamePlayable = true;
 	}
 }

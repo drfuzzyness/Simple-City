@@ -7,6 +7,7 @@ TagManager:
   - Road
   - Terrain
   - Building
+  - Floor
   layers:
   - Default
   - TransparentFX
