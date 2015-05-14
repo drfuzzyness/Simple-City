@@ -78,13 +78,13 @@ public class PlayerUIManager : MonoBehaviour {
 		for( float timer = 0f; timer > gameoverDelay; timer += Time.deltaTime) {
 // 			Debug.Log( "flashing " + timer );
 			ratio = timer / gameoverDelay;
-// 			Debug.Log( Mathf.Lerp( prevExposure, flashExposurePeak, flashTransition.Evaluate( ratio ) ) );
+// 			Debug.Log( Mathf.Lerp( prevExposure, flashExposurePeak, flashTransition.Evaluate( ratio ) ) );	
 			vignette.blurDistance = Mathf.Lerp( prevBlur, gameoverDOF, gameoverTransition.Evaluate( ratio ) );
 			vignette.blur = Mathf.Lerp( prevBlur, gameoverDOF, gameoverTransition.Evaluate( ratio ) );
 			yield return null;
 		}
 		// go to main menu
-		
+		SetupManager.instance.ShowMainMenu();
 	}	
 
 	void Awake() {
@@ -92,7 +92,9 @@ public class PlayerUIManager : MonoBehaviour {
 	}
 	
 	void Update() {
-		
+		if( Input.GetKeyDown(KeyCode.Escape) ) {
+			SetupManager.instance.ShowMainMenu();
+		}
 	}
 	
 	void Start() {

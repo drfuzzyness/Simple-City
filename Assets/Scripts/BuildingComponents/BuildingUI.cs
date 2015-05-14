@@ -60,6 +60,7 @@ public class BuildingUI : MonoBehaviour {
 	}
 	
 	void Update () {
+		UpdateOverviewCanvas();
 		if( showNewFloorInfo ) {
 			detFloorPrice.gameObject.SetActive( true );
 			addFloorButton.gameObject.SetActive( false );

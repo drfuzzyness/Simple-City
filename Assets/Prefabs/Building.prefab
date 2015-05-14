@@ -964,8 +964,10 @@ MonoBehaviour:
   age: 0
   isBuilt: 0
   isRunning: 0
+  floorsInQuene: 0
+  isUnderConstruction: 0
   startBuilt: 0
-  animationsEnabled: 0
+  animationsEnabled: 1
   baseFloorPrefab: {fileID: 405856, guid: 59ee3bb9b04e844df8a47f8b12294173, type: 2}
   floorPrefab: {fileID: 477536, guid: 62238a1fa0b0746478dffb81b173d59e, type: 2}
   roofPrefab: {fileID: 444916, guid: a5788e2d5f3bb4951b44e09e316fb763, type: 2}
@@ -1068,7 +1070,7 @@ MonoBehaviour:
   leftMouseAction: 1
   rightMouseAction: 2
   neighborVisualization: 2
-  overviewDisplayMode: 0
+  overviewDisplayMode: 2
   UITransform: {fileID: 489404}
   overviewText: {fileID: 11499660}
   detailsButton: {fileID: 11490088}
@@ -1474,6 +1476,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 11450940}
+  highRes: {fileID: 0}
+  lowRes: {fileID: 0}
   size: {x: 0, y: 0, z: 0}
   rightfulLocalPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &11499660

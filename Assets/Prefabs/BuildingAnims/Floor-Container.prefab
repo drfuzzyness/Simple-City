@@ -6627,6 +6627,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   building: {fileID: 0}
+  highRes: {fileID: 404472}
+  lowRes: {fileID: 486680}
   size: {x: 0, y: 2.0999999, z: 0}
   rightfulLocalPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000

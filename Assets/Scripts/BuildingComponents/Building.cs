@@ -9,6 +9,8 @@ public class Building : MonoBehaviour {
 	public int age;
 	public bool isBuilt;
 	public bool isRunning;
+	public int floorsInQuene;
+	public bool isUnderConstruction;
 
 	[Header("Balance")]
 	public bool startBuilt;
@@ -80,7 +82,14 @@ public class Building : MonoBehaviour {
 		Debug.Log("BuildFloor()");
 		if( isBuilt ) {
 			if( isRunning ) {
-				StartCoroutine( BuildNextFloor() );
+				if( isUnderConstruction ) {
+					floorsInQuene++;
+				} else {
+					isUnderConstruction = true;
+					floorsInQuene++;
+					StartCoroutine( BuildNextFloor() );
+				}
+				
 			} else {
 				Debug.LogWarning(gameObject.name + " hasn't finished building and can't BuildFloor()");
 			}
@@ -134,33 +143,36 @@ public class Building : MonoBehaviour {
 // 				                        transform.rotation ) as Floor ); // new floor above last floor
 // 				} 
 // 				else {
-			int rotationNdx = Random.Range(-1, 2);
-			Transform newFloor = Instantiate( floorPrefab,
-		                        lastFloor.transform.position,
-		                        transform.rotation ) as Transform; // new floor above last floor
-			floors.Add( newFloor.GetComponent<Floor>() );
-			lastFloor.transform.Translate(floors[floors.Count - 2].size, Space.Self);	
-// 				}
-			lastFloor.transform.SetParent( floors[floors.Count - 2].transform ); // parent new floor to building
-			lastFloor.transform.Rotate( 0f, rotationNdx * 90f, 0f, Space.Self);
-			lastFloor.building = this;
-			
-			StartCoroutine( MoveRoofUp() );
-			dustParticles.Play();
-			
-			Animator anim = lastFloor.transform.GetChild(0).GetComponent<Animator>();
-			int state = Animator.StringToHash("BuildFloor");
-			if( animationsEnabled ) {
-				anim.Play( state );
-				yield return new WaitForSeconds( .5f ); // praise the sun
-				while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash == state ) {
-					yield return null;
-				}
-				// swap to lowres model
-				lastFloor.transform.GetChild(0).gameObject.SetActive( false );
-				lastFloor.transform.GetChild(1).gameObject.SetActive( true );
-			} 
-			
+			while( floorsInQuene > 0) {
+				int rotationNdx = Random.Range(-1, 2);
+				Transform newFloor = Instantiate( floorPrefab,
+			                        lastFloor.transform.position,
+			                        transform.rotation ) as Transform; // new floor above last floor
+				floors.Add( newFloor.GetComponent<Floor>() );
+				lastFloor.transform.Translate(floors[floors.Count - 2].size, Space.Self);	
+	// 				}
+				lastFloor.transform.SetParent( floors[floors.Count - 2].transform ); // parent new floor to building
+				lastFloor.transform.Rotate( 0f, rotationNdx * 90f, 0f, Space.Self);
+				lastFloor.building = this;
+				
+				StartCoroutine( MoveRoofUp() );
+				dustParticles.Play();
+				
+				Animator anim = lastFloor.transform.GetChild(0).GetComponent<Animator>();
+				int state = Animator.StringToHash("BuildFloor");
+				if( animationsEnabled ) {
+					anim.Play( state );
+					yield return new WaitForSeconds( .5f ); // praise the sun
+					while( anim.GetCurrentAnimatorStateInfo(0).shortNameHash == state ) {
+						yield return null;
+					}
+					// swap to lowres model
+					lastFloor.highRes.gameObject.SetActive( false );
+					lastFloor.lowRes.gameObject.SetActive( true );
+				} 
+				floorsInQuene--;
+			}
+			isUnderConstruction = false;
 	}
 	
 	IEnumerator MoveRoofUp() {

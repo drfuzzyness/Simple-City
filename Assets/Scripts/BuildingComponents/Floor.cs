@@ -4,6 +4,8 @@ using System.Collections;
 public class Floor : MonoBehaviour {
 	
 	public Building building;
+	public Transform highRes;
+	public Transform lowRes;
 	public Vector3 size;
 	public Vector3 rightfulLocalPosition;
 
@@ -40,9 +42,9 @@ public class Floor : MonoBehaviour {
 	
 	public static bool CheckIfMouseUnobstructed() {
 // 		Debug.Log(  UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject() );
-		Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
-		RaycastHit hit = new RaycastHit();
-		Debug.Log( hit.collider );	
+// 		Ray ray = Camera.main.ScreenPointToRay( Input.mousePosition );
+// 		RaycastHit hit = new RaycastHit();
+// 		Debug.Log( hit.collider );	
 		return !UnityEngine.EventSystems.EventSystem.current.IsPointerOverGameObject(); 
 		// solution via via http://answers.unity3d.com/questions/822273/how-to-prevent-raycast-when-clicking-46-ui.html
 		

@@ -15,37 +15,30 @@ public class SetupManager : MonoBehaviour {
 	*/
 	
 	[SerializeField]
-	public int ClassicIndex;
+	private int MainMenuIndex;
 	[SerializeField]
-	public int SimulationIndex;
+	private int ClassicIndex;
+	[SerializeField]
+	private int SimulationIndex;
 	
 	public static SetupManager instance;
 	
 	public void ShowMainMenu() {
-		
+		Application.LoadLevel( MainMenuIndex );
 	}
 	
 	public void PlayClassic() {
-		
+		Debug.Log("Play Classic");
+		Application.LoadLevel( ClassicIndex );
 	}
 	
 	public void PlaySimulation() {
-		
+		Debug.Log("Play Simulation");
+		Application.LoadLevel( SimulationIndex );
 	}
 	
 	void DestroyManagers() {
 		
-	}
-
-	
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
 	}
 	
 	void Awake() {
