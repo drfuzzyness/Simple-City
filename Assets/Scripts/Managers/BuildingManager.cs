@@ -16,6 +16,15 @@ public class BuildingManager : MonoBehaviour {
 	void Awake() {
 		instance = this;
 	}
+	
+	public void Cleanse() {
+		foreach( Building thisBld in buildings) {
+			Destroy( thisBld.gameObject );
+		}
+		foreach( Building thisBld in unownedBuildings) {
+			Destroy( thisBld.gameObject );
+		}
+	}
 
 	// Use this for initialization
 	void Start () {

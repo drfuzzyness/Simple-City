@@ -84,6 +84,7 @@ public class PlayerUIManager : MonoBehaviour {
 			yield return null;
 		}
 		// go to main menu
+		
 	}	
 
 	void Awake() {

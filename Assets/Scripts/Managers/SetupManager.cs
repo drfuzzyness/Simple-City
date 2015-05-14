@@ -14,13 +14,26 @@ public class SetupManager : MonoBehaviour {
 	- Main Menu Animations
 	*/
 	
+	[SerializeField]
+	public int ClassicIndex;
+	[SerializeField]
+	public int SimulationIndex;
+	
 	public static SetupManager instance;
+	
+	public void ShowMainMenu() {
+		
+	}
 	
 	public void PlayClassic() {
 		
 	}
 	
 	public void PlaySimulation() {
+		
+	}
+	
+	void DestroyManagers() {
 		
 	}
 
