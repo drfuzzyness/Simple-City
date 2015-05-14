@@ -21,9 +21,6 @@ public class BuildingRevenue : MonoBehaviour {
 	[Header("Punish Highrise Algorithum")]
 	public float landValue;
 	
-	
-	
-	
 	private delegate void ValueCalculation();
 	private ValueCalculation TheValueCalculation;
 	private Building blding;
@@ -72,7 +69,7 @@ public class BuildingRevenue : MonoBehaviour {
 				Mathf.Round( (blding.floors.Count - BudgetManager.instance.numPositiveFloors) * BudgetManager.instance.negativePerFloorMultiplier);
 		}
 		combinedValue = Mathf.Round( revenue * BudgetManager.instance.rentToValueConversion + landValue );
-		floorConstructionCost = combinedValue * BudgetManager.instance.newFloorRatioOfValue;
+		floorConstructionCost = combinedValue * BudgetManager.instance.valueToNewFloorConversion;
 	}
 	
 	void CalculateRevenueNeighbors() {
@@ -81,7 +78,7 @@ public class BuildingRevenue : MonoBehaviour {
 		structureValue = blding.floors.Count * perFloorValue;
 		combinedValue = Mathf.Round( marketValue + structureValue );
 		revenue = combinedValue / BudgetManager.instance.rentToValueConversion;
-		floorConstructionCost = structureValue * BudgetManager.instance.newFloorRatioOfValue;
+		floorConstructionCost = structureValue * BudgetManager.instance.valueToNewFloorConversion;
 	}
 	
 	void CalculateRevenue() {

@@ -58,6 +58,15 @@ public class PlayerUIManager : MonoBehaviour {
 		isFlashing = false;
 	}
 	
+	
+	
+	public void GameOver() {
+		if( !isGamePlayable )
+			return;
+		isGamePlayable = false;
+		StartCoroutine( GameOverDisplay() );
+	}
+	
 	IEnumerator GameOverDisplay() {
 		VignetteAndChromaticAberration vignette = GetComponent<VignetteAndChromaticAberration>();
 		vignette.enabled = true;
@@ -75,15 +84,7 @@ public class PlayerUIManager : MonoBehaviour {
 			yield return null;
 		}
 		// go to main menu
-	}
-	
-	public void GameOver() {
-		if( !isGamePlayable )
-			return;
-		isGamePlayable = false;
-		StartCoroutine( GameOverDisplay() );
-	}
-	
+	}	
 
 	void Awake() {
 		instance = this;

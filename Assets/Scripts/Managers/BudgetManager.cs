@@ -43,7 +43,7 @@ public class BudgetManager : MonoBehaviour {
 // 	public IncreaseRate floorsIncreaseRate;
 	public bool buildFloorsEveryConstruction;
 // 	public float newFloorLinear = 5f;
-	public float newFloorRatioOfValue;
+	public float valueToNewFloorConversion;
 
 	[Header("UI Display")]
 
@@ -89,10 +89,10 @@ public class BudgetManager : MonoBehaviour {
 	void Update () {
 		switch( valueIncreaseRate ) {
 			case IncreaseRate.Linear:
-				increaseRateFunc = UpdateBaseValuesLinear;
+				increaseRateFunc = UpdateMarketValuesLinear;
 				break;
 			case IncreaseRate.Exponential:
-				increaseRateFunc = UpdateBaseValuesExponential;
+				increaseRateFunc = UpdateMarketValuesExponential;
 				break;
 			case IncreaseRate.Zero:
 				increaseRateFunc = null;
@@ -104,6 +104,10 @@ public class BudgetManager : MonoBehaviour {
 		increaseRateFunc(); // changes based on mode
 		UpdateCostToBuildForPlots();
 		CalculateRevenue();
+		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
+// 			Debug.Log("Applying baseValue of " + baseValue + " to " + thisBuilding);
+			thisBuilding.buildingRevenue.landValue = landValue;
+		}
 		UpdateUI();
 		if( money < 0 ) {
 			PlayerUIManager.instance.GameOver();
@@ -174,19 +178,14 @@ public class BudgetManager : MonoBehaviour {
 		}
 	}
 	
-	void UpdateBaseValuesExponential() {
-		landValue = originalLandValue + Mathf.Pow( linearValuePerBuilding * numOwnedBuildings, exponent );
-		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
-			thisBuilding.buildingRevenue.landValue = landValue;
-		}
+	void UpdateMarketValuesExponential() {
+		landValue = originalLandValue * Mathf.Pow( exponent, numOwnedBuildings );
+		
 	}
 	
-	void UpdateBaseValuesLinear() {
+	void UpdateMarketValuesLinear() {
 		landValue = originalLandValue + linearValuePerBuilding * numOwnedBuildings;
-		foreach( Building thisBuilding in BuildingManager.instance.buildings ) {
-// 			Debug.Log("Applying baseValue of " + baseValue + " to " + thisBuilding);
-			thisBuilding.buildingRevenue.landValue = landValue;
-		}
+
 	}
 
 	void UpdateCostToBuildForPlots() {

@@ -5,8 +5,11 @@ using UnityEngine.UI;
 
 public class CityGridGenerator : MonoBehaviour {
 
+	public bool buildOnStart;
+	private bool alreadyBuilt;	
 	[Header("Setup")]
 	public Transform buildingPrefab;
+	public RoadBuilder roadBuilder;
 	public Vector2 buildingsGrid;
 	public Vector3 sizeOfBuilding;
 
@@ -51,7 +54,7 @@ public class CityGridGenerator : MonoBehaviour {
 		}
 	}
 
-	void GenerateGridOfBuildings() {
+	public void GenerateGridOfBuildings() {
 		for( float x = 0; x <= buildingsGrid.x; x++ ) {
 			for( float y = 0; y <= buildingsGrid.y; y++ ) {
 				Vector3 pos = new Vector3( transform.position.x + x * sizeOfBuilding.x,
@@ -61,5 +64,6 @@ public class CityGridGenerator : MonoBehaviour {
 				BuildingManager.instance.buildings.Add( newBuilding.GetComponent<Building>() );
 			}
 		}
+		alreadyBuilt = true;
 	}
 }

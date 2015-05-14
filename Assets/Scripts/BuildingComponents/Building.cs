@@ -52,6 +52,7 @@ public class Building : MonoBehaviour {
 		}
 		Debug.Log( "CreateBuilding()" );
 		plot.gameObject.SetActive( false );
+		buildingUI.detailsButton.gameObject.SetActive( true );
 		isBuilt = true;
 		isRunning = false;
 		Transform newFloor = Instantiate( baseFloorPrefab, transform.position, transform.rotation ) as Transform;

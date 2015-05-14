@@ -42,20 +42,20 @@ MonoBehaviour:
   isPaused: 0
   money: 10
   sumRevenue: 0
-  timePerPaycheck: 4
+  timePerPaycheck: 3
   paychecksPerConstruction: 2
   landValue: 5
-  valueIncreaseRate: 2
+  valueIncreaseRate: 1
   linearValuePerBuilding: 6
   exponent: 2
   valueCalculationMode: 1
   rentToValueConversion: 5
   valuePerNeighbor: 10
   perFloorRent: 5
-  negativePerFloorMultiplier: 3
+  negativePerFloorMultiplier: 4
   numPositiveFloors: 4
-  buildFloorsEveryConstruction: 0
-  newFloorRatioOfValue: .200000003
+  buildFloorsEveryConstruction: 1
+  valueToNewFloorConversion: .200000003
   moneyText: {fileID: 0}
   revenueText: {fileID: 0}
   valueText: {fileID: 0}

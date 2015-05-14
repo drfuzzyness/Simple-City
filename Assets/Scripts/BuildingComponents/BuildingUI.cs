@@ -8,16 +8,24 @@ public class BuildingUI : MonoBehaviour {
 	
 	public enum NeighborVisualization { Off, Spheres, Connections };
 	public enum MouseAction { Ignore, BuildFloor, Info };
+	public enum OverviewDisplay { None, NewFloor, Revenue, TotalValue}
 	
 	[Header("Controls")]
 	public MouseAction leftMouseAction;
 	public MouseAction rightMouseAction;
 	public NeighborVisualization neighborVisualization;	
-	[Header("Overview Panel")]	
+	
+	[Header("Overview Panel")]
+	public OverviewDisplay overviewDisplayMode;
+	private bool showOverviewDisplay;
 	public Transform UITransform;
 	
-	public Text revText;
+	public Text overviewText;
+	public Button detailsButton;
+	public Text overviewLabel; 
+	
 	[Header("Details Panel")]
+	public bool showNewFloorInfo;
 	public Text detTitle;
 	public Text detFloors;
 	public Text detRevenue;
@@ -52,8 +60,13 @@ public class BuildingUI : MonoBehaviour {
 	}
 	
 	void Update () {
-		if( blding.buildingRevenue != null )
-			UpdateMoneyCanvas();
+		if( showNewFloorInfo ) {
+			detFloorPrice.gameObject.SetActive( true );
+			addFloorButton.gameObject.SetActive( false );
+		} else {
+			detFloorPrice.gameObject.SetActive( false );
+			addFloorButton.gameObject.SetActive( false );
+		}
 	}
 	
 // 	void OnPostRender() {
@@ -145,16 +158,25 @@ public class BuildingUI : MonoBehaviour {
 		}
 	}
 	
-	void ToggleDisplayDetails() {
+	public void ToggleDisplayDetails() {
 		if( showMoreInfoDisplay ) {
 			showMoreInfoDisplay = false;
 		} else {
 			showMoreInfoDisplay = true;
-			StartCoroutine( MoreInfoDisplay() );
+			StartCoroutine( DoMoreInfoDisplay() );
 		}
 	}
 	
-	IEnumerator MoreInfoDisplay() {
+	public void ToggleOverviewDisplay() {
+		if( showOverviewDisplay ) {
+			showOverviewDisplay = false;
+		} else {
+			showMoreInfoDisplay = true;
+			StartCoroutine( DoOverviewDisplay() );
+		}
+	}
+	
+	IEnumerator DoMoreInfoDisplay() {
 		detailsCanvas.gameObject.SetActive( true );
 // 		BudgetManager.instance.isPaused = true;
 		// animate to display
@@ -170,19 +192,59 @@ public class BuildingUI : MonoBehaviour {
 		// animate away display
 	}
 	
-	void UpdateMoneyCanvas() {
+	IEnumerator DoOverviewDisplay() {
+		while( showOverviewDisplay ) {
+			UpdateOverviewCanvas();
+			yield return null;
+		}
+		
+	}
+	
+	void UpdateOverviewCanvas() {
 		if( blding.isRunning ) {
-			if( blding.buildingRevenue.revenue >= 0 ) {
-				revText.text = "$" + blding.buildingRevenue.revenue;
-				revText.color = positiveCashflowColor;
+			if( overviewDisplayMode != OverviewDisplay.None ) {
+					overviewText.gameObject.SetActive( true );
+					overviewLabel.gameObject.SetActive( true );
 			}
-			else {
-				revText.text = "-$" + Mathf.Abs( blding.buildingRevenue.revenue );
-				revText.color = negativeCashflowColor;
+			switch( overviewDisplayMode ) {
+				case OverviewDisplay.NewFloor:
+					overviewText.text = "$" + blding.buildingRevenue.floorConstructionCost;
+					overviewText.color = overviewLabel.color = positiveCashflowColor;
+					overviewLabel.text = "NEW FLOOR";
+					break;
+				case OverviewDisplay.Revenue:
+					if( blding.buildingRevenue.revenue >= 0 ) {
+						overviewText.text = "$" + blding.buildingRevenue.revenue;
+						overviewText.color = overviewLabel.color = positiveCashflowColor;
+						overviewLabel.text = "INCOME";
+					}
+					else {
+						overviewText.text = "-$" + Mathf.Abs( blding.buildingRevenue.revenue );
+						overviewText.color = overviewLabel.color = negativeCashflowColor;
+						overviewLabel.text = "INCOME";
+					}
+					break;
+				case OverviewDisplay.TotalValue:
+					if( blding.buildingRevenue.combinedValue >= 0 ) {
+						overviewText.text = "$" + blding.buildingRevenue.combinedValue;
+						overviewText.color = overviewLabel.color = positiveCashflowColor;
+						overviewLabel.text = "TOTAL VALUE";
+					}
+					else {
+						overviewText.text = "-$" + Mathf.Abs( blding.buildingRevenue.combinedValue );
+						overviewText.color = overviewLabel.color = negativeCashflowColor;
+						overviewLabel.text = "TOTAL VALUE";
+					}
+					break;
+				default:
+					overviewText.gameObject.SetActive( false );
+					overviewLabel.gameObject.SetActive( false );
+					break;
 			}
+			
 		} else if ( !blding.isBuilt ) {
-			revText.color = neutralColor;
-			revText.text = "$" + blding.buildingRevenue.combinedValue;
+			overviewText.color = overviewLabel.color = neutralColor;
+			overviewText.text = "$" + blding.buildingRevenue.combinedValue;
 		}
 	}
 	
