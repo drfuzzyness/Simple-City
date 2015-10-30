@@ -1,0 +1,20 @@
+﻿The Image Targets sample shows how to detect an image target and render a simple 3D object on top of it.
+
+Key Functionality
+- Simultaneous detection and tracking of multiple targets
+- Load and activate multiple device databases
+- Activate Extended Tracking
+- Manage camera functions: flash and continuous autofocus
+
+Targets
+https://developer.vuforia.com/sites/default/files/sample-apps/targets/imagetargets_targets.pdf
+
+Instructions
+- Point camera at target to view
+- Single tap to focus
+- Double tap to access options menu
+
+Terms of Use
+https://developer.vuforia.com/legal/EULA
+
+© 2012-2015 Qualcomm Connected Experiences, Inc. All Rights Reserved.
