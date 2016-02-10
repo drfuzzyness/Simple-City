@@ -30,7 +30,7 @@ namespace Vuforia.EditorClasses
 #if (UNITY_5_2 || UNITY_5_1 || UNITY_5_0)
             BuildTargetGroup iOSBuildTarget = BuildTargetGroup.iOS;
 #else
-            BuildTargetGroup iOSBuildTarget = BuildTargetGroup.iPhone;
+            BuildTargetGroup iOSBuildTarget = BuildTargetGroup.iOS;
 #endif
 
             string androidSymbols = PlayerSettings.GetScriptingDefineSymbolsForGroup(androidBuildTarget);

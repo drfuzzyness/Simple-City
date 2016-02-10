@@ -11,5 +11,9 @@ EditorBuildSettings:
     path: Assets/Scenes/CityClicker-Classic.unity
   - enabled: 0
     path: Assets/Scenes/CityClicker-Simulation.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Planet.unity
+  - enabled: 0
+    path: Assets/Scenes/Planet-Tango.unity
+  - enabled: 1
+    path: Assets/Scenes/CityClicker-1.unity
